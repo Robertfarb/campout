@@ -33,9 +33,7 @@ export const login = user => dispatch => (
   ))
 );
 
-export const logout  = user => dispatch => (
-  SessAPIUtil.logout(user)
-  .then(user => (dispatch(logoutCurrentUser(user))
-  ), err => (dispatch(receiveErrors(err.responseJSON))
-  ))
+export const logout  = () => dispatch => (
+  SessAPIUtil.logout()
+  .then(user => dispatch(logoutCurrentUser()))
 );
