@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ openModal, currentUser, logout }) => {
   const sessionLinks = () => (
-    <nav className="login">
+    <nav className="logged-out-nav">
+      <img src=""></img>
       <button onClick={() => openModal('login')}>Login</button>
     </nav>
   );
 
   const personalGreeting = () => (
-    <hgroup className="logout-current-user">
+    <hgroup className="logged-in-nav">
       <h3>{currentUser.username}</h3>
       <button onClick={logout}>Logout</button>
     </hgroup>

@@ -24,7 +24,6 @@ update(field) {
 handleSubmit(e) {
   e.preventDefault();
   const user = Object.assign({}, this.state);
-  debugger;
   this.props.processForm(user).then(() => this.props.closeModal())
 };
 
@@ -38,7 +37,6 @@ renderErrors() {
       ))}
     </ul>
   );
-
   this.props.errors ? errors : nil
 }
 
@@ -48,7 +46,6 @@ render () {
       <h2>Join Campout</h2>
       <h3>Discover the best camping near me!</h3>
       <form onSubmit={this.handleSubmit}>
-      <div onClick={this.props.closeModal} className="close-x">X</div>
       {this.renderErrors()}
       <div className="signup-form">
           <input type="text"
