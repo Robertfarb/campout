@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Greeting = ({ openModal, currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login">
@@ -15,6 +16,7 @@ const Greeting = ({ openModal, currentUser, logout }) => {
     </hgroup>
   )
 
+  // debugger;
   return currentUser ? personalGreeting() : sessionLinks();
 }
 
