@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login">
-      <Link to="/login">Login</Link>
+      <Link to="/">Login</Link>
     </nav>
   );
+
   const personalGreeting = () => (
     <hgroup className="logout-current-user">
       <h3>{currentUser.username}</h3>
-      <button onClick={logout} value="Logout"/>
+      <button onClick={logout}>Logout</button>
     </hgroup>
   )
 

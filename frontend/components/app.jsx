@@ -5,14 +5,14 @@ import {Route,
   Switch, 
   Link, 
   HashRouter} from 'react-router-dom';
-import GreetingContainer from './greeting/greeting';
+import GreetingContainer from './greeting/greeting_container';
 
 
   const App = () => (
     <div>
       <header>
         <h1>Welcome to Campout!</h1>
-        {/* <GreetingContainer /> */}
+        <GreetingContainer />
       </header>
     </div>
   )
