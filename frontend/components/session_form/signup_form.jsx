@@ -23,9 +23,9 @@ update(field) {
 
 handleSubmit(e) {
   e.preventDefault();
-  debugger;
   const user = Object.assign({}, this.state);
-  this.props.processForm(user).then(this.props.closeModal);
+  debugger;
+  this.props.processForm(user).then(() => this.props.closeModal())
 };
 
 renderErrors() {

@@ -68,10 +68,10 @@ class SessionForm extends React.Component {
           <br/>
         </form>
         <span className="signup-prompt">Don't have a Campout account?</span>
-        <button className="signup" onClick={this.props.openModal('signup')}>Signup!</button>
+        <button className="signup" onClick={() => this.props.openModal('signup')}>Signup!</button>
       </div>
     );
   }
 }
 
-export default withRouter(SessionForm);
+export default withRouter(SessionForm)

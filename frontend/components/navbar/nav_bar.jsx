@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Greeting = ({ openModal, currentUser, logout }) => {
+const Navbar = ({ openModal, currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login">
       <button onClick={() => openModal('login')}>Login</button>
@@ -15,9 +15,8 @@ const Greeting = ({ openModal, currentUser, logout }) => {
       <button onClick={logout}>Logout</button>
     </hgroup>
   )
-
-  // debugger;
+  
   return currentUser ? personalGreeting() : sessionLinks();
 }
 
-export default Greeting;
+export default Navbar;
