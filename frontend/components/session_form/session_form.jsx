@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -64,7 +65,10 @@ class SessionForm extends React.Component {
           <br/>
           <input className="session-submit" type="submit" value={this.props.formType}/>
           </div>
+          <br/>
         </form>
+        <span className="signup-prompt">Don't have a Campout account?</span>
+        <button className="signup" onClick={this.props.openModal('signup')}>Signup!</button>
       </div>
     );
   }

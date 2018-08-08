@@ -5,17 +5,15 @@ class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: 'First name...',
-      lastName: 'Last name...',
-      username: 'Username...',
-      password: 'Password...',
-      email: 'Email address...',
-      zipCode: 'Zip code...'
+      first_name: '',
+      last_name: '',
+      username: '',
+      password: '',
+      zip_code: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
-}
 
 update(field) {
   return e => this.setState({
@@ -25,9 +23,10 @@ update(field) {
 
 handleSubmit(e) {
   e.preventDefault();
+  debugger;
   const user = Object.assign({}, this.state);
   this.props.processForm(user).then(this.props.closeModal);
-}
+};
 
 renderErrors() {
   const errors = () => (
@@ -54,21 +53,40 @@ render () {
       <div className="signup-form">
           <input type="text"
            value={this.state.firstName}
-           onChange={this.update('firstName')}
+           placeholder="First name..."
+           onChange={this.update('first_name')}
            className="signup-input"
           />
           <input type="text"
             value={this.state.lastName}
-           onChange={this.update('lastName')}
+            placeholder="Last name..."
+           onChange={this.update('last_name')}
           className="signup-input"
           />
           <input type="text"
             value={this.state.userName}
-           onChange={this.update('userName')}
+           onChange={this.update('username')}
+            placeholder="Username..."
+          className="signup-input"
+          />
+          <input type="password"
+            value={this.state.password}
+            placeholder="password"
+           onChange={this.update('password')}
+          className="signup-input"
+          />
+          <input type="text"
+            value={this.state.zip_code}
+            placeholder="Zip code..."
+           onChange={this.update('zip_code')}
           className="signup-input"
           />
       </div>
+      <input type="submit" value="Join Campout"/>
       </form>
     </div>
-  )
+    );
+  }
 }
+
+export default SignUpForm;
