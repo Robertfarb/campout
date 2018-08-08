@@ -12,19 +12,19 @@ body {
   z-index: 10;
 }
 
-.modal-child {
+.modal-child, .signup-modal-child{
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  height: 350px;
+  height: 305px;
   width: 245px;
 
   input {
-    height: 60px;
+    height: 55px;
     width: 250px;
     margin-bottom: 10px;
     box-sizing: border-box;
@@ -33,6 +33,8 @@ body {
     padding: 10px;
     border: 1px solid black;
     font-family:"Calibre", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
   }
 
   input::-webkit-input-placeholder {
@@ -41,7 +43,7 @@ body {
     font-weight: 600;
   }
 
-  .login-button {
+  .login-button, .signup-button {
     font-weight: bold;
     box-sizing: border-box;
     width: 250px;
@@ -52,7 +54,19 @@ body {
     font-size: 12px;
   }
 
-  .login-button:hover {
+  .login-button:hover, .signup-button:hover {
     background-color: #26c093;
+  }
+
+  .signup-prompt {
+    font-size: 11px;
+    text-align: center;
+    color: #333333;
+    letter-spacing: .5px;
+    text-align: center;
+    
+    button:hover {
+      border-bottom: 1px solid #333333;
+    }
   }
 }

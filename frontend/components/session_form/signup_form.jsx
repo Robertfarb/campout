@@ -42,45 +42,49 @@ renderErrors() {
 
 render () {
   return (
-    <div className="signup-form-conatiner">
-      <h2>Join Campout</h2>
-      <h3>Discover the best camping near me!</h3>
-      <form onSubmit={this.handleSubmit}>
-      {this.renderErrors()}
-      <div className="signup-form">
-          <input type="text"
-           value={this.state.firstName}
-           placeholder="First name..."
-           onChange={this.update('first_name')}
-           className="signup-input"
-          />
-          <input type="text"
-            value={this.state.lastName}
-            placeholder="Last name..."
-           onChange={this.update('last_name')}
-          className="signup-input"
-          />
-          <input type="text"
-            value={this.state.userName}
-           onChange={this.update('username')}
-            placeholder="Username..."
-          className="signup-input"
-          />
-          <input type="password"
-            value={this.state.password}
-            placeholder="password"
-           onChange={this.update('password')}
-          className="signup-input"
-          />
-          <input type="text"
-            value={this.state.zip_code}
-            placeholder="Zip code..."
-           onChange={this.update('zip_code')}
-          className="signup-input"
-          />
+    <div className="signup-modal-child" onClick={e => e.stopPropagation()}>
+      <div className="signup-form-conatiner">
+        <div className="welcome-back">
+          <big>Join Campout</big>
+          <small>Discover the best camping near me!</small>
+        </div>
+        <form onSubmit={this.handleSubmit}>
+        {this.renderErrors()}
+        <div className="signup-form">
+            <input type="text"
+            value={this.state.firstName}
+            placeholder="First name..."
+            onChange={this.update('first_name')}
+            className="signup-input"
+            />
+            <input type="text"
+              value={this.state.lastName}
+              placeholder="Last name..."
+            onChange={this.update('last_name')}
+            className="signup-input"
+            />
+            <input type="text"
+              value={this.state.userName}
+            onChange={this.update('username')}
+              placeholder="Username..."
+            className="signup-input"
+            />
+            <input type="password"
+              value={this.state.password}
+              placeholder="password"
+            onChange={this.update('password')}
+            className="signup-input"
+            />
+            <input type="text"
+              value={this.state.zip_code}
+              placeholder="Zip code..."
+            onChange={this.update('zip_code')}
+            className="signup-input"
+            />
+        </div>
+        <input type="submit" value="Join Campout" className="signup-button"/>
+        </form>
       </div>
-      <input type="submit" value="Join Campout"/>
-      </form>
     </div>
     );
   }

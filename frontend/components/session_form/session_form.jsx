@@ -41,6 +41,7 @@ class SessionForm extends React.Component {
 
   render () {
     return (
+      <div className="modal-child" onClick={e => e.stopPropagation()}>
       <div className="login-form-container">
         <div className="welcome-back">
           <big>Welcome Back!</big><br/>
@@ -74,6 +75,7 @@ class SessionForm extends React.Component {
           <span className="signup-prompt">Don't have a Campout account? </span>
           <button className="signup" onClick={() => this.props.openModal('signup')}>Signup!</button>
         </div>
+      </div>
       </div>
     );
   }
