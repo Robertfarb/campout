@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <div className="welcome-back">
           <big>Welcome Back!</big><br/>
-          <small>It's about time to go camping again!</small>
+          <small>It's about time to go camping again</small>
         </div>
         <form onSubmit={this.handleSubmit}>
           {this.renderErrors()}
@@ -66,12 +66,14 @@ class SessionForm extends React.Component {
             />
           </label>
           <br/>
-          <input className="login-button" type="submit" value={this.props.formType}/>
+          <input className="login-button" type="submit" value="Log In"/>
           </div>
           <br/>
         </form>
-        <span className="signup-prompt">Don't have a Campout account?</span>
-        <button className="signup" onClick={() => this.props.openModal('signup')}>Signup!</button>
+        <div className="signup-prompt">
+          <span className="signup-prompt">Don't have a Campout account? </span>
+          <button className="signup" onClick={() => this.props.openModal('signup')}>Signup!</button>
+        </div>
       </div>
     );
   }

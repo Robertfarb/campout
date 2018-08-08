@@ -1,45 +1,72 @@
 // Place all the styles related to the staticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
- .modal-background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 10;
-}
+// body {
+//    font-family: "Calibre", Helvetica, Arial, sans-serif;
+//  }
 
-.modal-child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  height: 300px;
-  width: 245px;
+//  .modal-background {
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   left: 0;
+//   background: rgba(0, 0, 0, 0.7);
+//   z-index: 10;
+// }
+
+// .modal-child {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   background-color: white;
+//   padding: 15px;
+//   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+//   height: 350px;
+//   width: 245px;
   
-  input {
-    height: 68px;
-    width: 250px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 10px;
-    border: 1px solid black;
-  }
-}
+//   input {
+//     height: 60px;
+//     width: 250px;
+//     margin-bottom: 10px;
+//     box-sizing: border-box;
+//     font-size: 16px;
+//     font-weight: 500;
+//     padding: 10px;
+//     border: 1px solid black;
+//     font-family:"Calibre", Helvetica, Arial, sans-serif;
+//   }
 
-.signup {
-  font-weight: bold;
-}
+//   .login-button {
+//     font-weight: bold;
+//     box-sizing: border-box;
+//     width: 250px;
+//     background-color: #26c093;
+//     border: none !important;
+//     color: white;
+//     text-align: center;
+//   }
+// }
 
-.login-button {
-  font-weight: bold;
-  box-sizing: border-box;
-  width: 250px;
-}
+// .signup {
+//   font-weight: bold;
+// }
+
+
+
+// .welcome-back {
+//   text-align: center;
+// }
+
+// .modal-child {
+//   small {
+//     font-size: 13px;
+//    color: #a1a1a1;
+//   }
+//   big {
+//     font-weight: 600;
+//     font-size: 1.2em;
+//     letter-spacing: .1px;
+//   }
+// }

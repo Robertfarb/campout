@@ -1,0 +1,58 @@
+body {
+   font-family: "Calibre", Helvetica, Arial, sans-serif;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  height: 350px;
+  width: 245px;
+
+  input {
+    height: 60px;
+    width: 250px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border: 1px solid black;
+    font-family:"Calibre", Helvetica, Arial, sans-serif;
+  }
+
+  input::-webkit-input-placeholder {
+    color: #333333;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .login-button {
+    font-weight: bold;
+    box-sizing: border-box;
+    width: 250px;
+    background-color: #40d9ac;
+    border: none !important;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .login-button:hover {
+    background-color: #26c093;
+  }
+}
