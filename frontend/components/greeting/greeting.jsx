@@ -10,7 +10,7 @@ const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => (
     <hgroup className="logout-current-user">
       <h3>{currentUser.username}</h3>
-      <button onClick={logout}>Log Out</button>
+      <button onClick={logout} value="Logout"/>
     </hgroup>
   )
 
