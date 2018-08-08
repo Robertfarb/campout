@@ -9,4 +9,4 @@ export const openModal = modal => ({
 export const closeModal = modal => ({
   type: CLOSE_MODAL,
   modal
-})
+});

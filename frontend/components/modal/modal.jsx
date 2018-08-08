@@ -1,6 +1,8 @@
 import React from 'react';
-import {closeModal} from '../actions/modal_actions';
+import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+import LoginFormContainer from '../session_form/login_form_container';
+import SignupFormContainer from '../session_form/signup_form_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -20,7 +22,7 @@ function Modal({modal, closeModal}) {
   }
   return (
     <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropogation()}>
+      <div className="modal-child" onClick={e => e.stopPropagation()}>
         { component }
       </div>
     </div>
@@ -35,4 +37,4 @@ const mapDispatchToProps = dispatch => ({
   closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mapStateToProps)(mapDispatchToProps)(Modal);
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
