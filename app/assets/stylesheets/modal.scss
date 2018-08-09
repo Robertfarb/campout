@@ -14,20 +14,20 @@ body {
 
 .modal-child, .signup-modal-child{
   position: absolute;
-  top: 190px;
+  top: 250px;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  height: 335px;
+  height: 370px;
   width: 300px;
 
 
   input {
     height: 60px;
     width: 300px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     box-sizing: border-box;
     font-size: 15px;
     font-weight: 500;
@@ -52,7 +52,7 @@ body {
     border: none !important;
     color: white;
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .login-button:hover, .signup-button:hover {
@@ -60,13 +60,17 @@ body {
   }
 
   .signup-prompt {
-    font-size: 11px;
+    font-size: 13px;
     text-align: center;
     color: #333333;
     letter-spacing: .5px;
     text-align: center;
     margin-top: 20px;
-    
+
+    button {
+      margin: 5px;
+    }
+
     button:hover {
       border-bottom: 1px solid #333333;
     }

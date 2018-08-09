@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentDidMount () {
@@ -22,6 +23,10 @@ class SessionForm extends React.Component {
       [field]: e.currentTarget.value
     });
   }
+
+  demoLogin () {
+    this.props.processForm({ username: "smokeythebear", password: "12345678"}).then(() => this.props.closeModal)
+  };
 
   handleSubmit(e) {
     e.preventDefault();
@@ -46,7 +51,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <div className="welcome-back">
           <big>Welcome Back!</big><br/>
-          <small>It's about time to go camping again</small>
+          <span className="camping-again"><small>It's about time to go camping again</small></span>
         </div>
         <form onSubmit={this.handleSubmit}>
           {this.renderErrors()}
@@ -74,8 +79,9 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
         </form>
         <div className="signup-prompt">
-          <span className="signup-prompt">Don't have a Campout account? </span>
+          <span className="signup-prompt">Don't have a Campout account? </span><br/>
           <button className="signup" onClick={() => this.props.openModal('signup')}>Signup!</button>
+          <button className="demo" onClick={() => this.demoLogin()}>Demo</button>
         </div>
       </div>
       </div>

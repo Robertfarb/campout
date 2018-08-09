@@ -4,18 +4,20 @@
 
 .welcome-back {
   text-align: center;
+  margin-bottom: 10px;
 }
+
 
 .modal-child, .signup-modal-child {
   small {
     font-weight: lighter;
-    letter-spacing: .5px;
-    font-size: 12px;
+    letter-spacing: .6px;
+    font-size: 14px;
     color: #a1a1a1;
   }
   big {
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.35em;
     letter-spacing: 0.6px;
     color: #333333;
   }
