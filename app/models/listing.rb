@@ -22,8 +22,28 @@
 #
 
 class Listing < ApplicationRecord
+  validates :title, :host_id, :description, :address, :long, :lat,
+            :price_daily, :is_glamping, :pet_friendly, :is_toilets, :max_capacity, :has_showers,
+            :checkin_after, :checkout_before, null: false
+  
+  belongs_to :host,
+    foreign_key: :host_id,
+    class_name: :User
 
+  has_many :listing_activities,
+    foreign_key: :listing_id,
+    class_name: :ListingActivity
 
+  has_many :activities,
+    through: :listing_activities,
+    source: :activity
 
   
+  def ensure_checkin_after
+    self.checkin_after ||= "11:00 am"
+  end
+
+  def ensure_checkout_before
+    self.checkout_before ||= "2:00 pm"
+  end
 end
