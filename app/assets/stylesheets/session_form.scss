@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-.modal-child {
+.modal-child, .signup-modal-child {
   small {
     font-weight: lighter;
     letter-spacing: .5px;
@@ -15,7 +15,7 @@
   }
   big {
     font-weight: 600;
-    font-size: 1em;
+    font-size: 1.2em;
     letter-spacing: 0.6px;
     color: #333333;
   }

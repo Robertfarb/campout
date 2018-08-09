@@ -43,9 +43,10 @@ renderErrors() {
 render () {
   return (
     <div className="signup-modal-child" onClick={e => e.stopPropagation()}>
+      <img src={window.images.logoPng} />
       <div className="signup-form-conatiner">
         <div className="welcome-back">
-          <big>Join Campout</big>
+          <big>Join Campout</big><br/>
           <small>Discover the best camping near me!</small>
         </div>
         <form onSubmit={this.handleSubmit}>

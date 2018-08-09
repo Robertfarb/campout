@@ -14,21 +14,22 @@ body {
 
 .modal-child, .signup-modal-child{
   position: absolute;
-  top: 25%;
+  top: 180px;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   height: 305px;
-  width: 245px;
+  width: 300px;
+
 
   input {
-    height: 55px;
-    width: 250px;
+    height: 60px;
+    width: 300px;
     margin-bottom: 10px;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     padding: 10px;
     border: 1px solid black;
@@ -39,14 +40,14 @@ body {
 
   input::-webkit-input-placeholder {
     color: #333333;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
   }
 
   .login-button, .signup-button {
     font-weight: bold;
     box-sizing: border-box;
-    width: 250px;
+    width: 300px;
     background-color: #40d9ac;
     border: none !important;
     color: white;
