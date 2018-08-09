@@ -1,8 +1,34 @@
-.splash-place {
-  font-size: 50px;
-  position: fixed;
-  top: 45%;
-  left: 35%;
-  text-align: center;
-  margin: 0 auto;
+.main-container {
+    position: relative;
+    display: flex;
+    top: 115px;
+}
+
+.right-main {
+  width: 50%;
+}
+
+.left-main {
+  width: 50%;
+  padding: 3vw 8.5vw;
+
+  h2 {
+    
+  }
+}
+
+.right-img-conatiner {
+  text-align: right;
+}
+
+@media (max-width: 910px) {
+  .main-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  // .right-main {
+  //     display: block;
+  //     width: 100%
+  // }
 }

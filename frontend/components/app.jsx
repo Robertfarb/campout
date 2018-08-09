@@ -10,18 +10,18 @@ import Modal from './modal/modal';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import Footer from './footer/footer';
-// import mainContainer from './home/mainContainer';
+import MainPage from './home/main';
 
 
   const App = () => (
     <div>
       <NavBarContainer />
       <Modal />
-      {/* <Switch>
-        <Route exact path="/listings/:listingId" component={inProgress} />
-        <Route path="/discover" component={searchInProgress} />
-        <Route path="/" component={mainContainer} />
-      </Switch> */}
+      <Switch>
+        {/* <Route exact path="/listings/:listingId" component={inProgress} />
+        <Route path="/discover" component={searchInProgress} /> */}
+        <Route path="/" component={MainPage} />
+      </Switch>
     </div>
   )
 
