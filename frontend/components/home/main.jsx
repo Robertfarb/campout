@@ -17,7 +17,7 @@ class MainPage extends React.Component {
             <p>Book unique camping experiences at 300,000 <br /> campsites, ranches, vineyards, public parks and more.</p>
           </div>
           <div className="search-bar-container">
-            <input className="campsite-search" type="text"/>
+            <input placeholder="Camping near me..." className="campsite-search" type="text"/>
           </div>
         </div>
         <div className="right-main">
