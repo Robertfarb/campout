@@ -13,6 +13,10 @@ class SessionForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentDidMount () {
+    this.props.clearErrors();
+  }
+
   update (field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -22,13 +26,13 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(this.props.closeModal);
+    this.props.processForm(user).then(this.props.closeModal)
   }
 
   renderErrors() {
-      return (<ul>
+    return (<ul className="signin-errors">
         {this.props.errors.map((error, idx) => (
-          <li key={`error-${idx}`}>
+          <li key={`error-${idx}`} className="signin-error">
             {error}
           </li>
         ))}
@@ -67,6 +71,7 @@ class SessionForm extends React.Component {
           <input className="login-button" type="submit" value="Log In"/>
           </div>
           <br/>
+          {this.renderErrors()}
         </form>
         <div className="signup-prompt">
           <span className="signup-prompt">Don't have a Campout account? </span>
