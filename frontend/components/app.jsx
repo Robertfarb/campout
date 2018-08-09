@@ -9,15 +9,19 @@ import NavBarContainer from './navbar/navbar_container';
 import Modal from './modal/modal';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
+import Footer from './footer/footer';
+// import mainContainer from './home/mainContainer';
 
 
   const App = () => (
     <div>
       <NavBarContainer />
       <Modal />
-      <header>
-        <h1 className="splash-place">Welcome to Campout!</h1>
-      </header>
+      {/* <Switch>
+        <Route exact path="/listings/:listingId" component={inProgress} />
+        <Route path="/discover" component={searchInProgress} />
+        <Route path="/" component={mainContainer} />
+      </Switch> */}
     </div>
   )
 
