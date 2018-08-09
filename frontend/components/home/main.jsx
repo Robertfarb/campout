@@ -23,7 +23,7 @@ class MainPage extends React.Component {
         <div className="right-main">
           <div className="right-img-conatiner">
             <img src={window.images.yosemiteMain} alt="Yosemite National Park"/>
-            <p>Yosemite Nat. Park hosted by National Park Service</p>
+            <p><Link to="/">Yosemite Nat. Park</Link> hosted by National Park Service</p>
           </div>
         </div>
         <div className="splash-listing-images">

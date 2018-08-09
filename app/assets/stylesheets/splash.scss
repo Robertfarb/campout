@@ -6,6 +6,14 @@
 
 .right-main {
   width: 50%;
+  
+  a {
+    border-bottom: 1px solid #ebebeb;
+    color: #333333;
+  }
+  a:hover {
+    border-color: #333333;
+  }
 }
 
 .left-main {
@@ -26,6 +34,12 @@
 
 .right-img-conatiner {
   text-align: right;
+
+  p {
+    padding-right: 5px;
+    font-family: "Calibre", Helvetica, Arial, sans-serif;
+    color: #a1a1a1;
+  }
 }
 
 @media (max-width: 910px) {
