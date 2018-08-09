@@ -6,7 +6,7 @@ const Navbar = ({ openModal, currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="logged-out-nav nav">
       <div className="left">
-        <img className="nav-logo" src={window.images.logoPng} />
+        <Link to="/"><img className="nav-logo" src={window.images.logoPng} /></Link>
         <input className="nav-search" placeholder="Search..." type="text"/>
       </div>
       <div className="right">
@@ -20,7 +20,7 @@ const Navbar = ({ openModal, currentUser, logout }) => {
   const personalGreeting = () => (
     <hgroup className="logged-in-nav nav">
     <div className="left">
-      <img className="nav-logo" src={window.images.logoPng} />
+      <Link to="/"><img className="nav-logo" src={window.images.logoPng} /></Link>
       <input className="nav-search"  type="text" placeholder="Search..."/>
     </div>
       <div className="right">
