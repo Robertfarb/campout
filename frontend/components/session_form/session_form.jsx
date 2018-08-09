@@ -18,6 +18,10 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
+  componentWillUnmount () {
+    this.props.clearErrors();
+  }
+
   update (field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -25,7 +29,7 @@ class SessionForm extends React.Component {
   }
 
   demoLogin () {
-    this.props.processForm({ username: "smokeythebear", password: "12345678"}).then(() => this.props.closeModal)
+    this.props.processForm({ username: "smokeythebear", password: "12345678"}).then(this.props.closeModal)
   };
 
   handleSubmit(e) {
@@ -35,14 +39,15 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return (<ul className="signin-errors">
+    return (
+    <ul className="signin-errors">
         {this.props.errors.map((error, idx) => (
           <li key={`error-${idx}`} className="signin-error">
             {error}
           </li>
         ))}
       </ul>
-    )
+    );
   }
 
   render () {
@@ -81,6 +86,7 @@ class SessionForm extends React.Component {
         <div className="signup-prompt">
           <span className="signup-prompt">Don't have a Campout account? </span><br/>
           <button className="signup" onClick={() => this.props.openModal('signup')}>Signup!</button>
+          <span className="signup-demo-split">|</span>
           <button className="demo" onClick={() => this.demoLogin()}>Demo</button>
         </div>
       </div>

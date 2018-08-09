@@ -26,6 +26,7 @@ const Navbar = ({ openModal, currentUser, logout }) => {
       <div className="right">
         <a className="github nav-link" href="https://github.com/robertfarb/"><i className="fa fa-github fa-2x"></i></a>
         <a className="linked-in nav-link" href="https://www.linkedin.com/in/robert-farb-613a3751/"><i className="fa fa-linkedin fa-2x"></i></a>
+        <img className="smokey-icon" src={window.images.smokeyIcon} />
         <span className="current-user nav-link">{currentUser.username}</span>
         <button className="logout-button" onClick={logout}>Logout</button>
       </div>

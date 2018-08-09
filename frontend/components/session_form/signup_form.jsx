@@ -28,8 +28,8 @@ handleSubmit(e) {
 };
 
 renderErrors() {
-  const errors = () => (
-    <ul>
+  return (
+    <ul class="errors">
       {this.props.errors.map((error, idx) => (
         <li key={`error-${idx}`}>
           {error}
@@ -37,7 +37,6 @@ renderErrors() {
       ))}
     </ul>
   );
-  this.props.errors ? errors : nil
 }
 
 render () {
@@ -50,7 +49,6 @@ render () {
           <small>Discover the best camping near me!</small>
         </div>
         <form onSubmit={this.handleSubmit}>
-        {this.renderErrors()}
         <div className="signup-form">
             <input type="text"
             value={this.state.firstName}
@@ -85,6 +83,7 @@ render () {
         </div>
         <input type="submit" value="Join Campout" className="signup-button"/>
         </form>
+        {this.renderErrors()}
       </div>
     </div>
     );

@@ -1,8 +1,13 @@
 .signup-modal-child {
   height: 555px;
   top: 355px;
-
+ 
   .welcome-back {
     margin-bottom: 10px;
   }
+}
+
+.errors {
+  color: red;
+  text-align: center;
 }
