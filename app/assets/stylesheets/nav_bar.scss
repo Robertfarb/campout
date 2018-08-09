@@ -16,6 +16,7 @@
   width: 100%;
   box-sizing: border-box;
   z-index: 4;
+  background-color: white;
 
   .left {
     display: flex;
@@ -45,6 +46,7 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     width: 400px;
     padding: 10px;
+    padding-left: 25px;
     margin-left: 10px
   }
 }
