@@ -13,7 +13,9 @@ class MainPage extends React.Component {
       <div className="main-container">
         <div className="left-main">
           <h2>Campout makes camping easy.</h2><br/>
-          <p>Book unique camping experiences at 300,000 campsites, ranches, vineyards, public parks and more.</p>
+          <div className="tagline">
+            <p>Book unique camping experiences at 300,000 <br /> campsites, ranches, vineyards, public parks and more.</p>
+          </div>
           <div className="search-bar-container">
             <input className="campsite-search" type="text"/>
           </div>

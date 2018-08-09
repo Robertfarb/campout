@@ -9,11 +9,18 @@
 }
 
 .left-main {
-  width: 50%;
+  width: 38%;
   padding: 3vw 8.5vw;
 
   h2 {
-    
+    font-size: 4.3vw;
+    font-family: "Calibre", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #333333;
+    line-height: .9;
+  }
+  .p{
+    letter-spacing: 1px;
   }
 }
 
@@ -27,6 +34,14 @@
     width: 100%;
     align-items: center;
   }
+  .left-main{
+    width: 100%;
+    text-align: center;
+  }
+  .right-main {
+    width: 80%;
+  }
+     
   // .right-main {
   //     display: block;
   //     width: 100%
