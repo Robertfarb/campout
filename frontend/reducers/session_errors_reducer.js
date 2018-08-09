@@ -2,7 +2,7 @@ import { RECEIVE_CURRENT_USER,
          RECEIVE_SESSION_ERRORS} from '../actions/session_actions';
 
 
-export default (state = {}, action) => {
+export default (state = [], action) => {
   Object.freeze(state);
 
   switch (action.type) {
