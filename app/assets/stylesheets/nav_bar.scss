@@ -70,9 +70,23 @@
     display: none;
     width: 100vw;
     }
+    .smokey-icon, .current-user {
+      display: none;
+    }
   }
 }
 
+@media (min-width: 701px) and (max-width: 1090px) {
+  .nav {
+    .nav-search {
+      width: 200px;
+    }
+    .smokey-icon{
+      display: none;
+    }
+  }
+}
+ 
 .smokey-icon {
   height: 45px;
   width: 45px;

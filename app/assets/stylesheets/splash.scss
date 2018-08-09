@@ -27,8 +27,9 @@
     color: #333333;
     line-height: .9;
   }
-  .p{
-    letter-spacing: 1px;
+  p{
+    letter-spacing: .6px;
+    line-height: 1.6;
   }
 }
 
@@ -54,6 +55,14 @@
   }
   .right-main {
     width: 80%;
+  }
+
+  @media (max-width: 510px) {
+    .left-main {
+     h2 {
+       font-size: 25px;
+     }
+    }
   }
      
   // .right-main {
