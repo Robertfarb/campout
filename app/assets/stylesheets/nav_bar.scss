@@ -1,0 +1,21 @@
+.nav-logo {
+  height: 45px;
+  width: 150px;
+  margin: 5px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.login-button {
+  font-size: 16px;
+}
+
+.login-button:hover {
+  border-bottom: 1px solid #5a5a5a;
+}

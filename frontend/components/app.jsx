@@ -16,7 +16,7 @@ import SignupFormContainer from './session_form/signup_form_container';
       <NavBarContainer />
       <Modal />
       <header>
-        <h1>Welcome to Campout!</h1>
+        <h1 className="splash-place">Welcome to Campout!</h1>
       </header>
     </div>
   )
