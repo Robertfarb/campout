@@ -10,12 +10,12 @@ User.create({username: "robfarb", first_name: "Robert", last_name: "Farb", zip_c
 User.create({username: "smokeythebear", first_name: "Smokey", last_name: "Bear", zip_code: "94103", password: "12345678"})
 User.create({username: "parkranger10", first_name: "Ranger", last_name: "Rick", zip_code: "92234", password: "ilovenationalparks"})
 
-yos = Listing.create!({title: "Yosemite", host_id: 1, description: "Yosemite National Park lies in the heart of California. It flaunts'hanging' valleys, many waterfalls, cirque lakes, polished domes, moraines and U-shaped valleys.",
+yos = Listing.create!({title: "Yosemite", host_id: 1, description: "Yosemite National Park lies in the heart of California. It flaunts 'hanging' valleys, many waterfalls, cirque lakes, polished domes, moraines and U-shaped valleys.",
                 address: "Yosemite National Park", long: -119.538329, lat: 37.865101, price_daily: 55, is_glamping: false, 
                 pet_friendly: false, is_toilets: false, max_capacity: 5, has_showers: false, checkin_after: "10:00 am", 
                 checkout_before: "4:00 pm"})
                 
-                # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_1.jpg"), filename: "yosemite-1")
+                yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_1.jpg"), filename: "yosemite-1")
                 # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_2.jpg"), filename: "yosemite-2")
                 # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_3.jpg"), filename: "yosemite-3")
                 # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_4.jpg"), filename: "yosemite-4")

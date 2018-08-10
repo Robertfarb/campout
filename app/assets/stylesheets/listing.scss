@@ -1,3 +1,14 @@
-.listing_container {
+.listing-container {
+    min-height: 90vh;
+    display: block;
+    margin-top: 75px !important;
+}
+
+.listing-left {
+  width: 67%;
+  padding-right: 75px;
+}
+
+.listing {
   
 }
