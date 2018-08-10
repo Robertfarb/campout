@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { signup, login, logout } from './actions/session_actions';
 import {openModal, closeModal} from './actions/modal_actions';
+import {requestAllListings, requestListing} from './actions/listings_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -25,9 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
   //testing//
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.login = login;
-  window.logout = logout;
-  window.openModal= openModal;
-  window.closeModal= closeModal;
+  window.requestAllListings = requestAllListings;
+  window.requestListing = requestListing;
+  // window.login = login;
+  // window.logout = logout;
+  // window.openModal= openModal;
+  // window.closeModal= closeModal;
   //testing//
 });

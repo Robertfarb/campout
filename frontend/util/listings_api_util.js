@@ -1,4 +1,4 @@
-export const fetchListings = (listings) => (
+export const fetchListings = () => (
   $.ajax({
     method: "GET",
     url: "api/listings"
