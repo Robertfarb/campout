@@ -62,6 +62,10 @@
     width: 100%;
     align-items: center;
   }
+  .search-bar-container {
+    width: 80%;
+    margin: 0 auto;
+  }
   .left-main{
     width: 100%;
     text-align: center;
@@ -69,17 +73,12 @@
   .right-main {
     width: 80%;
   }
+}
 
-  @media (max-width: 510px) {
-    .left-main {
-     h2 {
-       font-size: 25px;
-     }
+@media (max-width: 510px) {
+  .left-main {
+    h2 {
+      font-size: 25px;
     }
   }
-     
-  // .right-main {
-  //     display: block;
-  //     width: 100%
-  // }
 }
