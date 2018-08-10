@@ -1,0 +1,34 @@
+.not-found-tent {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: auto;
+    position: relative;
+}
+
+center {
+  margin-top: 20px;
+}
+
+center a{
+  font-size: 2.2vw;
+  font-family: "Calibre", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #333333;
+  line-height: .9;
+}
+
+center a:hover{
+  border-bottom: 1px solid black;
+}
+
+.not-found-container {
+  position: fixed;
+  top: 90px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2.2em;
+  }
+}

@@ -7,10 +7,8 @@ import {Route,
   HashRouter} from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
 import Modal from './modal/modal';
-import LoginFormContainer from './session_form/login_form_container';
-import SignupFormContainer from './session_form/signup_form_container';
-import Footer from './footer/footer';
 import MainPage from './home/main';
+import NotFound from './not_found/not_found'
 
 
   const App = () => (
@@ -20,8 +18,8 @@ import MainPage from './home/main';
       <Switch>
         {/* <Route exact path="/listings/:listingId" component={inProgress} />
         <Route path="/discover" component={searchInProgress} /> */}
-        <Route path="/" component={MainPage} />
-        <Route component={test} />
+        <Route exact path="/" component={MainPage} />
+        <Route path="*" component={NotFound} />
       </Switch>
     </div>
   )
