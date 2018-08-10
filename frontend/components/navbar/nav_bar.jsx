@@ -13,6 +13,7 @@ const Navbar = ({ openModal, currentUser, logout }) => {
         <a className="github nav-link" href="https://github.com/robertfarb/"><i className="fa fa-github fa-2x"></i></a>
         <a className="linked-in nav-link" href="https://www.linkedin.com/in/robert-farb-613a3751/"><i className="fa fa-linkedin fa-2x"></i></a>
         <button className="login-button" onClick={() => openModal('login')}>Log in</button>
+        <button className="signup-button" onClick={() => openModal('signup')}>Sign up</button>
       </div>
     </nav>
   );

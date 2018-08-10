@@ -1,5 +1,5 @@
 .signup-modal-child {
-  height: 555px;
+  height: 593px;
   top: 355px;
  
   .welcome-back {
@@ -10,4 +10,26 @@
 .errors {
   color: red;
   text-align: center;
+  margin-top: 20px;
+  width: 291px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
+.signup-form-container {
+  .signup-prompt{
+      text-align: center !important;
+  }
+}
+
+.login {
+  font-size: 13px;
+  margin: 0px 7px;
+  font-weight: 600;
+}
+
+.login:hover {
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+

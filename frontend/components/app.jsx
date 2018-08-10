@@ -21,6 +21,7 @@ import MainPage from './home/main';
         {/* <Route exact path="/listings/:listingId" component={inProgress} />
         <Route path="/discover" component={searchInProgress} /> */}
         <Route path="/" component={MainPage} />
+        <Route component={test} />
       </Switch>
     </div>
   )

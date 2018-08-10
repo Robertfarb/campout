@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -82,8 +83,10 @@ render () {
             />
         </div>
         <input type="submit" value="Join Campout" className="signup-button"/>
-        </form>
+          <span className="signup-prompt">Already a Campout member?</span>
+          <button className="login" onClick={() => this.props.openModal('login')}>Login!</button>
         {this.renderErrors()}
+        </form>
       </div>
     </div>
     );
