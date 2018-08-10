@@ -4,4 +4,10 @@ class Activity < ApplicationRecord
   belongs_to :listing,
   foreign_key: :listing_id,
   class_name: :Listing
+
+
+  def to_hash
+    hash = {}; self.attributes.each { |k,v| hash[k] = v }
+    return hash
+  end
 end

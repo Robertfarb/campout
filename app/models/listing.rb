@@ -44,4 +44,12 @@ class Listing < ApplicationRecord
   def ensure_checkout_before
     self.checkout_before ||= "2:00 pm"
   end
+
+  def activities_arr
+    activities = []
+    self.activities.first.to_hash.each do |activity, present|
+      activities.push(activity) if present == true
+    end
+    activities
+  end
 end
