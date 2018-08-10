@@ -4,5 +4,5 @@ import listings from './listings_reducer';
 
 export default combineReducers({
     users: usersReducer,
-    listings
+    listings: listings
 });
