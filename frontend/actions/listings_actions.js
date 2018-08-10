@@ -10,7 +10,7 @@ export const requestAllListings = () => dispatch => {
 
 export const requestListing = (id) => dispatch => {
   return APIUtil.fetchListing(id)
-  .then(listings => dispatch(receiveAllListings(listings)))
+  .then(listing => dispatch(receiveListing(listing)))
 }
 
 export const receiveAllListings = (listings) => ({
