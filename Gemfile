@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-
+gem "aws-sdk-s3"
 gem 'rails_12factor'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
+# Use Capistrano for deployment 
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do

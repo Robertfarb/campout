@@ -30,13 +30,11 @@ class Listing < ApplicationRecord
     foreign_key: :host_id,
     class_name: :User
 
-  has_many :listing_activities,
-    foreign_key: :listing_id,
-    class_name: :ListingActivity
-
   has_many :activities,
-    through: :listing_activities,
-    source: :activity
+    foreign_key: :listing_id,
+    class_name: :Activity
+
+  has_many_attached  :photos
 
   
   def ensure_checkin_after

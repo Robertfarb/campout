@@ -8,3 +8,57 @@
 
 User.create({username: "robfarb", first_name: "Robert", last_name: "Farb", zip_code: "94103", password: "12345678"})
 User.create({username: "smokeythebear", first_name: "Smokey", last_name: "Bear", zip_code: "94103", password: "12345678"})
+User.create({username: "parkranger10", first_name: "Ranger", last_name: "Rick", zip_code: "92234", password: "ilovenationalparks"})
+
+yos = Listing.create!({title: "Yosemite", host_id: 1, description: "Yosemite National Park lies in the heart of California. It flaunts'hanging' valleys, many waterfalls, cirque lakes, polished domes, moraines and U-shaped valleys.",
+                address: "Yosemite National Park", long: -119.538329, lat: 37.865101, price_daily: 55, is_glamping: false, 
+                pet_friendly: false, is_toilets: false, max_capacity: 5, has_showers: false, checkin_after: "10:00 am", 
+                checkout_before: "4:00 pm"})
+                
+                # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_1.jpg"), filename: "yosemite-1")
+                # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_2.jpg"), filename: "yosemite-2")
+                # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_3.jpg"), filename: "yosemite-3")
+                # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_4.jpg"), filename: "yosemite-4")
+                # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_5.jpg"), filename: "yosemite-5")
+                
+big_sur = Listing.create!({title: "Big Sur", host_id: 3, description: "Experience one of the world's most unforgettable stretches of coastline in and around Big Sur, California.", 
+                address: "Big Sur National Park", long: -121.856261, lat: 36.361475, price_daily: 120, is_glamping: false, 
+                pet_friendly: true, is_toilets: true, max_capacity: 6, has_showers: true, checkin_after: "11:00 am", 
+                checkout_before: "3:00 pm"})
+
+                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur1.jpg"), filename: "big_sur-1")
+                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur2.jpg"), filename: "big_sur-2")
+                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur3.jpg"), filename: "big_sur-3")
+                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur4.jpg"), filename: "big_sur-4")
+                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur5.jpg"), filename: "big_sur-5")
+                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur6.jpg"), filename: "big_sur-6")
+
+j_tree = Listing.create!({title: "Joshua Tree", host_id: 3, description: "Arid low desert and vegetated high desert meet in Joshua Tree National Park, offering visitors stunning vistas and rewarding hikes, and incredible climbs.", 
+                address: "Joshua Tree National Park", long: -115.900993, lat: 33.873417, price_daily: 60, is_glamping: false, 
+                pet_friendly: false, is_toilets: true, max_capacity: 10, has_showers: false, checkin_after: "10:00 am", 
+                checkout_before: "4:00 pm"})
+
+                # j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree1.jpg"), filename: "jtree1")
+                # j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree2.jpg"), filename: "jtree2")
+                # j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree3.jpg"), filename: "jtree3")
+                # j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree4.jpg"), filename: "jtree4")
+                # j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree5.jpg"), filename: "jtree5")
+
+
+zion = Listing.create!({title: "Zion", host_id: 1, description: "Zion is a beautiful, vast nature reserve in Southwest Utah offering hikes through slot canyons and endless trails through renowned red canyons", 
+                address: "Zion National Park", long: -113.026299, lat: 37.298203, price_daily: 105, is_glamping: false, 
+                pet_friendly: true, is_toilets: false, max_capacity: 10, has_showers: false, checkin_after: "10:00 am", 
+                checkout_before: "4:00 pm"})
+
+                # zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion1.jpg"), filename: "zion1")
+                # zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion2.jpg"), filename: "zion3")
+                # zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion3.jpg"), filename: "zion4")
+                # zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion4.jpg"), filename: "zion5")
+                # zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion5.jpg"), filename: "zion6")
+               
+
+
+Activity.create!({hiking: true, biking: false, swimming: true, fishing: true, climbing: true, surfing: false, skiing: false, listing_id: 1})
+Activity.create!({hiking: true, biking: true, swimming: true, fishing: true, climbing: false, surfing: true, skiing: false, listing_id: 2})
+Activity.create!({hiking: true, biking: false, swimming: false, fishing: false, climbing: true, surfing: false, skiing: false, listing_id: 3})
+Activity.create!({hiking: true, biking: false, swimming: false, fishing: false, climbing: true, surfing: false, skiing: false, listing_id: 4})
