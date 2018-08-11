@@ -32,7 +32,10 @@ class Listing extends React.Component {
               <div className="listing-description">
                 <aside className="details-aside">
                   <img className="host-avatar" src={window.images.parkRanger}></img>
-                  <div className="host-info">{this.props.listing.host.first_name} {this.props.listing.host.last_name}</div>
+                  <div className="host-info">
+                    <h3>Hosted By</h3>
+                    <p>{this.props.listing.host.first_name} {this.props.listing.host.last_name}</p>
+                  </div>
                 </aside>
                 <main>
                   <div className="listing-description-text-wrapper">
@@ -41,7 +44,7 @@ class Listing extends React.Component {
                 </main>
               </div>
 
-              <div className="listing-details">
+              <div className="listing-details listing-description">
                 <aside className="details-aside"><p>Details</p></aside>
                 <main className="Listing Details">
                   <ul>
@@ -55,7 +58,7 @@ class Listing extends React.Component {
                 </main>
               </div>
 
-              <div className="listing-activities">
+              <div className="listing-activities listing-description">
                 <aside className="details-aside"><p>Activities</p></aside>
                 <main>
                   <ul className="activities-list">
