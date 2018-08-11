@@ -15,12 +15,37 @@ const Footer = () => {
             glamping tents and more.
           </p>
         </div>
-        <div className="footer-links">
+        <div className="footer-section browse">
+          <h5>Browse</h5>
+          <ul>
+            <a href="#"><li>Host campers</li></a>
+            <a href="#"><li>Discover Camps</li></a>
+            <a href="#"><li>Gift Cards</li></a>
+            <a href="#"><li>Help</li></a>
+            <a href="#"><li>Contact</li></a>
+          </ul>
+        </div>
+        <div className="footer-section browse">
+          <h5>About</h5>
+          <ul>
+            <a href="#"><li>Journal</li></a>
+            <a href="#"><li>Our Story</li></a>
+            <a href="#"><li>The Team</li></a>
+            <a href="#"><li>Careers</li></a>
+            <a href="#"><li>Press Kit</li></a>
+          </ul>
+        </div>
+        <div className="footer-section browse">
           <h5>Social</h5>
-          <a className="github nav-link" href="https://github.com/robertfarb/"><i className="fa fa-github fa-2x"></i></a>
-          <a className="linked-in nav-link" href="https://www.linkedin.com/in/robert-farb-613a3751/"><i className="fa fa-linkedin fa-2x"></i></a>
-          <a className="linked-in nav-link" href="https://www.linkedin.com/in/robert-farb-613a3751/"><i className="fa fa-linkedin fa-2x"></i></a>
-          <a className="linked-in nav-link" href="https://www.linkedin.com/in/robert-farb-613a3751/"><i className="fa fa-linkedin fa-2x"></i></a>
+          <ul>
+            <a href="#"><li>Facebook</li></a>
+            <a href="#"><li>Twitter</li></a>
+            <a href="#"><li>Instagram</li></a>
+            <a href="#"><li>Pinterest</li></a>
+            <a href="#"><li>Spotify</li></a>
+          </ul>
+          <ul>
+          </ul>
         </div>
       </footer>
       <div className="footer-bottom-wrapper">

@@ -1,14 +1,12 @@
 .footer-wrapper {
   position: relative;
   bottom: 0;
-  width: 100%;
   background-color: #41305C;
   background-image: url(https://s3-us-west-1.amazonaws.com/campout-dev/tent_logo.png?versionId=null),url(https://s3-us-west-1.amazonaws.com/campout-dev/footer-img2.png?versionId=null);
   background-position: bottom center;
   background-repeat: no-repeat, repeat-x;
   background-size: auto 55px, auto 200px;
   padding-top: 5px;
-  padding-bottom: 200px;
   color: #fff;
   background-position-x: 50%, 50%;
   background-position-y: 100%, 100%;
@@ -16,12 +14,11 @@
 
 .footer {
   display: flex;
-  background-color: #412F5A;
-  padding: 30px 0px;
-  width: 80vw;
+  padding: 15px 0px;
+  width: 65vw;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding-bottom: 225px;
 }
 
 .footer-bottom-wrapper {
@@ -30,11 +27,10 @@
     background: #417D95;
     border-top: 5px solid #fde0ab;
     position: absolute;
-    top: 388px;
 }
 
 .footer-bottom {
-    padding: 9.5px;
+    padding: 9px 19.5vw;
     display: flex;
     width: 100%;
     color: white;
@@ -44,4 +40,40 @@
     justify-content: space-between;
     line-height: 1.42;
     box-sizing: border-box;
+}
+
+.site-description {
+  margin: 0px 30px 0px 30px;
+  width:  550px;
+  color: white;
+  font-weight: 100;
+  font-size: 11.3px;
+  line-height: 1.8;
+}
+
+.footer {
+  h5 {
+    color: $footer-font-purple;
+    margin-bottom: 20px;
+    font-size: 13px;
+  }
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-section {
+  li {
+    color: white;
+    font-weight: 100;
+    font-size: 11.3px;
+    line-height: 1.8;
+  }
+
+  li:hover {
+    color: #c59ac7;
+    transition: 1ms;
+  }
 }
