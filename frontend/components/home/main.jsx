@@ -27,7 +27,6 @@ class MainPage extends React.Component {
           </div>
         </div>
         <div className="splash-listing-images">
-          
         </div>
       </div>
     );

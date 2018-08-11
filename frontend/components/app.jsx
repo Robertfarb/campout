@@ -10,6 +10,7 @@ import Modal from './modal/modal';
 import MainPage from './home/main';
 import NotFound from './not_found/not_found'
 import ListingContainer from './listings/listing_container';
+import Footer from './footer/footer'
 
 
   const App = () => (
@@ -22,6 +23,7 @@ import ListingContainer from './listings/listing_container';
         <Route exact path="/" component={MainPage} />
         <Route path="*" component={NotFound} />
       </Switch>
+      <Footer />
     </div>
   )
 

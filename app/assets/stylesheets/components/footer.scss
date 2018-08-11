@@ -1,10 +1,47 @@
 .footer-wrapper {
   position: relative;
   bottom: 0;
-  width: 100%
+  width: 100%;
+  background-color: #41305C;
+  background-image: url(https://s3-us-west-1.amazonaws.com/campout-dev/tent_logo.png?versionId=null),url(https://s3-us-west-1.amazonaws.com/campout-dev/footer-img2.png?versionId=null);
+  background-position: bottom center;
+  background-repeat: no-repeat, repeat-x;
+  background-size: auto 55px, auto 200px;
+  padding-top: 5px;
+  padding-bottom: 200px;
+  color: #fff;
+  background-position-x: 50%, 50%;
+  background-position-y: 100%, 100%;
 }
 
 .footer {
   display: flex;
   background-color: #412F5A;
+  padding: 30px 0px;
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-bottom-wrapper {
+    width: 100%;
+    justify-content: center;
+    background: #417D95;
+    border-top: 5px solid #fde0ab;
+    position: absolute;
+    top: 388px;
+}
+
+.footer-bottom {
+    padding: 9.5px;
+    display: flex;
+    width: 100%;
+    color: white;
+    font-size: 10px;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+    justify-content: space-between;
+    line-height: 1.42;
+    box-sizing: border-box;
 }

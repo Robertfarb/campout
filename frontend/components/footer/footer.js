@@ -23,6 +23,11 @@ const Footer = () => {
           <a className="linked-in nav-link" href="https://www.linkedin.com/in/robert-farb-613a3751/"><i className="fa fa-linkedin fa-2x"></i></a>
         </div>
       </footer>
+      <div className="footer-bottom-wrapper">
+        <div className="footer-bottom">
+          <p>Made in California.</p>
+        </div>
+      </div>
     </div>
   );
 }
