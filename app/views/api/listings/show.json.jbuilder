@@ -2,12 +2,10 @@ json.extract! @listing, :id, :title, :host_id, :description, :address, :long, :l
 json.activities @listing.activities_arr
 
 json.host do
-  json.set! @listing.host_id do
-    json.id @listing.host.id
-    json.username @listing.host.username
-    json.first_name @listing.host.first_name
-    json.last_name @listing.host.last_name
-  end
+  json.id @listing.host.id
+  json.username @listing.host.username
+  json.first_name @listing.host.first_name
+  json.last_name @listing.host.last_name
 end
 
 json.listingPhotos do

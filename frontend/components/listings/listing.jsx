@@ -31,8 +31,8 @@ class Listing extends React.Component {
 
               <div className="listing-description">
                 <aside className="details-aside">
-                  <img className="host-avatar"></img>
-                  <div className="host-info"></div>
+                  <img className="host-avatar" src={window.images.parkRanger}></img>
+                  <div className="host-info">{this.props.listing.host.first_name} {this.props.listing.host.last_name}</div>
                 </aside>
                 <main>
                   <div className="listing-description-text-wrapper">
