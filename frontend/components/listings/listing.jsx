@@ -6,11 +6,14 @@ class Listing extends React.Component {
     super(props);
   }
 
-
+  componentWillReceiveProps (ownProps) {
+    if (this.props.listingId != ownProps.match.params.listingId) {
+      this.props.requestListing(this.props.match.params.listingId)
+      }
+  }
 
   componentDidMount () {
-    this.props.requestListing(this.props.match.params.listingId).then((payload) => { 
-      this.props.history.push(`/listings/${payload.listing.id}`)})
+    this.props.requestListing(this.props.listingId)
   }
   
 

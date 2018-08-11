@@ -17,7 +17,7 @@ import ListingContainer from './listings/listing_container';
       <NavBarContainer />
       <Modal />
       <Switch>
-        <Route exact path="/listings/:listingId" component={ListingContainer} />
+        <Route path="/listings/:listingId" component={ListingContainer} />
         {/* <Route path="/discover" component={searchInProgress} /> */}
         <Route exact path="/" component={MainPage} />
         <Route path="*" component={NotFound} />
