@@ -19,6 +19,13 @@ class Listing extends React.Component {
 
   render() {
     if (!this.props.listing) return null; //in in order to catch if no listing comes back
+    let glamping;
+    let pet_friendly;
+    let has_showers;
+    
+    this.props.listing.is_glamping ? glamping = "Glamping" : glamping = " Tent Camping"
+    this.props.listing.pet_friendly === true ? pet_friendly = "On Leash" : pet_friendly = "No Pets"
+    this.props.listing.has_showers === true ? has_showers = "Showers on Site" : has_showers = "Primitive campsite"
 
     return (
       <div className="listing-show-page">
@@ -46,14 +53,14 @@ class Listing extends React.Component {
 
               <div className="listing-details listing-description">
                 <aside className="details-aside"><p>Details</p></aside>
-                <main className="Listing Details">
+                <main className="listing-details">
                   <ul>
-                    <li>Check in After: {this.props.listing.checkin_after}</li>
-                    <li>Checkout Before: {this.props.listing.checkout_before}</li>
-                    <li>Campsite Area: {this.props.listing.is_glamping}</li>
-                    <li>Pets Allowed: {this.props.listing.pet_friendly}</li>
-                    <li>Showers Available: {this.props.listing.has_showers}</li>
-                    <li>Max Group Size: {this.props.listing.max_capacity}</li>
+                    <li><strong>Check in After:&nbsp;</strong> {this.props.listing.checkin_after}</li>
+                    <li><strong>Checkout Before:&nbsp;</strong> {this.props.listing.checkout_before}</li>
+                    <li><strong>Campsite Area:&nbsp;</strong> { glamping }</li>
+                    <li><strong>Pets Allowed:&nbsp;</strong> { pet_friendly }</li>
+                    <li><strong>Showers Available:&nbsp;</strong> { has_showers }</li>
+                    <li><strong>Max Group Size:&nbsp;</strong> {this.props.listing.max_capacity}</li>
                   </ul>
                 </main>
               </div>
@@ -62,19 +69,30 @@ class Listing extends React.Component {
                 <aside className="details-aside"><p>Activities</p></aside>
                 <main>
                   <ul className="activities-list">
-                  <li>Hiking</li>
-                  <li>Biking</li>
-                  <li>Climbing</li>
-                  <li>Wildlife atching</li>
+                    <li><img className="host-avatar" src={window.images.hiking}></img>Hiking</li>
+                    <li><img className="host-avatar" src={window.images.biking}></img>Biking</li>
+                    <li><img className="host-avatar" src={window.images.swimming}></img>Climbing</li>
+                    <li><img className="host-avatar" src={window.images.bird}></img>Wildlife watching</li>
                   </ul>
                 </main>
               </div>
 
               <div className="listing-current-status">
-                <h1>The vibe at {this.props.listing.title}</h1>
-                <div></div>
-                <div></div>
-                <div></div>
+                <h2>The vibe at {this.props.listing.title}</h2>
+                <div className="status-square-container">
+                  <div className="status-square">
+                    <h2>2000 ft</h2>
+                    <p>Listing's elevation</p>
+                  </div>
+                  <div className="status-square">
+                    <h2>72°F</h2>
+                    <p>Current temperature</p>
+                  </div>
+                  <div className="status-square">
+                    <h2>Clear Sky</h2>
+                    <p>Current conditions</p>
+                  </div>
+                </div>
               </div>
             </div>
 
