@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 
 
 class MainPage extends React.Component {
-
+  constructor (props){
+    super(props);
+  }
 
 
   render() {
@@ -27,6 +29,7 @@ class MainPage extends React.Component {
           </div>
         </div>
         <div className="splash-listing-images">
+
         </div>
       </div>
     );
