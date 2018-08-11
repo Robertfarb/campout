@@ -15,7 +15,7 @@ yos = Listing.create!({title: "Yosemite", host_id: 1, description: "Yosemite Nat
                 pet_friendly: false, is_toilets: false, max_capacity: 5, has_showers: false, checkin_after: "10:00 am", 
                 checkout_before: "4:00 pm"})
                 
-                yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_1.jpg"), filename: "yosemite-1")
+                # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_1.jpg"), filename: "yosemite-1")
                 # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_2.jpg"), filename: "yosemite-2")
                 # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_3.jpg"), filename: "yosemite-3")
                 # yos.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/yosemite/yosemite_4.jpg"), filename: "yosemite-4")

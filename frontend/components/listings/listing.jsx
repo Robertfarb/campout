@@ -8,7 +8,7 @@ class Listing extends React.Component {
 
   componentWillReceiveProps (ownProps) {
     if (this.props.listingId != ownProps.match.params.listingId) {
-      this.props.requestListing(this.props.match.params.listingId)
+      this.props.requestListing(ownProps.match.params.listingId)
       }
   }
 
@@ -18,7 +18,7 @@ class Listing extends React.Component {
   
 
   render() {
-    if (!this.props.listing) return (<div><p>loading</p></div>); //in in order to catch if no listing comes back
+    if (!this.props.listing) return null; //in in order to catch if no listing comes back
 
     return (
       <div className="listing-container">
@@ -56,12 +56,11 @@ class Listing extends React.Component {
           <div className="listing-activities">
             <aside className="details-aside"><p>Activities</p></aside>
             <main>
-              
               <ul className="activities-list">
-                {
-                  this.props.listing.activities.map((activity) =>
-                  <li key={this.props.listing.activities.indexOf(activity)}>{activity}</li>)
-                }
+              <li>Hiking</li>
+              <li>Biking</li>
+              <li>Climbing</li>
+              <li>Wildlife atching</li>
               </ul>
             </main>
           </div>
