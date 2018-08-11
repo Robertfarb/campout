@@ -7,6 +7,7 @@ import { requestAllListings, requestListing } from '../../actions/listings_actio
 
 const mapStateToProps = (state, ownProps) => {
   // debugger;
+  const listingId = ownProps.match.params.listingId
   const listing = state.entities.listings[ownProps.match.params.listingId]
   const host = state.entities.listings.host
   const photos = state.entities.listings.photos
@@ -14,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     listing,
     host,
-    photos
+    photos,
+    listingId
   }
 };
 

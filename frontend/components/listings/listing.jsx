@@ -6,12 +6,16 @@ class Listing extends React.Component {
     super(props);
   }
 
+
+
   componentDidMount () {
-    this.props.requestListing(this.props.match.params.listingId)
+    this.props.requestListing(this.props.match.params.listingId).then((payload) => { 
+      this.props.history.push(`/listings/${payload.listing.id}`)})
   }
+  
 
   render() {
-    if (!this.props.listing) return null; //in in order to catch if no listing comes back
+    if (!this.props.listing) return (<div><p>loading</p></div>); //in in order to catch if no listing comes back
 
     return (
       <div className="listing-container">
@@ -75,4 +79,4 @@ class Listing extends React.Component {
   }
 }
 
-export default Listing;
+export default withRouter(Listing);
