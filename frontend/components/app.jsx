@@ -19,10 +19,10 @@ import Footer from './footer/footer'
       <Modal />
       <Switch>
         <Route exact path="/listings/:listingId" component={ListingContainer} />
+        {/* <Route exact path="/listings" component={ListingContainer} /> */}
         {/* <Route path="/discover" component={searchInProgress} /> */}
         <Route exact path="/" component={MainPage} />
         <Route path="*" component={NotFound} />
-        <Route path="/listings/*" component={NotFound} />
       </Switch>
       <Footer />
     </div>
