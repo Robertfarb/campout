@@ -25,8 +25,8 @@ class MainPage extends React.Component {
           </div>
           <div className="right-main">
             <div className="right-img-conatiner">
-              <img src={window.images.yosemiteMain} alt="Yosemite National Park"/>
-              <p><Link to="/">Yosemite Nat. Park</Link> hosted by National Park Service</p>
+              <a href="/#/listings/1"><img src={window.images.yosemiteMain} alt="Yosemite National Park"/></a>
+              <p><Link to="listings/1/">Yosemite Nat. Park</Link> hosted by National Park Service</p>
             </div>
           </div>
         </div>
@@ -55,44 +55,56 @@ class MainPage extends React.Component {
               </footer>
             </div>
             <div className="splash-square">
-              <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/vlad-shapochnikov-127780-unsplash.jpg" alt="" /></div>
+              <a href="#/listings/5"><div className="splash-listing-img">
+                <img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/vlad-shapochnikov-127780-unsplash.jpg" alt="" />
+              </div></a>
               <footer className="splash-image-footer">
-                <h3>Crater Lake</h3>
+                <a href="/listings/5"><h3>Crater Lake</h3></a>
                 <p>Oregon</p>
               </footer>
             </div>
             <div className="splash-square">
-              <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/big_sur.jpg" alt="" /></div>
+              <a href="#/listings/2"><div className="splash-listing-img">
+                <img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/big_sur.jpg" alt="" />
+              </div></a>
               <footer className="splash-image-footer">
-              <h3>Big Sur</h3>
+              <a href="#/listings/2"><h3>Big Sur</h3></a>
               <p>California</p>
               </footer>
             </div>
             <div className="splash-square">
-              <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/zion.jpg" alt="" /></div>
+              <a href="#/listings/4"><div className="splash-listing-img">
+                <img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/zion.jpg" alt="" />
+              </div></a>
               <footer className="splash-image-footer">
-                <h3>Zion</h3>
+                <a href="/listings/4"><h3>Zion</h3></a>
                 <p>Utah</p>
               </footer>
             </div>
             <div className="splash-square">
-              <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/joshua_tree.jpg" alt="" /></div>
+              <a href="#/listings/3"><div className="splash-listing-img">
+              <img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/joshua_tree.jpg" alt="" />
+              </div></a>
               <footer className="splash-image-footer">
-                <h3>Joshua Tree</h3>
+                <a href="/#/listings/3"><h3>Joshua Tree</h3></a>
                 <p>California</p>
               </footer>
             </div>
             <div className="splash-square">
-              <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/grand_canyon.jpg" alt="" /></div>
+              <a href="#/listings/6"><div className="splash-listing-img">
+                <img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/grand_canyon.jpg" alt="" />
+              </div></a>
               <footer className="splash-image-footer">
-                <h3>Grand Canyon</h3>
+                <a href="#/listings/6/"><h3>Grand Canyon</h3></a>
                 <p>Arizona</p>
               </footer>
             </div>
             <div className="splash-square">
-              <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/redwood.jpg" alt="" /></div>
+              <a href="#/listings/7">
+                <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/redwood.jpg" alt="" />
+              </div></a>
               <footer className="splash-image-footer">
-                <h3>Redwoods</h3>
+                <a href="#/listings/6/"><h3>Redwoods</h3></a>
                 <p>California</p>
               </footer>
             </div>

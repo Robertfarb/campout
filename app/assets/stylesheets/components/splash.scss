@@ -111,6 +111,27 @@
 
 .splash-image-footer {
   height: 80px;
+  padding: 14px;
+  position: relative;
+  display: block;
+
+  h3 {
+    margin: 0;
+    letter-spacing: .3px;
+    width: fit-content;
+    border-bottom: 1px solid transparent;
+  }
+
+  h3:hover {
+    border-bottom: 1px solid $font-medium-gray;
+  }
+
+  p {
+    color: #a1a1a1;
+    margin-top: 5.5px;
+    font-weight: 100;
+    width: fit-content;
+  }
 }
 
 @media (max-width: 910px) {

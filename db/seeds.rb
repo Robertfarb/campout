@@ -8,6 +8,7 @@
 
 users.delete_all
 listings.delete_all
+activities.delete_all
 
 User.create({username: "robfarb", first_name: "Robert", last_name: "Farb", zip_code: "94103", password: "12345678"})
 User.create({username: "smokeythebear", first_name: "Smokey", last_name: "Bear", zip_code: "94103", password: "12345678"})
@@ -65,9 +66,23 @@ crater_lake = Listing.create!({title: "Crater Lake", host_id: 4, description: "E
                 address: "Crater Lake National Park", long: 122.1685, lat: 42.8684, price_daily: 100, is_glamping: false, 
                 pet_friendly: false, is_toilets: true, max_capacity: 8, has_showers: false, checkin_after: "10 AM", 
                 checkout_before: "4 PM"})
+
+                # crater_lake.photos.attatch(io: File.open(""))
+
+
+grand_canyon = Listing.create!({title: "Grand Canyon", host_id: 4, description: "Come explore the vast canyon carved out by the Colorado River. The Grand Canyon is the most spectacular gorge in the world. Located in the state of Arizona, it cuts across the Grand Canyon National Park.", 
+                address: "Grand Canyon National Park", long: -112.112999, lat: 36.106964, price_daily: 50, is_glamping: false, 
+                pet_friendly: true, is_toilets: true, max_capacity: 15, has_showers: false, checkin_after: "11 AM", 
+                checkout_before: "4 PM"})
+
+
+redwoods = Listing.create!({title: "Redwoods", host_id: 3, description: "Come explore the vast canyon carved out by the Colorado River. The Grand Canyon is the most spectacular gorge in the world. Located in the state of Arizona, it cuts across the Grand Canyon National Park.", 
+                address: "Redwoods National Park", long: -124.0046275, lat: 41.2131788, price_daily: 75, is_glamping: false, 
+                pet_friendly: true, is_toilets: true, max_capacity: 8, has_showers: true, checkin_after: "9 AM", 
+                checkout_before: "2 PM"})
                
 
-
+#Listing Images
 Activity.create!({hiking: true, biking: false, swimming: true, fishing: true, climbing: true, surfing: false, skiing: false, listing_id: 1})
 Activity.create!({hiking: true, biking: true, swimming: true, fishing: true, climbing: false, surfing: true, skiing: false, listing_id: 2})
 Activity.create!({hiking: true, biking: false, swimming: false, fishing: false, climbing: true, surfing: false, skiing: false, listing_id: 3})
