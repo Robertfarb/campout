@@ -25,6 +25,7 @@ class Listing extends React.Component {
     let pet_friendly;
     let has_showers;
     
+    // debugger;
     this.props.listing.is_glamping ? glamping = "Glamping" : glamping = " Tent Camping"
     this.props.listing.pet_friendly === true ? pet_friendly = "On Leash" : pet_friendly = "No Pets"
     this.props.listing.has_showers === true ? has_showers = "Showers on Site" : has_showers = "Primitive campsite"
@@ -32,7 +33,7 @@ class Listing extends React.Component {
     return (
       <div className="listing-show-page">
         <div className="listing-photos">
-          <ListingImageCarousel photos={this.props.listing.listingPhotos}/>
+          {/* <ListingImageCarousel photos={this.props.listing.listingPhotos}/> */}
           <div className="listing-container">
             <div className="listing-left">
               <div className="listing-title">
@@ -84,15 +85,15 @@ class Listing extends React.Component {
                 <h2>The vibe at {this.props.listing.title}</h2>
                 <div className="status-square-container">
                   <div className="status-square">
-                    <h2>2000 ft</h2>
+                    <h2>{this.props.listing.conditions.elevation}ft</h2>
                     <p>Listing's elevation</p>
                   </div>
                   <div className="status-square">
-                    <h2>72°F</h2>
+                    <h2>{this.props.listing.conditions.weather}°F</h2>
                     <p>Current temperature</p>
                   </div>
                   <div className="status-square">
-                    <h2>Clear Sky</h2>
+                    <h2>{this.props.listing.conditions.curr_conditions}</h2>
                     <p>Current conditions</p>
                   </div>
                 </div>

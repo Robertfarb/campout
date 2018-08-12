@@ -16,15 +16,14 @@ class ListingImageCarousel extends React.Component {
       slidesToScroll: 1
     };
     const { photos } = this.props;
-    debugger;
 
     return (
       <div className="listing-image-carousel">
         <Slider {...settings}>
           {Object.values(photos).map(photo => 
-            <div key={photo.id}>
+            {return (<div key={photo.id}>
               <img src={photo.imgUrl} alt="Listing Photo"/>
-            </div>
+            </div>)}
           )}
         </Slider>
       </div>

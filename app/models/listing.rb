@@ -15,7 +15,7 @@
 #  is_toilets      :boolean          not null
 #  max_capacity    :integer          not null
 #  has_showers     :boolean          not null
-#  checkin_after   :string           not null
+#  checkin_after   :string    ;       not null
 #  checkout_before :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
@@ -56,14 +56,14 @@ class Listing < ApplicationRecord
     lat = self.lat.to_s
     long = self.long.to_s
     response = HTTParty.get "https://api.openweathermap.org/data/2.5/weather?lat=#{lat}&lon=#{long}&appid=bcb83c4b54aee8418983c2aff3073b3b&units=imperial", {accept: :json}
-    response.parsed_response["main"]["temp"].to_s
+    response.parsed_response["main"]["temp"].to_int
   end
 
   def elevation
     lat = self.lat.to_s
     long = self.long.to_s
     response = HTTParty.get "https://maps.googleapis.com/maps/api/elevation/json?locations=#{lat},#{long}&key=AIzaSyA3imQIBSdT5CA2gHrew5dZBP2QmmdTISc", {accept: :json}
-    response.parsed_response["results"].first["elevation"]
+    response.parsed_response["results"].first["elevation"].to_int
   end
 
   def curr_conditions
