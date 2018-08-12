@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import ListingImageCarousel from './listing_image_carousel';
 
 class Listing extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class Listing extends React.Component {
   }
 
   componentDidMount () {
+    window.scrollTo(0, 0)
     this.props.requestListing(this.props.listingId)
   }
   
@@ -27,9 +29,11 @@ class Listing extends React.Component {
     this.props.listing.pet_friendly === true ? pet_friendly = "On Leash" : pet_friendly = "No Pets"
     this.props.listing.has_showers === true ? has_showers = "Showers on Site" : has_showers = "Primitive campsite"
 
+    debugger;
     return (
       <div className="listing-show-page">
         <div className="listing-photos">
+          <ListingImageCarousel photos={this.props.listing.listingPhotos}/>
           <div className="listing-container">
             <div className="listing-left">
               <div className="listing-title">

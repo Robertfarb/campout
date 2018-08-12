@@ -59,7 +59,7 @@ class MainPage extends React.Component {
                 <img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/vlad-shapochnikov-127780-unsplash.jpg" alt="" />
               </div></a>
               <footer className="splash-image-footer">
-                <a href="/listings/5"><h3>Crater Lake</h3></a>
+                <a href="#/listings/5"><h3>Crater Lake</h3></a>
                 <p>Oregon</p>
               </footer>
             </div>

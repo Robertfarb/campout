@@ -19,7 +19,6 @@
 #  checkout_before :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#
 
 class Listing < ApplicationRecord
   validates :title, :host_id, :description, :address, :long, :lat,
@@ -51,5 +50,26 @@ class Listing < ApplicationRecord
       activities.push(activity) if present == true
     end
     activities
+  end
+
+  def curr_weather
+    lat = self.lat.to_s
+    long = self.long.to_s
+    response = HTTParty.get "https://api.openweathermap.org/data/2.5/weather?lat=#{lat}&lon=#{long}&appid=bcb83c4b54aee8418983c2aff3073b3b&units=imperial", {accept: :json}
+    response.parsed_response["main"]["temp"].to_s
+  end
+
+  def elevation
+    lat = self.lat.to_s
+    long = self.long.to_s
+    response = HTTParty.get "https://maps.googleapis.com/maps/api/elevation/json?locations=#{lat},#{long}&key=AIzaSyA3imQIBSdT5CA2gHrew5dZBP2QmmdTISc", {accept: :json}
+    response.parsed_response["results"].first["elevation"]
+  end
+
+  def curr_conditions
+    lat = self.lat.to_s
+    long = self.long.to_s
+    response = HTTParty.get "https://api.openweathermap.org/data/2.5/weather?lat=#{lat}&lon=#{long}&appid=bcb83c4b54aee8418983c2aff3073b3b&units=imperial", {accept: :json}
+    response.parsed_response["weather"].first["main"]
   end
 end
