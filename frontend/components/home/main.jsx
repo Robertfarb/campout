@@ -72,7 +72,7 @@ class MainPage extends React.Component {
               <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/zion.jpg" alt="" /></div>
               <footer className="splash-image-footer">
                 <h3>Zion</h3>
-                </p>Utah</p>
+                <p>Utah</p>
               </footer>
             </div>
             <div className="splash-square">
@@ -93,6 +93,7 @@ class MainPage extends React.Component {
               <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/redwood.jpg" alt="" /></div>
               <footer className="splash-image-footer">
                 <h3>Redwoods</h3>
+                <p>California</p>
               </footer>
             </div>
           </div>
