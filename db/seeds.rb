@@ -67,7 +67,6 @@ crater_lake = Listing.create!({title: "Crater Lake", host_id: 4, description: "E
                 pet_friendly: false, is_toilets: true, max_capacity: 8, has_showers: false, checkin_after: "10 AM", 
                 checkout_before: "4 PM"})
 
-                
 
 
 grand_canyon = Listing.create!({title: "Grand Canyon", host_id: 4, description: "Come explore the vast canyon carved out by the Colorado River. The Grand Canyon is the most spectacular gorge in the world. Located in the state of Arizona, it cuts across the Grand Canyon National Park.", 

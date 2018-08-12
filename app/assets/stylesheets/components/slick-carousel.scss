@@ -1,0 +1,43 @@
+.listing-photos {
+  height: 50vh;
+  position: relative;
+  top: 80px;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.listing-image-carousel {
+  height: 50vh;
+  top: 50px;
+  width: 95%;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 24px;
+  height: 50vh;
+}
+
+.image-slider-css {
+  position: relative;
+  display: block;
+}
+
+.slider-img {
+  height: 50vh;
+  width: auto;
+}
+
+.slick-list {
+  overflow: hidden;
+  height: 50vh;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-track {
+  display: block;
+  position: relative;
+}
+
+.slick-slide {
+  margin: 5px;
+}

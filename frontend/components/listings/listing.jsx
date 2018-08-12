@@ -32,8 +32,7 @@ class Listing extends React.Component {
 
     return (
       <div className="listing-show-page">
-        <div className="listing-photos">
-          {/* <ListingImageCarousel photos={this.props.listing.listingPhotos}/> */}
+          <ListingImageCarousel photos={this.props.listing.listingPhotos}/>
           <div className="listing-container">
             <div className="listing-left">
               <div className="listing-title">
@@ -105,7 +104,6 @@ class Listing extends React.Component {
             </div>
           </div>
         </div>
-      </div>
     );
   }
 }
