@@ -77,7 +77,7 @@ class MainPage extends React.Component {
                 <img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/zion.jpg" alt="" />
               </div></a>
               <footer className="splash-image-footer">
-                <a href="/listings/4"><h3>Zion</h3></a>
+                <a href="/#/listings/4"><h3>Zion</h3></a>
                 <p>Utah</p>
               </footer>
             </div>
@@ -104,7 +104,7 @@ class MainPage extends React.Component {
                 <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/redwood.jpg" alt="" />
               </div></a>
               <footer className="splash-image-footer">
-                <a href="#/listings/6/"><h3>Redwoods</h3></a>
+                <a href="#/listings/7/"><h3>Redwoods</h3></a>
                 <p>California</p>
               </footer>
             </div>
