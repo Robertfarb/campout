@@ -17,13 +17,13 @@ class ListingImageCarousel extends React.Component {
     };
     const { photos } = this.props;
     debugger;
-    
+
     return (
       <div className="listing-image-carousel">
         <Slider {...settings}>
-          {photos.map(photo => 
+          {Object.values(photos).map(photo => 
             <div key={photo.id}>
-              <img src={photo.img_url} alt="Listing Photo"/>
+              <img src={photo.imgUrl} alt="Listing Photo"/>
             </div>
           )}
         </Slider>

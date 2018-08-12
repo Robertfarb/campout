@@ -29,7 +29,6 @@ class Listing extends React.Component {
     this.props.listing.pet_friendly === true ? pet_friendly = "On Leash" : pet_friendly = "No Pets"
     this.props.listing.has_showers === true ? has_showers = "Showers on Site" : has_showers = "Primitive campsite"
 
-    debugger;
     return (
       <div className="listing-show-page">
         <div className="listing-photos">

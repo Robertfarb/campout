@@ -31,23 +31,23 @@ big_sur = Listing.create!({title: "Big Sur", host_id: 3, description: "Experienc
                 pet_friendly: true, is_toilets: true, max_capacity: 6, has_showers: true, checkin_after: "11 AM", 
                 checkout_before: "3 PM"})
 
-                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur1.jpg"), filename: "big_sur-1")
-                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur2.jpg"), filename: "big_sur-2")
-                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur3.jpg"), filename: "big_sur-3")
-                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur4.jpg"), filename: "big_sur-4")
-                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur5.jpg"), filename: "big_sur-5")
-                # big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur6.jpg"), filename: "big_sur-6")
+                big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur1.jpg"), filename: "big_sur-1")
+                big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur2.jpg"), filename: "big_sur-2")
+                big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur3.jpg"), filename: "big_sur-3")
+                big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur4.jpg"), filename: "big_sur-4")
+                big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur5.jpg"), filename: "big_sur-5")
+                big_sur.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/big_sur/big_sur6.jpg"), filename: "big_sur-6")
 
 j_tree = Listing.create!({title: "Joshua Tree", host_id: 3, description: "Arid low desert and vegetated high desert meet in Joshua Tree National Park, offering visitors stunning vistas and rewarding hikes, and incredible climbs.", 
                 address: "Joshua Tree National Park", long: -115.900993, lat: 33.873417, price_daily: 60, is_glamping: false, 
                 pet_friendly: false, is_toilets: true, max_capacity: 10, has_showers: false, checkin_after: "10 AM", 
                 checkout_before: "4 PM"})
 
-                # j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree1.jpg"), filename: "jtree1")
-                # j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree2.jpg"), filename: "jtree2")
-                # j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree3.jpg"), filename: "jtree3")
-                # j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree4.jpg"), filename: "jtree4")
-                # j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree5.jpg"), filename: "jtree5")
+                j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree1.jpg"), filename: "jtree1")
+                j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree2.jpg"), filename: "jtree2")
+                j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree3.jpg"), filename: "jtree3")
+                j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree4.jpg"), filename: "jtree4")
+                j_tree.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/joshua_tree/joshua_tree5.jpg"), filename: "jtree5")
 
 
 zion = Listing.create!({title: "Zion", host_id: 1, description: "Zion is a beautiful, vast nature reserve in Southwest Utah offering hikes through slot canyons and endless trails through renowned red canyons", 
@@ -55,11 +55,11 @@ zion = Listing.create!({title: "Zion", host_id: 1, description: "Zion is a beaut
                 pet_friendly: true, is_toilets: false, max_capacity: 10, has_showers: false, checkin_after: "10 AM", 
                 checkout_before: "4 PM"})
 
-                # zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion1.jpg"), filename: "zion1")
-                # zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion2.jpg"), filename: "zion3")
-                # zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion3.jpg"), filename: "zion4")
-                # zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion4.jpg"), filename: "zion5")
-                # zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion5.jpg"), filename: "zion6")
+                zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion1.jpg"), filename: "zion1")
+                zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion2.jpg"), filename: "zion3")
+                zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion3.jpg"), filename: "zion4")
+                zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion4.jpg"), filename: "zion5")
+                zion.photos.attach(io: File.open("/Users/robfarb/Desktop/app_academy/campout_seeds/zion/zion5.jpg"), filename: "zion6")
 
                 
 crater_lake = Listing.create!({title: "Crater Lake", host_id: 4, description: "Explore the beatuty that is Crater Lake National Park in the Cascade Mountains of southern Oregon. It’s known for its namesake Crater Lake, formed by the now-collapsed volcano, Mount Mazama.", 
