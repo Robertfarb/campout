@@ -14,7 +14,7 @@ class ListingIndexItem extends React.Component {
     return (
       <div className="listing-index-item">
         <div className="listing-img-container">
-          <a href="#/listings/5"><img className="listing-img" src={listing.listingIcon} alt="listing icon"/></a>
+          <a href={`#/listings/${listing.id}`}><img className="listing-img" src={listing.listingIcon} alt="listing icon"/></a>
         </div>
         <div className="listing-info">
           <h1 className="listing-name">{listing.title}</h1>
