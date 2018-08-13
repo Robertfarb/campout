@@ -5,16 +5,17 @@ export const fetchBookings = () => (
   })
 )
 
-export const createBooking = (booking) => (
-  $.ajax({
+export const createBooking = (booking) => {
+  console.log(booking)
+  return $.ajax({
     method: "POST",
-    url: `api/listings/${booking.listing.id}/bookings`,
+    url: `api/listings/${booking.listing_id}/bookings`,
     data: { booking }
   })
-) 
+} 
 
 export const deleteBooking = id => {
-  $.ajax({
+  return $.ajax({
     method: "DELETE",
     url: `api/bookings/${id}`
   })

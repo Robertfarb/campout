@@ -24,11 +24,11 @@ class Listing extends React.Component {
     const { loading } = this.props
 
     if (this.props.listing === undefined) {
-      return (<div class="loading-container"><div class="loader">Loading...</div></div>)
+      return (<div className="loading-container"><div className="loader">Loading...</div></div>)
     } else if (!this.props.listingId) {
-      return (<div class="loading-container"><div class="loader">Loading...</div></div>)
+      return (<div className="loading-container"><div className="loader">Loading...</div></div>)
     } else if (!this.props.listing.host) {
-      return (<div class="loading-container"><div class="loader">Loading...</div></div>)
+      return (<div className="loading-container"><div className="loader">Loading...</div></div>)
     }
     // if (loading) {
      

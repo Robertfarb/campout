@@ -18,9 +18,9 @@ const bookingsReducer = (state = {}, action) => {
       delete updatedState[action.bookingId];
       return updatedState;
     case CREATE_BOOKING:
-      return merge(newState, state, {[action.booking.id]: action.booking})
+      return merge(newState, state, {booking: action.booking})
     case RECEIVE_BOOKING_ERRORS:
-      retun
+      return action.errors || {errors: "No bookings found"}
       
     default:
       return state;

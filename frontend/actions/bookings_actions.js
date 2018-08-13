@@ -18,7 +18,7 @@ export const requestAllBookings = () => dispatch => (
   }).fail(err => dispatch(receiveBookingErrors(err.responseJSON)))
 )
 
-export const deleteBooking = bookingId => dispatch (
+export const deleteBooking = bookingId => dispatch => (
   APIUtil.deleteBooking(bookingId).then(booking => {
     dispatch(removeBooking(booking))
   }).fail(err => dispatch(receiveBookingErrors(err.responseJSON)))
