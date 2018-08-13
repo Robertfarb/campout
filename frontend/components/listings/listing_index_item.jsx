@@ -9,14 +9,15 @@ class ListingIndexItem extends React.Component {
 
   render() {
     const { listing } = this.props
-    debugger;
 
     return (
       <div className="listing-index-item">
-        <img src={listing.listingIcon} alt="listing icon" />
+        <div className="listing-img-container">
+          <img className="listing-img" src={listing.listingIcon} alt="listing icon"/>
+        </div>
         <div className="listing-info">
-          <h1>{listing.title}</h1>
-          <p>{listing.description}</p>
+          <h1 className="listing-name">{listing.title}</h1>
+          <p className="listing-index-description">{listing.description}</p>
         </div>
       </div>
     )

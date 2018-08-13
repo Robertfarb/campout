@@ -21,12 +21,11 @@ class ListingIndex extends React.Component {
   render() {
   //  if (!this.props.listings) return
     return (
-      Object.values(this.props.listings).map(listing => (
-        <div className="listing-index">
-          <ListingIndexItem key={listing.id} listing={listing}/>
-        </div>
-      )
-    )
+      <div className="listing-index">
+      {Object.values(this.props.listings).map(listing => (
+        <ListingIndexItem key={listing.id} listing={listing}/> 
+      ))}
+    </div>
   )}
 }
 
