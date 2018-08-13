@@ -9,8 +9,9 @@ import NavBarContainer from './navbar/navbar_container';
 import Modal from './modal/modal';
 import MainPage from './home/main';
 import NotFound from './not_found/not_found'
-import ListingContainer from './listings/listing_container';
 import Footer from './footer/footer'
+import ListingShow from './listings/listing_container';
+import ListingsIndex from './listings/listings_index_container'
 
 
   const App = () => (
@@ -18,8 +19,8 @@ import Footer from './footer/footer'
       <NavBarContainer />
       <Modal />
       <Switch>
-        <Route exact path="/listings/:listingId" component={ListingContainer} />
-        {/* <Route exact path="/listings" component={ListingContainer} /> */}
+        <Route path="/listings/:listingId" component={ListingShow} />
+        <Route exact path="/listings" component={ListingsIndex} />
         {/* <Route path="/discover" component={searchInProgress} /> */}
         <Route exact path="/" component={MainPage} />
         <Route path="*" component={NotFound} />

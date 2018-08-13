@@ -1,28 +1,35 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import ListingImageCarousel from './listing_image_carousel';
+import ListingIndexItem from './listing_index_item'
+import {selectAllListings} from '../../reducers/selectors';
 
-class Listing extends React.Component {
+
+class ListingIndex extends React.Component {
   constructor(props) {
     super(props);
   }
 
   componentWillReceiveProps(ownProps) {
-    if (this.props.listingId != ownProps.match.params.listingId) {
-      this.props.requestListing(ownProps.match.params.listingId)
-    }
   }
 
   componentDidMount() {
     window.scrollTo(0, 0)
-    this.props.requestListing(this.props.listingId)
+    this.props.requestAllListings();
   }
 
 
   render() {
-    if (!this.props.listing) return null; //in in order to catch if no listing comes back
-    let glamping;
-    let pet_friendly;
-    let has_showers;
-  }
+  //  if (!this.props.listings) return
+    return (
+      Object.values(this.props.listings).map(listing => (
+        <div className="listing-index">
+          <ListingIndexItem key={listing.id} listing={listing}/>
+        </div>
+      )
+    )
+  )}
 }
+
+
+export default ListingIndex;
+

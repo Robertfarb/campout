@@ -24,8 +24,8 @@ class Listing extends React.Component {
     let glamping;
     let pet_friendly;
     let has_showers;
+  
     
-    // debugger;
     this.props.listing.is_glamping ? glamping = "Glamping" : glamping = " Tent Camping"
     this.props.listing.pet_friendly === true ? pet_friendly = "On Leash" : pet_friendly = "No Pets"
     this.props.listing.has_showers === true ? has_showers = "Showers on Site" : has_showers = "Primitive campsite"
