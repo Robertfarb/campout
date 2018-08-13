@@ -18,7 +18,6 @@ class ListingImageCarousel extends React.Component {
       variableWidth: true,
       horizontal: true,
       buttons: false,
-      swipeToScroll: true
     };
 
     const { photos } = this.props;
