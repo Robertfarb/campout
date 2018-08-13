@@ -111,4 +111,4 @@ Activity.create!({hiking: true, biking: true, swimming: false, fishing: true, cl
 
 
 #Test
-# booking = Booking.create!({})
+booking1 = Booking.create!({guest_id: 1, listing_id: 1, check_in: Date.new(2018, 8, 12), check_out: Date.new(2018, 8, 14), total_price: 200, total_guests: 10})

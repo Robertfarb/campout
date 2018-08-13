@@ -22,5 +22,3 @@ class Booking < ApplicationRecord
     foreign_key: :listing_id,
     class_name: :Listing
 end
-
-booking1 = Booking.create!({guest_id: 1, listing_id: 1, check_in: Date.new(2018, 8, 12), check_out: Date.new(2018, 8, 14), total_price: 200, total_guests: 10})
