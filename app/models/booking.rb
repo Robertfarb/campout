@@ -21,4 +21,14 @@ class Booking < ApplicationRecord
   belongs_to :listing,
     foreign_key: :listing_id,
     class_name: :Listing
+
+  def total_days
+    @total_days = check_out - check_in
+    @total_days.to_int
+  end
+
+  def total_price
+    @priceTotal = (self.listing.price_daily * total_days)
+    @priceTotal.to_int
+  end
 end
