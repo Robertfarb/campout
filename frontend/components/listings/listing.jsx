@@ -7,7 +7,9 @@ class Listing extends React.Component {
     super(props);
   }
 
+
   componentWillReceiveProps (ownProps) {
+    debugger;
     if (this.props.listingId != ownProps.match.params.listingId) {
       this.props.requestListing(ownProps.match.params.listingId)
       }

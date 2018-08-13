@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 class ListingIndexItem extends React.Component {
@@ -13,7 +14,7 @@ class ListingIndexItem extends React.Component {
     return (
       <div className="listing-index-item">
         <div className="listing-img-container">
-          <img className="listing-img" src={listing.listingIcon} alt="listing icon"/>
+          <a href="#/listings/5"><img className="listing-img" src={listing.listingIcon} alt="listing icon"/></a>
         </div>
         <div className="listing-info">
           <h1 className="listing-name">{listing.title}</h1>
