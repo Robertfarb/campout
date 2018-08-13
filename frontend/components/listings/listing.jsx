@@ -21,11 +21,13 @@ class Listing extends React.Component {
   
 
   render() {
-    if (!this.props.listing) return null; //in in order to catch if no listing comes back
+    if (this.props.listing === undefined) return null;
+    if (!this.props.listingId) return null;
+    if (!this.props.listing.host) return null; //in in order to catch if no listing comes back
+
     let glamping;
     let pet_friendly;
     let has_showers;
-  
     
     this.props.listing.is_glamping ? glamping = "Glamping" : glamping = " Tent Camping"
     this.props.listing.pet_friendly === true ? pet_friendly = "On Leash" : pet_friendly = "No Pets"
