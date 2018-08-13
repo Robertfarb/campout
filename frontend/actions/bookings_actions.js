@@ -9,13 +9,12 @@ export const REMOVE_BOOKING = 'REMOVE_BOOKING';
 export const createBooking = booking => dispatch => (
   APIUtil.createBooking(booking).then(booking => {
     dispatch(receiveBooking(booking));
-    return booking; 
   }).fail(err => dispatch(receiveBookingErrors(err.responseJSON)))
 )
 
-export const fetchBookings = () => dispatch (
+export const requestAllBookings = () => dispatch => (
   APIUtil.fetchBookings().then(bookings => {
-    dispatch(receiveAllBookings(bookings));
+    dispatch(receiveAllBookings(bookings))
   })
 )
 
