@@ -7,6 +7,7 @@ import ui from './ui_reducer';
 export default combineReducers ({
   entities,
   session: sessionReducer,
+
   errors,
-  ui
+  ui,
 })
