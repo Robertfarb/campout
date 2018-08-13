@@ -108,3 +108,7 @@ Activity.create!({hiking: true, biking: true, swimming: true, fishing: false, cl
 Activity.create!({hiking: true, biking: false, swimming: false, fishing: false, climbing: false, surfing: false, skiing: false, listing_id: 5})
 Activity.create!({hiking: true, biking: false, swimming: true, fishing: true, climbing: true, surfing: false, skiing: false, listing_id: 6})
 Activity.create!({hiking: true, biking: true, swimming: false, fishing: true, climbing: true, surfing: false, skiing: false, listing_id: 7})
+
+
+#Test
+# booking = Booking.create!({})

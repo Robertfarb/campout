@@ -20,6 +20,10 @@ class User < ApplicationRecord
   attr_reader :password
 
   after_initialize :ensure_session_token
+
+  has_many :bookings,
+    foreign_key: :guest_id,
+    class_name: :Booking
   
   def self.generate_session_token
     SecureRandom.urlsafe_base64

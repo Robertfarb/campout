@@ -15,10 +15,11 @@
 #  is_toilets      :boolean          not null
 #  max_capacity    :integer          not null
 #  has_showers     :boolean          not null
-#  checkin_after   :string    ;       not null
+#  checkin_after   :string           not null
 #  checkout_before :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#
 
 class Listing < ApplicationRecord
   validates :title, :host_id, :description, :address, :long, :lat,
@@ -34,6 +35,10 @@ class Listing < ApplicationRecord
     class_name: :Activity
 
   has_many_attached  :photos
+
+  has_many :bookings,
+    foreign_key: :listing_id,
+    class_name: :Booking
 
   
   def ensure_checkin_after
