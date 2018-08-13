@@ -21,9 +21,18 @@ class Listing extends React.Component {
   
 
   render() {
-    if (this.props.listing === undefined) return null;
-    if (!this.props.listingId) return null;
-    if (!this.props.listing.host) return null; //in in order to catch if no listing comes back
+    const { loading } = this.props
+
+    if (this.props.listing === undefined) {
+      return (<div class="loading-container"><div class="loader">Loading...</div></div>)
+    } else if (!this.props.listingId) {
+      return (<div class="loading-container"><div class="loader">Loading...</div></div>)
+    } else if (!this.props.listing.host) {
+      return (<div class="loading-container"><div class="loader">Loading...</div></div>)
+    }
+    // if (loading) {
+     
+    // }
 
     let glamping;
     let pet_friendly;

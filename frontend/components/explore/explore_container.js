@@ -1,18 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Listing from './listing';
-import { requestAllListings, requestListing } from '../../actions/listings_actions';
-
-
+import Explore from './explore';
+// import { } from '../../actions/explore_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const listingId = ownProps.match.params.listingId
   const listing = state.entities.listings[ownProps.match.params.listingId]
   const host = state.entities.listings.host
   const photos = state.entities.listings.listingPhotos
-  const loading = state.ui.loading.detailLoading
 
-  
   return {
     listing,
     host,
