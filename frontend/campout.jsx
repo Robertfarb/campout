@@ -4,7 +4,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { signup, login, logout } from './actions/session_actions';
 import {openModal, closeModal} from './actions/modal_actions';
-import {requestAllListings, requestListing} from './actions/listings_actions'
+import {requestAllListings, requestListing} from './actions/listings_actions';
+import {requestAllBookings,  deleteBooking, createBooking, receiveAllBookings} from './actions/bookings_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -26,11 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
   //testing//
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.requestAllListings = requestAllListings;
-  window.requestListing = requestListing;
-  // window.login = login;
-  // window.logout = logout;
-  // window.openModal= openModal;
-  // window.closeModal= closeModal;
+  window.requestAllBookings = requestAllBookings;
+  window.deleteBooking = deleteBooking;
+  window.createBooking = createBooking;
+  window.receiveAllBookings = receiveAllBookings;
+  // window.requestAllListings = requestAllListings;
+  // window.requestListing = requestListing;
   //testing//
 });

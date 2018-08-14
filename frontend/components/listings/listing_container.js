@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   const listing = state.entities.listings[ownProps.match.params.listingId]
   const host = state.entities.listings.host
   const photos = state.entities.listings.listingPhotos
+  const loading = state.ui.loading.detailLoading
 
   
   return {

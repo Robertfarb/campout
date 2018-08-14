@@ -1,17 +1,25 @@
 class Api::BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings
-    render "api/bookings/index"
+    if current_user
+      @bookings = current_user.bookings
+      render "api/bookings/index"
+    else
+        render json: "No current User is logged in", status: 404
+    end
   end
 
   def show
     @booking = Booking.find(params[:id])
-    render :show
+    if @booking
+      render :show
+    else
+        render json: "Booking not found", status: 404
+    end
   end
 
   def create
     @booking = Booking.new(booking_params)
-    if @booking.save
+    if @booking.save!
       render "api/bookings/show"
     else
       render json: @booking.errors.full_messages, status: 422

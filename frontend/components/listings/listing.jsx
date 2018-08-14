@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ListingImageCarousel from './listing_image_carousel';
+import BookingContainer from '../booking/booking_container';
 
 class Listing extends React.Component {
   constructor(props) {
@@ -21,9 +22,15 @@ class Listing extends React.Component {
   
 
   render() {
-    if (this.props.listing === undefined) return null;
-    if (!this.props.listingId) return null;
-    if (!this.props.listing.host) return null; //in in order to catch if no listing comes back
+    const { loading } = this.props
+
+    if (this.props.listing === undefined) {
+      return (<div className="loading-container"><div className="loader">Loading...</div></div>)
+    } else if (!this.props.listingId) {
+      return (<div className="loading-container"><div className="loader">Loading...</div></div>)
+    } else if (!this.props.listing.host) {
+      return (<div className="loading-container"><div className="loader">Loading...</div></div>)
+    }
 
     let glamping;
     let pet_friendly;
@@ -103,7 +110,7 @@ class Listing extends React.Component {
             </div>
 
             <div className="listing-right">
-              <h1>Calendar goes here</h1>
+              <BookingContainer />
             </div>
           </div>
         </div>
