@@ -49,13 +49,13 @@ class Listing < ApplicationRecord
     self.checkout_before ||= "2:00 pm"
   end
 
-  def activities_arr
-    activities = []
-    self.activities.first.to_hash.each do |activity, present|
-      activities.push(activity) if present == true
-    end
-    activities
-  end
+  # def activities_arr
+  #   activities = []
+  #   self.activities.first.to_hash.each do |activity, present|
+  #     activities.push(activity) if present == true
+  #   end
+  #   activities
+  # end
 
   def curr_weather
     lat = self.lat.to_s
