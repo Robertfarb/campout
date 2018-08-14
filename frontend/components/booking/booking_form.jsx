@@ -87,26 +87,36 @@ class BookingForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             {this.renderErrors()}
             <div className="daily-price-header">
-              {currListing.price_daily}$ <br/>per night
+              {currListing.price_daily}$ <br/>
+              <p className="per-night">per night</p>
             </div>
             <div className="booking-form">
               <br />
-              <div className="booking-dates">
-                <input type="date"
-                  // value={this.state.check_in}
-                  onChange={this.update("check_in")}
-                  className="booking-check-in booking-date"
-                />
-                <input type="date"
-                  // value={this.state.check_in}
-                  onChange={this.update("check_out")}
-                  className="booking-check-out booking-date"
-                />
-              </div>
-              <div className="booking-guests-selector">
-                <a className="booking-minus" onClick={() => this.handleNumGuests("minus")}>-</a>
-                <p className="booking-guests">{this.state.total_guests}</p>
-                <a className="booking-plus" onClick={ () => this.handleNumGuests("plus")}>+</a>
+              <div className="booking-details">
+                <div className="booking-date-input">
+                  <h5 className="check">Check in</h5>
+                  <input type="date"
+                    // value={this.state.check_in}
+                    onChange={this.update("check_in")}
+                    className="booking-check-in booking-date"
+                  />
+                </div>
+                <div className="booking-date-input">
+                  <h5 className="check">Check out</h5>
+                  <input type="date"
+                    // value={this.state.check_in}
+                    onChange={this.update("check_out")}
+                    className="booking-check-out booking-date"
+                  />  
+                </div>
+                <div className="booking-guests-selector">
+                  <h5 className="guests">Guests</h5>
+                  <div className="guest-meter">
+                    <a className="booking-minus" onClick={() => this.handleNumGuests("minus")}>-</a>
+                    <p className="booking-guests">{this.state.total_guests}</p>
+                    <a className="booking-plus" onClick={ () => this.handleNumGuests("plus")}>+</a>
+                  </div>
+                </div>
               </div>
               <br />
               <input className="booking-submit" type="submit" value="Direct Book" />
