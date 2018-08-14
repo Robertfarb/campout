@@ -42,7 +42,7 @@ class BookingForm extends React.Component {
     booking.guest_id = this.props.currentUserId;
     booking.listing_id = this.props.match.params.listingId
     this.props.createBooking(booking)
-    .then(() => this.props.history.push('/'));
+      .then(() => this.props.history.push(`/users/${this.props.currentUserId}`));
   }
 
   handleNumGuests (operation) {
