@@ -11,7 +11,7 @@ import MainPage from './home/main';
 import NotFound from './not_found/not_found'
 import Footer from './footer/footer'
 import ListingShow from './listings/listing_container';
-import ListingsIndex from './listings/listings_index_container'
+import ListingsIndex from './listings/listings_index_container';
 
 
   const App = () => (

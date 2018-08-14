@@ -7,19 +7,19 @@ class BookingForm extends React.Component {
     this.state = {
       check_in: '',
       check_out: '',
-      total_price: '',
-      total_guests: ''
+      total_price: 0,
+      total_guests: 0
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
-    this.props.clearErrors();
+    this.props.requestAllBookings();
   }
 
   componentWillUnmount() {
-    this.props.clearErrors();
+    this.setState({check_in: '', check_out: ''})
   }
 
   update(field) {
@@ -31,7 +31,8 @@ class BookingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const booking = Object.assign({}, this.state);
-    this.props.processForm(user).then(this.props.closeModal)
+    this.props.createBooking(this.state);
+    //Clear errors & rer-render listing
   }
 
   handleNumGuests () {
@@ -40,7 +41,7 @@ class BookingForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul className="signin-errors">
+      <ul className="booking-errors">
         {this.props.errors.map((error, idx) => (
           <li key={`error-${idx}`} className="signin-error">
             {error}
@@ -51,42 +52,47 @@ class BookingForm extends React.Component {
   }
 
   render() {
-    return (
-      <div className="booking-form-container">
-        <form onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
-          <div className="daily-price-header"></div>
-          <div className="login-form">
-            <br />
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              className="login-input"
-              placeholder="Username"
-            />
-            <br />
-            <label>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-                placeholder="Password"
-              />
-            </label>
-            <br />
-            <input className="login-button" type="submit" value="Log In" />
-          </div>
-          <br />
-          {this.renderErrors()}
-        </form>
-        <div className="signup-prompt">
-          <span className="signup-prompt">Don't have a Campout account? </span><br />
-          <button className="signup" onClick={() => this.props.openModal('signup')}>Signup!</button>
-          <span className="signup-demo-split">|</span>
-          <button className="demo" onClick={() => this.demoLogin()}>Demo</button>
+    // if (currentListing === undefined) return null
+    const listingId = this.props.match.params.listingId 
+    if (!this.props.currentUserId) {
+      return (
+        <div>
+          <button>Log In to Book</button>
         </div>
-      </div>
-    );
+      )
+    } else {
+      return (
+        <div className="booking-form-container">
+          <form>
+            {this.renderErrors()}
+            <div className="daily-price-header">
+              {this.props.currentListing.price_daily}
+            </div>
+            <div className="booking-form">
+              <br />
+              <input type="date"
+                // value={this.state.check_in}
+                // onChange={this.update('username')}
+                className="booking-check-in booking-date"
+              />
+              <input type="date"
+                // value={this.state.check_in}
+                // onChange={this.update('username')}
+                className="booking-check-out booking-date"
+              />
+              <div className="booking-guests-selector">
+                <a className="booking-minus">-</a>
+                <p className="booking-guests">{this.state.total_guests}</p>
+                <a className="booking-plus">+</a>
+              </div>
+              <br />
+              <input className="booking-submit" type="submit" value="Direct Book" />
+            </div>
+            <br />
+          </form>
+        </div>
+      );
+    }
   }
 }
 

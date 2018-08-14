@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ListingImageCarousel from './listing_image_carousel';
+import BookingContainer from '../booking/booking_container';
 
 class Listing extends React.Component {
   constructor(props) {
@@ -30,9 +31,6 @@ class Listing extends React.Component {
     } else if (!this.props.listing.host) {
       return (<div className="loading-container"><div className="loader">Loading...</div></div>)
     }
-    // if (loading) {
-     
-    // }
 
     let glamping;
     let pet_friendly;
@@ -113,6 +111,7 @@ class Listing extends React.Component {
 
             <div className="listing-right">
               <h1>Calendar goes here</h1>
+              <BookingContainer />
             </div>
           </div>
         </div>
