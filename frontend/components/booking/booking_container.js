@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { createBooking, deleteBooking, clearErrors, requestAllBookings} from '../../actions/bookings_actions';
 import { requestListing } from '../../actions/listings_actions';
+import { openModal } from '../../actions/modal_actions';
 import BookingForm from './booking_form';
 
 const mapStateToProps = (state, ownProps) => {

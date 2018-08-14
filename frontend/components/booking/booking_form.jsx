@@ -14,6 +14,7 @@ class BookingForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.handleNumGuests = this.handleNumGuests.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +25,10 @@ class BookingForm extends React.Component {
     this.setState({check_in: '', check_out: ''})
   }
 
+  totalPrice () {
+    (this.state.check_out - this.state.check_in) * total_price
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -31,20 +36,26 @@ class BookingForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger;
     e.preventDefault();
     const booking = Object.assign({}, this.state);
-    this.props.createBooking(this.state);
-    //Clear errors & rer-render listing
+    booking.guest_id = this.props.currentUserId;
+    booking.listing_id = this.props.match.params.listingId
+    this.props.createBooking(booking)
+    .then(() => this.props.history.push('/'));
   }
 
   handleNumGuests (operation) {
-    debugger;
     const max_capacity = this.props.listings[this.props.match.params.listingId].max_capacity
     if (operation === "minus" && this.state.total_guests > 0) {
       this.setState({ total_guests: this.state.total_guests - 1 })
     } else if (operation === "plus" && this.state.total_guests < max_capacity) {
       this.setState({ total_guests: this.state.total_guests + 1 })
     }
+  }
+
+  handleDateChange (type) {
+    this.setState({[type]: [e.currentTarget.value]})
   }
 
   renderErrors() {
@@ -68,28 +79,28 @@ class BookingForm extends React.Component {
     if (!this.props.currentUserId) {
       return (
         <div>
-          <button onClick={() => this.props.openModal("login")}>Log In to Book</button>
+          <button className="booking-login sticky-button" onClick={() => this.props.openModal("login")}>Log In to Book</button>
         </div>
       )
     } else {
       return (
         <div className="booking-form-container">
-          <form>
+          <form onSubmit={this.handleSubmit}>
             {this.renderErrors()}
             <div className="daily-price-header">
-              {currListing.price_daily}
+              {currListing.price_daily}$ <br/>per night
             </div>
             <div className="booking-form">
               <br />
               <div className="booking-dates">
                 <input type="date"
                   // value={this.state.check_in}
-                  // onChange={this.update('username')}
+                  onChange={this.update("check_in")}
                   className="booking-check-in booking-date"
                 />
                 <input type="date"
                   // value={this.state.check_in}
-                  // onChange={this.update('username')}
+                  onChange={this.update("check_out")}
                   className="booking-check-out booking-date"
                 />
               </div>
