@@ -36,7 +36,6 @@ class BookingForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger;
     e.preventDefault();
     const booking = Object.assign({}, this.state);
     booking.guest_id = this.props.currentUserId;
