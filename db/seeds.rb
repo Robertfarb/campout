@@ -92,11 +92,11 @@ crater_lake = Listing.create!({title: "Crater Lake", host_id: national_park_serv
                 pet_friendly: false, is_toilets: true, max_capacity: 8, has_showers: false, checkin_after: "10 AM", 
                 checkout_before: "4 PM"})
 
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake1.jpg"), filename: "crater_lake1.jpg")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake2.jpg"), filename: "crater_lake2.jpg")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake3.jpg"), filename: "crater_lake3.jpg")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake4.jpg"), filename: "crater_lake4.jpg")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake5.jpg"), filename: "crater_lake5.jpg")
+                crater_lake.photos.attach(io: File.open("/app/assets/images/crater_lake/crater_lake1.jpg"), filename: "crater_lake1.jpg")
+                crater_lake.photos.attach(io: File.open("/app/assets/images/crater_lake/crater_lake2.jpg"), filename: "crater_lake2.jpg")
+                crater_lake.photos.attach(io: File.open("/app/assets/images/crater_lake/crater_lake3.jpg"), filename: "crater_lake3.jpg")
+                crater_lake.photos.attach(io: File.open("/app/assets/images/crater_lake/crater_lake4.jpg"), filename: "crater_lake4.jpg")
+                crater_lake.photos.attach(io: File.open("/app/assets/images/crater_lake/crater_lake5.jpg"), filename: "crater_lake5.jpg")
 
                 # crater_lake.photos.attach(io: File.open("./app/assets/images/crater_lake/crater_lake1.jpg"), filename: "crater_lake1.jpg")
                 # crater_lake.photos.attach(io: File.open("./app/assets/images/crater_lake/crater_lake2.jpg"), filename: "crater_lake2.jpg")
