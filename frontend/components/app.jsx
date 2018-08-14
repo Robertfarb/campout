@@ -7,7 +7,7 @@ import {Route,
   HashRouter} from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
 import Modal from './modal/modal';
-import MainPage from './home/main';
+import MainPage from './home/main_container';
 import NotFound from './not_found/not_found'
 import Footer from './footer/footer'
 import ListingShow from './listings/listing_container';
