@@ -5,7 +5,7 @@ import UserIndex from './user_index';
 
 const mapStateToProps = (state, ownProps) => ({
     bookings: state.entities.bookings,
-    currentUser: state.entities.users[ownProps.match.params.userId]
+    currentUser: state.entities.users[ownProps.match.params.userId],
 });
 
 const mapDispatchToProps = dispatch => {

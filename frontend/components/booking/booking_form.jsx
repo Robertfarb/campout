@@ -9,7 +9,7 @@ class BookingForm extends React.Component {
       check_in: '',
       check_out: '',
       total_price: 0,
-      total_guests: 0
+      total_guests: 1
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
@@ -87,7 +87,7 @@ class BookingForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             {this.renderErrors()}
             <div className="daily-price-header">
-              {currListing.price_daily}$ <br/>
+              ${currListing.price_daily}<br/>
               <p className="per-night">per night</p>
             </div>
             <div className="booking-form">
