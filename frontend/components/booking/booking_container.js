@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
   bookings: state.entities.bookings,
   currentUserId: state.session.id,
-  errors: state.errors.booking
+  errors: state.errors.booking,
+  listings: state.entities.listings
 }};
 
 const mapDispatchToProps = dispatch => {

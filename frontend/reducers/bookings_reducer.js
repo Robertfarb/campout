@@ -1,5 +1,5 @@
 import {RECEIVE_ALL_BOOKINGS, RECEIVE_BOOKING,
-        CREATE_BOOKING, RECEIVE_BOOKING_ERRORS,
+        CREATE_BOOKING,
         REMOVE_BOOKING} from '../actions/bookings_actions';
 import merge from 'lodash/merge';
 
@@ -19,8 +19,6 @@ const bookingsReducer = (state = {}, action) => {
       return updatedState;
     case CREATE_BOOKING:
       return merge(newState, state, {booking: action.booking})
-    case RECEIVE_BOOKING_ERRORS:
-      return action.errors || {errors: "No bookings found"}
       
     default:
       return state;

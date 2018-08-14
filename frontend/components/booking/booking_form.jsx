@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
 
 class BookingForm extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class BookingForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.handleNumGuests = this.handleNumGuests.bind(this);
   }
 
   componentDidMount() {
@@ -35,8 +37,14 @@ class BookingForm extends React.Component {
     //Clear errors & rer-render listing
   }
 
-  handleNumGuests () {
-
+  handleNumGuests (operation) {
+    debugger;
+    const max_capacity = this.props.listings[this.props.match.params.listingId].max_capacity
+    if (operation === "minus" && this.state.total_guests > 0) {
+      this.setState({ total_guests: this.state.total_guests - 1 })
+    } else if (operation === "plus" && this.state.total_guests < max_capacity) {
+      this.setState({ total_guests: this.state.total_guests + 1 })
+    }
   }
 
   renderErrors() {
@@ -52,12 +60,15 @@ class BookingForm extends React.Component {
   }
 
   render() {
-    // if (currentListing === undefined) return null
-    const listingId = this.props.match.params.listingId 
+    const listingId = this.props.match.params.listingId
+    const currListing = this.props.listings[listingId]
+
+    if (this.props.match.params['listingId'] === undefined) return null
+
     if (!this.props.currentUserId) {
       return (
         <div>
-          <button>Log In to Book</button>
+          <button onClick={() => this.props.openModal("login")}>Log In to Book</button>
         </div>
       )
     } else {
@@ -66,24 +77,26 @@ class BookingForm extends React.Component {
           <form>
             {this.renderErrors()}
             <div className="daily-price-header">
-              {this.props.currentListing.price_daily}
+              {currListing.price_daily}
             </div>
             <div className="booking-form">
               <br />
-              <input type="date"
-                // value={this.state.check_in}
-                // onChange={this.update('username')}
-                className="booking-check-in booking-date"
-              />
-              <input type="date"
-                // value={this.state.check_in}
-                // onChange={this.update('username')}
-                className="booking-check-out booking-date"
-              />
+              <div className="booking-dates">
+                <input type="date"
+                  // value={this.state.check_in}
+                  // onChange={this.update('username')}
+                  className="booking-check-in booking-date"
+                />
+                <input type="date"
+                  // value={this.state.check_in}
+                  // onChange={this.update('username')}
+                  className="booking-check-out booking-date"
+                />
+              </div>
               <div className="booking-guests-selector">
-                <a className="booking-minus">-</a>
+                <a className="booking-minus" onClick={() => this.handleNumGuests("minus")}>-</a>
                 <p className="booking-guests">{this.state.total_guests}</p>
-                <a className="booking-plus">+</a>
+                <a className="booking-plus" onClick={ () => this.handleNumGuests("plus")}>+</a>
               </div>
               <br />
               <input className="booking-submit" type="submit" value="Direct Book" />

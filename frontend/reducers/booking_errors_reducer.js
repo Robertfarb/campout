@@ -9,7 +9,7 @@ export default (state = [], action) => {
 
   switch (action.type) {
     case RECEIVE_BOOKING_ERRORS:
-      return action.errors
+      return action.errors || [];
     case RECEIVE_BOOKING:
       return [];
     case CLEAR_ERRORS:

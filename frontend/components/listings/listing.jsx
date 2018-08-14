@@ -110,7 +110,6 @@ class Listing extends React.Component {
             </div>
 
             <div className="listing-right">
-              <h1>Calendar goes here</h1>
               <BookingContainer />
             </div>
           </div>
