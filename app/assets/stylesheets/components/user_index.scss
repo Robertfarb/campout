@@ -1,0 +1,38 @@
+.user-bookings-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  margin: 25px 25px 0 25px;
+  
+  .booking-details {
+  flex-direction: column;
+  }
+}
+
+
+.booking-index-item {
+  text-align: center;
+  margin-bottom: 20px;
+
+  img {
+    border-radius: 5px;
+  }
+}
+
+.user-homepage {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  min-height: 50vh;
+
+  h1 {
+    text-align: center;
+    font-size: 4em;
+    color: $font-medium-gray;
+  }
+}
+
+.booking-dates {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
