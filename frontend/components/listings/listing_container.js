@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Listing from './listing';
 import { requestAllListings, requestListing } from '../../actions/listings_actions';
+import {requestAllBookings} from '../../actions/bookings_actions';
 
 
 
@@ -23,7 +24,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   requestAllListings: () => dispatch(requestAllListings()),
-  requestListing: (id) => dispatch(requestListing(id))
+  requestListing: (id) => dispatch(requestListing(id)),
+  requestAllBookings: () => dispatch(requestAllBookings())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Listing);

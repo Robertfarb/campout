@@ -6,10 +6,6 @@ class UserIndex extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  componentwillMount() {
-    this.props.reqwuestAllBookings();
-  }
   
   componentDidMount() {
     window.scrollTo(0, 0)
@@ -18,12 +14,12 @@ class UserIndex extends React.Component {
 
 
   render() {
-    if (this.props.bookings === undefined) return null;
-    debugger;
+    // debugger;
+    if (Object.values(this.props.bookings).length === 0) return null;
 
     return (
-
       <div className="user-bookings-index">
+      <h1>Your Bookings</h1>
         {Object.values(this.props.bookings).map(booking => (
           <div key={booking.id}>
             <img className="booking-img"src={booking.listing.listingIcon}></img>

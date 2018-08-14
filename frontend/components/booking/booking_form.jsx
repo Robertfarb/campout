@@ -23,6 +23,7 @@ class BookingForm extends React.Component {
 
   componentWillUnmount() {
     this.setState({check_in: '', check_out: ''})
+    this.props.requestAllBookings();
   }
 
   totalPrice () {
@@ -41,6 +42,7 @@ class BookingForm extends React.Component {
     booking.guest_id = this.props.currentUserId;
     booking.listing_id = this.props.match.params.listingId
     this.props.createBooking(booking)
+      .then(() => this.props.requestAllBookings())
       .then(() => this.props.history.push(`/users/${this.props.currentUserId}`));
   }
 
