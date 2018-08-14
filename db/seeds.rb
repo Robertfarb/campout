@@ -68,10 +68,10 @@ crater_lake = Listing.create!({title: "Crater Lake", host_id: national_park_serv
                 checkout_before: "4 PM"})
 
                 crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake1.jpg"), filename: "crater1")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake2.jpg"), filename: "crater2")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake3.jpg"), filename: "crater3")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake4.jpg"), filename: "crater4")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake5.jpg"), filename: "crater5")
+                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake2.jpg"), filename: "crater2")
+                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake3.jpg"), filename: "crater3")
+                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake4.jpg"), filename: "crater4")
+                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake5.jpg"), filename: "crater5")
 
 
 
