@@ -25,7 +25,7 @@ class UserIndex extends React.Component {
               <p>{this.props.booking.listing.description}</p>
             </div>
           </div>
-        ))}
+      ))}
       </div>
     )
   }
