@@ -22,6 +22,11 @@ class ListingsMap extends React.Component {
     this.MarkerManager.updateMarkers(listingsArr)
   }
 
+  componentDidUpdate () {
+    const listingsArr = Object.values(this.props.listings)
+    this.MarkerManager.updateMarkers(listingsArr)
+  }
+
   handleMarkerClick (listing) {
     this.props.history.push(`listings/${listing.id}`);
   }

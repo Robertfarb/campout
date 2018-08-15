@@ -19,8 +19,15 @@ class Search extends React.Component {
 
     return (
       <div className="map-search-container">
-        <ListingsIndex listings={this.props.listings} requestAllListings={this.props.requestAllListings}/>
-        <ListingsMap listings={this.props.listings}/>
+        <ListingsIndex 
+        listings={this.props.listings} 
+        requestAllListings={this.props.requestAllListings}
+        changeFilter={this.props.changeFilter}
+        />
+        <ListingsMap 
+        listings={this.props.listings}
+        changeFilter={this.props.changeFilter}
+        />
       </div>
     )
   }

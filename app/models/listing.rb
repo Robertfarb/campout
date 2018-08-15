@@ -40,6 +40,12 @@ class Listing < ApplicationRecord
     foreign_key: :listing_id,
     class_name: :Booking
 
+  def self.in_bounds(bounds)
+    self.where("lat < ?", bounds[:northEast][:lat])
+    .where("lat > ?", bounds[:southWest][:lat])
+    .where("long > ?", bounds[:southWest][:long])
+    .where("long < ?", bounds[:northEast][:long])
+  end
   
   def ensure_checkin_after
     self.checkin_after ||= "11:00 am"

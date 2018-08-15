@@ -10,7 +10,8 @@ const mapStateToProps = (state, errors) => ({
 
 const mapDispatchToProps = dispatch => ({
   requestListing: (id) => dispatch(requestListing(id)),
-  requestAllListings: () => dispatch(requestAllListings())
+  requestAllListings: () => dispatch(requestAllListings()),
+  changeFilter: (filter, value) => dispatch(changeFilter(filter, value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

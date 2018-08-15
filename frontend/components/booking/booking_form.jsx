@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
+import { DateRangePicker, DayPickerRangeController } from 'react-dates';
 
 class BookingForm extends React.Component {
   constructor(props) {
@@ -31,10 +32,12 @@ class BookingForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
+    e => this.setState({
       [field]: e.currentTarget.value
     });
   }
+
+  
 
   handleSubmit(e) {
     e.preventDefault();
@@ -72,8 +75,9 @@ class BookingForm extends React.Component {
   }
 
   render() {
-    const listingId = this.props.match.params.listingId
-    const currListing = this.props.listings[listingId]
+    const listingId = this.props.match.params.listingId;
+    const currListing = this.props.listings[listingId];
+    const today = new Date().toJSON().slice(0, 10).toString();
 
     if (this.props.match.params['listingId'] === undefined) return null
 
@@ -98,7 +102,7 @@ class BookingForm extends React.Component {
                 <div className="booking-date-input">
                   <h5 className="check">Check in</h5>
                   <input type="date"
-                    // value={this.state.check_in}
+                    min={ today }
                     onChange={this.update("check_in")}
                     className="booking-check-in booking-date"
                   />
@@ -106,7 +110,7 @@ class BookingForm extends React.Component {
                 <div className="booking-date-input">
                   <h5 className="check">Check out</h5>
                   <input type="date"
-                    // value={this.state.check_in}
+                    min={this.state.check_in}
                     onChange={this.update("check_out")}
                     className="booking-check-out booking-date"
                   />  
