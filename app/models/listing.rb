@@ -55,6 +55,11 @@ class Listing < ApplicationRecord
     self.checkout_before ||= "2:00 pm"
   end
 
+   {
+      northEast: {"lat"=>"37.80971", "lng"=>"-122.39208"},
+      southWest: {"lat"=>"37.74187", "lng"=>"-122.47791"}
+    }
+
   # def activities_arr
   #   activities = []
   #   self.activities.first.to_hash.each do |activity, present|

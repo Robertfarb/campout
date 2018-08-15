@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Discover from './discover';
 import { requestAllListings, requestListing} from '../../actions/listings_actions';
+import { changeFilter } from '../../actions/location_filter_actions';
 
 
 

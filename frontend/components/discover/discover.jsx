@@ -17,6 +17,7 @@ class Discover extends React.Component {
   render() {
     if (Object.values(this.props.listings).length === 0) return null;
 
+
     return (
       <div className="map-search-container">
         <ListingsIndex 
@@ -27,6 +28,7 @@ class Discover extends React.Component {
         <ListingsMap 
         listings={this.props.listings}
         changeFilter={this.props.changeFilter}
+        updateFilter={this.props.updateFilter}
         />
       </div>
     )

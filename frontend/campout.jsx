@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import { signup, login, logout } from './actions/session_actions';
-import {openModal, closeModal} from './actions/modal_actions';
-import {requestAllListings, requestListing} from './actions/listings_actions';
+import { fetchSearchListings, fetchFilterListings} from './util/listings_api_util';
 import {requestAllBookings,  deleteBooking, createBooking, receiveAllBookings} from './actions/bookings_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -28,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.requestAllBookings = requestAllBookings;
-  window.deleteBooking = deleteBooking;
-  window.createBooking = createBooking;
   window.receiveAllBookings = receiveAllBookings;
+  window.fetchSearchListings = fetchSearchListings;
+  window.fetchFilterListings = fetchFilterListings;
   // window.requestAllListings = requestAllListings;
   // window.requestListing = requestListing;
   //testing//

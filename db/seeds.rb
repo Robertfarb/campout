@@ -24,7 +24,7 @@ yos = Listing.create!({title: "Yosemite", host_id: national_park_service.id, des
                 # # yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_2.jpg"), filename: "yosemite-2.jpg")
                 # # yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_3.jpg"), filename: "yosemite-3.jpg")
                 # # yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_4.jpg"), filename: "yosemite-4.jpg")
-                # # yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_5.jpg"), filename: "yosemite-5.jpg")
+                # yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_5.jpg"), filename: "yosemite-5.jpg")
 
                 yos.photos.attach(io: File.open("./app/assets/images/yosemite/yosemite_1.jpg"), filename: "yosemite-1.jpg")
                 yos.photos.attach(io: File.open("./app/assets/images/yosemite/yosemite_2.jpg"), filename: "yosemite-2.jpg")

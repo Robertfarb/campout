@@ -8,7 +8,8 @@ class ListingsMap extends React.Component {
   constructor (props) {
     super(props);
     
-    this.handleMarkerClick = this.handleMarkerClick.bind(this)
+    this.handleMarkerClick = this.handleMarkerClick.bind(this);
+    this.registerListeners = this.registerListeners.bind(this);
   }
 
   componentDidMount () {
@@ -21,6 +22,7 @@ class ListingsMap extends React.Component {
     this.map = new google.maps.Map(this.mapNode, mapOptions)
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this))
     this.MarkerManager.updateMarkers(listingsArr)
+    this.registerListeners();
   }
 
   registerListeners () {
@@ -30,7 +32,7 @@ class ListingsMap extends React.Component {
         northEast: {lat: north, long: east},
         southWest: {lat: south, long: west}
       };
-      this.props.changeFilter('bounds', bounds);
+      this.props.changeFilter('location', bounds);
     });
   }
 

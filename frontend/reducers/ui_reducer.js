@@ -2,8 +2,10 @@ import { combineReducers } from 'redux';
 
 import modal from './modal_reducer';
 import loading from './loading_reducer';
+import mapBounds from './location_filters_reducer';
 
 export default combineReducers({
   modal,
-  loading
+  loading,
+  mapBounds,
 });
