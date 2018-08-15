@@ -1,5 +1,6 @@
 class Api::ListingsController < ApplicationController
   def index
+    # debugger;
     @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
   end
 

@@ -5,9 +5,9 @@ export const RECEIVE_LISTING = 'RECEIVE_LISTING';
 export const START_LOADING_ALL_LISTINGS = 'START_LOADING_ALL_LISTINGS';
 export const START_LOADING_SINGLE_LISTING = 'START_LOADING_SINGLE_LISTING'
 
-export const requestAllListings = () => dispatch => {
+export const requestAllListings = (bounds) => dispatch => {
   dispatch(startLoadingAllListings());
-  return APIUtil.fetchListings()
+  return APIUtil.fetchSearchListings(bounds)
   .then(listings => dispatch(receiveAllListings(listings)))
 }
 

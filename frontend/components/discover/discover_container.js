@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Discover from './discover';
 import { requestAllListings, requestListing} from '../../actions/listings_actions';
-import { changeFilter } from '../../actions/location_filter_actions';
+import { updateFilter } from '../../actions/location_filter_actions';
 
 
 
@@ -12,7 +12,7 @@ const mapStateToProps = (state, errors) => ({
 const mapDispatchToProps = dispatch => ({
   requestListing: (id) => dispatch(requestListing(id)),
   requestAllListings: () => dispatch(requestAllListings()),
-  changeFilter: (filter, value) => dispatch(changeFilter(filter, value))
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Discover);

@@ -1,6 +1,5 @@
 import * as APIUtil from '../util/listings_api_util';
 
-export const UPDATE_BOUNDS = 'UPDATE_BOUNDS';
 export const UPDATE_FILTER = 'UPDATE_FILTER';
 
 export const changeFilter = (filter, value) => ({
@@ -11,5 +10,6 @@ export const changeFilter = (filter, value) => ({
 
 export const updateFilter = (filter, value) => (dispatch, getState) => {
   dispatch(changeFilter(filter, value));
-  return APIUtil.fetchFilterListings(getState().ui.filters)(dispatch);
+  console.log("made it here");
+  return requestAllListings(getState().ui.mapBounds)(dispatch);
 }

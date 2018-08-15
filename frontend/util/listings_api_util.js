@@ -19,11 +19,3 @@ export const fetchSearchListings = searchParams => (
     data: { searchParams }
   })
 );
-
-export const fetchFilterListings = (filters) => (
-  $.ajax({
-    method: "GET",
-    url: "api/listings",
-    data: { filters }
-  })
-)

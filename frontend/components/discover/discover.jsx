@@ -15,7 +15,9 @@ class Discover extends React.Component {
   }
 
   render() {
-    if (Object.values(this.props.listings).length === 0) return null;
+    if (Object.values(this.props.listings).length === 0) {
+      return (<div className="loading-container"><div className="loader">Loading...</div></div>)
+    }
 
 
     return (
@@ -23,11 +25,10 @@ class Discover extends React.Component {
         <ListingsIndex 
         listings={this.props.listings} 
         requestAllListings={this.props.requestAllListings}
-        changeFilter={this.props.changeFilter}
+        updateFilter={this.props.updateFilter}
         />
         <ListingsMap 
         listings={this.props.listings}
-        changeFilter={this.props.changeFilter}
         updateFilter={this.props.updateFilter}
         />
       </div>

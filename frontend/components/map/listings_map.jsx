@@ -32,7 +32,7 @@ class ListingsMap extends React.Component {
         northEast: {lat: north, long: east},
         southWest: {lat: south, long: west}
       };
-      this.props.changeFilter('location', bounds);
+      this.props.updateFilter('location', bounds);
     });
   }
 
