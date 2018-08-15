@@ -38,10 +38,11 @@ class UserIndex extends React.Component {
                 <h2>{booking.listing.title}</h2>
                 <p>{booking.listing.description}</p>
                 <div className="booking-dates">
-                  <p>{booking.check_in}</p> - <p>{booking.check_out}</p>
+                  <p>{booking.check_in}&nbsp;</p> - <p>&nbsp;{booking.check_out}</p>
                 </div>
-                {/* <button onClick={() => this.props.deleteBooking(booking.id)}>Cancel Booking</button> */}
-                <button onClick={() => this.handleDelete(booking.id)}>Cancel Booking</button>
+                <div className="cancel-booking">
+                  <button onClick={() => this.handleDelete(booking.id)}>Cancel Booking</button>
+                </div>
               </div>
             </div>
             ))}
