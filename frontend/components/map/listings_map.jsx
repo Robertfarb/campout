@@ -5,8 +5,9 @@ import MarkerManager from '../../util/marker_manager';
 class ListingsMap extends React.Component {
   constructor (props) {
     super(props);
-
     
+    this.handleMarkerClick = this.handleMarkerClick
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount () {
@@ -19,6 +20,17 @@ class ListingsMap extends React.Component {
     this.map = new google.maps.Map(this.mapNode, mapOptions)
     this.MarkerManager = new MarkerManager(this.map)
     this.MarkerManager.updateMarkers(listingsArr)
+  }
+
+  handleMarkerClick (listing) {
+    this.props.history.push(`listings/${listing.id}`);
+  }
+
+  handleClick (listing) {
+    this.props.history.push({
+      pathname: 'benches/new',
+      search: `lat=${coords.lat}&lng=$coords.lng`
+    })
   }
 
   render() {
