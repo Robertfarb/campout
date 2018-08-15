@@ -14,6 +14,7 @@ import ListingShow from './listings/listing_container';
 import ListingsIndex from './listings/listings_index_container';
 import UserProfile from './user/user_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import SearchIndex from './search/search_container';
 
 
   const App = () => (
@@ -23,6 +24,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
       <Switch>
         <Route path="/listings/:listingId" component={ListingShow} />
         <Route exact path="/listings" component={ListingsIndex} />
+        <Route path="/discover" component={SearchIndex} />
         <ProtectedRoute path="/users/:userId" component={UserProfile}/>
         {/* <Route path="/discover" component={searchInProgress} /> */}
         <Route exact path="/" component={MainPage} />

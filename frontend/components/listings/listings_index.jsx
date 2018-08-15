@@ -19,7 +19,6 @@ class ListingIndex extends React.Component {
 
 
   render() {
-  //  if (!this.props.listings) return
     return (
       <div className="listing-index">
       {Object.values(this.props.listings).map(listing => (
