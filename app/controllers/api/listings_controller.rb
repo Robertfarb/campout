@@ -1,6 +1,6 @@
 class Api::ListingsController < ApplicationController
   def index
-    @listings = Listing.in_bounds(params[:bounds])
+    @listings = Listing.all
   end
 
   def show

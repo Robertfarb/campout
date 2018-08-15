@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Search from './search';
+import Discover from './discover';
 import { requestAllListings, requestListing} from '../../actions/listings_actions';
 
 
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
   changeFilter: (filter, value) => dispatch(changeFilter(filter, value))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(Discover);

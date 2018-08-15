@@ -2,6 +2,7 @@ class MarkerManager {
   constructor (map, handleClick) {
     this.map = map;
     this.markers = {};
+    this.handleClick = handleClick;
   }
   
   updateMarkers(listings) {
@@ -22,7 +23,8 @@ class MarkerManager {
     const marker = new google.maps.Marker({
       position,
       map: this.map,
-      listingId: listing.id
+      listingId: listing.id,
+      listingTitle: listing.title
     });
 
     marker.addListener('click', () => this.handleClick(listing));

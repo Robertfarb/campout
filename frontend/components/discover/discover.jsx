@@ -5,7 +5,7 @@ import ListingsIndex from '../listings/listings_index';
 
 
 
-class Search extends React.Component {
+class Discover extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -33,4 +33,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default Discover;

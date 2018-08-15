@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MarkerManager from '../../util/marker_manager';
+import { withRouter } from 'react-router-dom';
+
 
 class ListingsMap extends React.Component {
   constructor (props) {
     super(props);
     
-    this.handleMarkerClick = this.handleMarkerClick
-    this.handleClick = this.handleClick.bind(this);
+    this.handleMarkerClick = this.handleMarkerClick.bind(this)
   }
 
   componentDidMount () {
@@ -18,8 +19,19 @@ class ListingsMap extends React.Component {
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions)
-    this.MarkerManager = new MarkerManager(this.map)
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this))
     this.MarkerManager.updateMarkers(listingsArr)
+  }
+
+  registerListeners () {
+    google.maps.event.addListener(this.map, 'idle', () => {
+      const { north, south, east, west } = this.map.getBounds().toJSON();
+      const bounds = {
+        northEast: {lat: north, long: east},
+        southWest: {lat: south, long: west}
+      };
+      this.props.changeFilter('bounds', bounds);
+    });
   }
 
   componentDidUpdate () {
@@ -27,16 +39,11 @@ class ListingsMap extends React.Component {
     this.MarkerManager.updateMarkers(listingsArr)
   }
 
+
   handleMarkerClick (listing) {
     this.props.history.push(`listings/${listing.id}`);
   }
 
-  handleClick (listing) {
-    this.props.history.push({
-      pathname: 'benches/new',
-      search: `lat=${coords.lat}&lng=$coords.lng`
-    })
-  }
 
   render() {
     return (
@@ -48,4 +55,4 @@ class ListingsMap extends React.Component {
   }
 }
 
-  export default ListingsMap;
+  export default withRouter(ListingsMap);
