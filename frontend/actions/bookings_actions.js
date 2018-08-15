@@ -10,19 +10,22 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const createBooking = booking => dispatch => (
   APIUtil.createBooking(booking).then(booking => {
     dispatch(receiveBooking(booking));
-  }).fail(err => dispatch(receiveBookingErrors(err.responseJSON)))
+  }, err => dispatch(receiveBookingErrors(err.responseJSON)
+))
 )
 
 export const requestAllBookings = () => dispatch => (
   APIUtil.fetchBookings().then(bookings => {
     dispatch(receiveAllBookings(bookings))
-  }).fail(err => dispatch(receiveBookingErrors(err.responseJSON)))
+  }, err => dispatch(receiveBookingErrors(err)
+))
 )
 
 export const deleteBooking = bookingId => dispatch => (
   APIUtil.deleteBooking(bookingId).then(booking => {
     dispatch(removeBooking(booking))
-  }).fail(err => dispatch(receiveBookingErrors(err.responseJSON)))
+  }, err => dispatch(receiveBookingErrors(err.responseJSON)
+))
 )
 
 export const receiveAllBookings = (bookings) => ({
@@ -35,9 +38,9 @@ export const receiveBooking = (booking) => ({
   booking
 })
 
-export const receiveBookingErrors = errors => ({
+export const receiveBookingErrors = payload => ({
   type: RECEIVE_BOOKING_ERRORS,
-  errors
+  payload
 })
 
 export const removeBooking = bookingId => ({

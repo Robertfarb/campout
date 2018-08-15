@@ -4,7 +4,7 @@ class Api::BookingsController < ApplicationController
       @bookings = current_user.bookings
       render "api/bookings/index"
     else
-        render json: "No current User is logged in", status: 404
+        render json: ["No current User is logged in"], status: 404
     end
   end
 
@@ -13,16 +13,16 @@ class Api::BookingsController < ApplicationController
     if @booking
       render :show
     else
-        render json: "Booking not found", status: 404
+        render json: ["Booking not found"], status: 404
     end
   end
 
   def create
     @booking = Booking.new(booking_params)
-    if @booking.save!
+    if @booking.save
       render "api/bookings/show"
     else
-      render json: @booking.errors.full_messages, status: 422
+      render json: ["Please fill out all the booking fields"], status: 422
     end
   end
 

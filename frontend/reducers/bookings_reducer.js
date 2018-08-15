@@ -12,14 +12,12 @@ const bookingsReducer = (state = {}, action) => {
       return action.bookings || {};
     case RECEIVE_BOOKING:
       return action.booking
-      // return merge (newState, state, {[action.booking.id]: action.booking})
     case REMOVE_BOOKING:
       let updatedState = merge(newState, state);
       delete updatedState[action.bookingId];
       return updatedState;
     case CREATE_BOOKING:
       return merge(newState, state, {booking: action.booking})
-      
     default:
       return state;
   }

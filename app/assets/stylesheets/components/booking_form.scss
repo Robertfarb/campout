@@ -65,7 +65,7 @@
     width: 33%;
     display: flex;
     flex-direction: column;
-    padding: 17px 10px;
+    padding: 14px 10px;
     border: 1px solid #ebebeb;
     text-align: center;
 }
@@ -101,4 +101,11 @@
 
 .booking-plus, .booking-minus {
     cursor: pointer;
+}
+
+.booking-errors {
+    .signin-error {
+        bottom: 6px;
+        left: 109px;
+    }
 }
