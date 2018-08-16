@@ -44,8 +44,8 @@ class Filter extends React.Component {
             <input
               type='checkbox'
               className="radio-input"
-              onClick={this.toggleFilter('glamping')}
-              checked={this.props.filters['glamping'] === false}
+              onClick={this.toggleFilter('camping')}
+              checked={this.props.filters['camping'] === true}
               // onChange={}
             />
             <label>Camping</label>
@@ -162,6 +162,7 @@ class Filter extends React.Component {
             />
             <label>15 or more</label>
          </li>
+         <button className="clear-filters" onClick={() => this.props.clearFilters()}>Clear Filters</button>
       </div>
     );
   }

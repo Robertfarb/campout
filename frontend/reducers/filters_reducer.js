@@ -10,6 +10,7 @@ const filtersReducer = (state = {}, action) => {
   const newState = {};
 
   const defaultFilters = {
+    camping: false,
     glamping: false,
     petFriendly: false,
     toilets: false,
@@ -32,9 +33,9 @@ const filtersReducer = (state = {}, action) => {
     case REMOVE_CAPACITY_FILTER:
       return {maxCapacity: 100}
     case CLEAR_FILTERS:
-      break
+      return defaultFilters;
     case REMOVE_FILTER:
-      return defaultFilters
+      return {[action.filter]: false}
     default:
       return state;
   }
