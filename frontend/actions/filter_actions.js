@@ -4,7 +4,7 @@ export const REMOVE_PRICE_FILTER = 'REMOVE_PRICE_FILTER';
 export const REMOVE_FILTER = 'REMOVE_FILTER';
 export const CLEAR_FILTERS = 'CLEAR_FILTERS';
 
-export const receive_filter = filter => ({
+export const receiveFilter = filter => ({
   type: RECEIVE_FILTER,
   filter,
 })

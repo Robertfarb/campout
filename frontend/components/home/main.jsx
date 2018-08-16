@@ -26,7 +26,8 @@ class MainPage extends React.Component {
   }
 
   handleSearchInput () {
-    
+    //Write function to handle the search bar input and direct me to the /discover with the map centered
+    // on the desired city (geocoder??)
   }
 
   render() {

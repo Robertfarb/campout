@@ -13,19 +13,19 @@ const filtersReducer = (state = {}, action) => {
     petFriendly: false,
     toiets: false,
     group: false,
-    max_capacity: 100,
+    maxCapacity: 100,
     showers: false,
-    min_price: 0,
-    max_price: 10000
+    minPrice: 0,
+    maxPrice: 10000
   }
 
   switch (action.type) {
     case RECEIVE_FILTER:
       return merge(newState, state, {[action.filter]: true});
     case RECEIVE_PRICE_FILTER:
-      return merge(newState, state, {price: action.price});
+      return merge(newState, state, {maxPrice: action.price});
     case REMOVE_PRICE_FILTER:
-      return merge(newState, state, {price: 10000});
+      return merge(newState, state, {maxPrice: 10000});
     case CLEAR_FILTERS:
       break
     case REMOVE_FILTER:
