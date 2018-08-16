@@ -9,7 +9,7 @@ class Filter extends React.Component {
   render() {
     return (
       <div className="filters-container">
-        <h2>Amenities</h2>
+        <h2 className="filter-header">Amenities</h2>
           <li>
             <input
               type='checkbox'
@@ -60,7 +60,7 @@ class Filter extends React.Component {
             />
             <label>Toilets</label>
          </li>
-         <h2>Pricing</h2>
+         <h2 className="filter-header">Pricing</h2>
           <li>
             <input
               type='checkbox'
@@ -101,7 +101,7 @@ class Filter extends React.Component {
             />
             <label>Under $175</label>
          </li>
-         <h2>Group Size</h2>
+         <h2 className="filter-header">Group Size</h2>
           <li>
             <input
               type='checkbox'
