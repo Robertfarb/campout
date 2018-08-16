@@ -3,6 +3,9 @@ export const RECEIVE_PRICE_FILTER = 'RECEIVE_PRICE_FILTER';
 export const REMOVE_PRICE_FILTER = 'REMOVE_PRICE_FILTER';
 export const REMOVE_FILTER = 'REMOVE_FILTER';
 export const CLEAR_FILTERS = 'CLEAR_FILTERS';
+export const RECEIVE_CAPACITY_FILTER = 'RECEIVE_CAPACITY_FILTER';
+export const REMOVE_CAPACITY_FILTER = 'REMOVE_CAPACITY_FILTER';
+
 
 export const receiveFilter = filter => ({
   type: RECEIVE_FILTER,
@@ -12,6 +15,15 @@ export const receiveFilter = filter => ({
 export const removeFilter = filter => ({
   type: REMOVE_FILTER,
   filter,
+})
+
+export const receiveCapacityFilter = capacity => ({
+  type: RECEIVE_CAPACITY_FILTER,
+  capacity
+})
+
+export const removeCapacityFilter = () => ({
+  type: REMOVE_CAPACITY_FILTER,
 })
 
 export const receivePriceFilter = price => ({
