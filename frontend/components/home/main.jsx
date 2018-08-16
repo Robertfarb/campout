@@ -7,13 +7,27 @@ import { Link } from 'react-router-dom';
 class MainPage extends React.Component {
   constructor (props){
     super(props);
+    this.state = {
+      geoLocation: ''
+    }
 
+    this.update = this.update.bind(this);
+    this.handleSearchInput = this.handleSearchInput.bind(this);
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
   }
 
   componentDidMount () {
     this.props.requestAllListings();
   }
 
+  handleSearchInput () {
+    
+  }
 
   render() {
     if (this.props.listings === undefined) return null;
@@ -27,7 +41,7 @@ class MainPage extends React.Component {
               <p>Book unique camping experiences at 300,000 <br /> campsites, ranches, vineyards, public parks and more.</p>
             </div>
             <div className="search-bar-container">
-              <input placeholder="Camping near me..." className="campsite-search" type="text"/>
+              <input onSubmit={() => this.props.history.push("/discover")} placeholder="Camping near me..." className="campsite-search" type="text"/>
               <button onClick={() => this.props.history.push("/discover")}className="splash-search">Search</button>
             </div>
           </div>

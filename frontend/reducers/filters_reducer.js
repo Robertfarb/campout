@@ -1,5 +1,7 @@
 import merge from 'lodash/merge';
-import { UPDATE_FILTER } from '../actions/location_filter_actions';
+import { RECEIVE_FILTER, RECEIVE_PRICE_FILTER,
+        REMOVE_PRICE_FILTER, REMOVE_FILTER,
+        CLEAR_FILTERS  } from '../actions/location_filter_actions';
 
 
 const filtersReducer = (state = {}, action) => {
@@ -7,18 +9,27 @@ const filtersReducer = (state = {}, action) => {
   const newState = {};
 
   const defaultFilters = {
-    glamping: 'false',
-    pet_friendly: 'false',
-    toilets: 'false',
+    glamping: false,
+    petFriendly: false,
+    toiets: false,
+    group: false,
     max_capacity: 100,
-    showers: 'false',
+    showers: false,
     min_price: 0,
     max_price: 10000
   }
 
   switch (action.type) {
-    case UPDATE_FILTER:
-      return [];
+    case RECEIVE_FILTER:
+      return merge(newState, state, {[action.filter]: true});
+    case RECEIVE_PRICE_FILTER:
+      return merge(newState, state, {price: action.price});
+    case REMOVE_PRICE_FILTER:
+      return merge(newState, state, {price: 10000});
+    case CLEAR_FILTERS:
+      break
+    case REMOVE_FILTER:
+      return defaultFilters
     default:
       return state;
   }

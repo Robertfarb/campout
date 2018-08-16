@@ -4,7 +4,6 @@ import { requestAllListings, requestListing} from '../../actions/listings_action
 import { updateFilter } from '../../actions/location_filter_actions';
 
 
-
 const mapStateToProps = (state, errors) => ({
   listings: state.entities.listings,
 });

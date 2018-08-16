@@ -7,7 +7,7 @@ const Navbar = ({ openModal, currentUser, logout }) => {
     <nav className="logged-out-nav nav">
       <div className="left">
         <Link to="/"><img className="nav-logo" src={window.images.logoPng} /></Link>
-        <input className="nav-search" placeholder="Search..." type="text"/>
+        <input className="nav-search" placeholder="Search..." type="text" />
       </div>
       <div className="right">
         <a className="github nav-link" href="https://github.com/robertfarb/"><i className="fa fa-github fa-2x"></i></a>
