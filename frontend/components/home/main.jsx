@@ -13,6 +13,8 @@ class MainPage extends React.Component {
 
     this.update = this.update.bind(this);
     this.handleSearchInput = this.handleSearchInput.bind(this);
+    this.handlePriceFilter = this.handlePriceFilter.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
   }
 
   update(field) {
@@ -28,6 +30,22 @@ class MainPage extends React.Component {
   handleSearchInput () {
     //Write function to handle the search bar input and direct me to the /discover with the map centered
     // on the desired city (geocoder??)
+  }
+
+  handleFilter(filter) {
+    return e => {
+      this.props.clearFilters();
+      this.props.receiveFilter(filter);
+      this.props.history.push('/discover')
+    }
+  }
+
+  handlePriceFilter(price) {
+    return e => {
+      this.props.clearFilters();
+      this.props.receivePriceFilter(price);
+      this.props.history.push('/discover')
+    }
   }
 
   render() {
@@ -57,23 +75,23 @@ class MainPage extends React.Component {
           <h2>Discover camping...</h2>
           <div className="splash-square-grid">
             <div className="splash-square">
-              <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/puppy-1234691_1920.jpg" alt="Pet friendly Camping"/></div>
+              <div onClick={this.handleFilter('petFriendly')} className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/puppy-1234691_1920.jpg" alt="Pet friendly Camping"/></div>
               <footer className="splash-image-footer">
-                <h3>Pet friendly camping</h3>
+                <h3 onClick={this.handleFilter('petFriendly')}>Pet friendly camping</h3>
                 <p>Best options near me</p>
               </footer>
             </div>
             <div className="splash-square">
-              <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/glapming.jpg" alt="Glamping" /></div>
+              <div onClick={this.handleFilter('glamping')} className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/glapming.jpg" alt="Glamping" /></div>
               <footer className="splash-image-footer">
-                <h3>Glamping near me</h3>
+                <h3 onClick={this.handleFilter('glamping')}>Glamping near me</h3>
                 <p>Best options near me</p>
               </footer>
             </div>
             <div className="splash-square">
-              <div className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/martine-jacobsen-344052-unsplash.jpg" alt="" /></div>
+              <div onClick={this.handlePriceFilter(50)} className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/martine-jacobsen-344052-unsplash.jpg" alt="" /></div>
               <footer className="splash-image-footer">
-                <h3>Beach camping</h3>
+                <h3 onClick={this.handlePriceFilter(50)}>Camping under $50</h3>
                 <p>Best options near me</p>
               </footer>
             </div>

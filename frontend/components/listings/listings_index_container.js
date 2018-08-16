@@ -9,10 +9,12 @@ import { requestAllListings, requestListing } from '../../actions/listings_actio
 const mapStateToProps = (state, ownProps) => {
   const listings = state.entities.listings
   const listingId = ownProps.match.params.listingId;
+  const filters = state.ui.filters;
 
   return {
     listings,
-    listingId
+    listingId,
+    filters
   }
 };
 
