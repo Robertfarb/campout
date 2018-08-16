@@ -17,7 +17,6 @@ class ListingIndex extends React.Component {
   }
 
   applyListingFilters () {
-    debugger;
     const { filters, listings } = this.props;
     
     const filteredListings = Object.values(listings).filter(listing => {
