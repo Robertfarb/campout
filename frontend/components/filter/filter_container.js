@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import Filter from './filter';
 
 const mapStateToProps = state => ({
-  listings: state.entities.listings,
   filters: state.ui.filters
 });
 

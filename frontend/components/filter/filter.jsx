@@ -4,7 +4,22 @@ import { withRouter } from 'react-router-dom';
 class Filter extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = this.props
   }
+
+  toggleFilter (type) {
+    con
+  }
+
+  toggleCapFilter(cap) {
+
+  }
+
+  togglePriceFilter (price) {
+
+  }
+  
   
   render() {
     return (
@@ -110,7 +125,7 @@ class Filter extends React.Component {
               checked={this.props.filters['maxCapacity'] === 5}
               onChange={function () { }}
             />
-            <label>5 or more campers</label>
+            <label>5 or more</label>
          </li>
           <li>
             <input
@@ -120,7 +135,7 @@ class Filter extends React.Component {
               checked={this.props.filters['maxCapacity'] === 5}
               onChange={function () { }}
             />
-            <label>10 or more campers</label>
+            <label>10 or more</label>
          </li>
           <li>
             <input
@@ -130,7 +145,7 @@ class Filter extends React.Component {
               checked={this.props.filters['maxCapacity'] === 5}
               onChange={function () { }}
             />
-            <label>15 or more campers</label>
+            <label>15 or more</label>
          </li>
       </div>
     );
