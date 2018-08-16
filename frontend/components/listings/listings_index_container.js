@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ListingIndex from './listings_index';
 import { requestAllListings, requestListing } from '../../actions/listings_actions';
-// import { selectAllListings } from '../../reducers/selectors'
+import { clearFilters } from '../../actions/filter_actions';
 
 
 
@@ -20,6 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   requestAllListings: () => dispatch(requestAllListings()),
+  clearFilters: () => dispatch(clearFilters())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListingIndex);

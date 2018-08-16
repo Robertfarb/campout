@@ -13,49 +13,77 @@ class ListingIndex extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0)
-    this.props.requestAllListings();
+    // this.props.requestAllListings();
+    this.props.clearFilters();
   }
 
   applyListingFilters () {
-    debugger;
-    const { filters, listings } = this.props;
+    let filters = this.props.filters;
+    let filteredListings = Object.values(this.props.listings);
+
+    if (filters['glamping'] === true) {
+    filteredListings = filteredListings.filter(listing => {
+      if (listing.is_glamping) return listing});
+    }
+
+    // if (filters['camping'] === true) {
+    //   filteredListings = filteredListings.filter(listing => {
+    //     if (listing.is_glamping === false) return listing
+    //   });
+    // }
     
-    const filteredListings = Object.values(listings).filter(listing => {
-      if (this.props.filters['glamping'] === true && listing.is_glamping) return;
-      if (this.props.filters['camping'] === true && !listing.is_glamping) return;
-      if (this.props.filters['petFriendly'] === true && listing.pet_friendly) return;
-      if (this.props.filters['toilets'] === true && listing.is_toilets) return;
-      if (this.props.filters['showers'] === true && listing.has_showers) return;
-      if (this.props.filters['maxPrice'] && listing.price_daily < filters['maxPrice']) return;
-      if (this.props.filters['maxCapacity'] && listing.max_capacity < filters['maxCapacity']) return;
-    });
+    if (filters['petFriendly'] === true) {
+    filteredListings = filteredListings.filter(listing => {
+      if (listing.pet_friendly) return listing});
+    }
+
+    if (filters['toilets'] === true) {
+      filteredListings = filteredListings.filter(listing => {
+        if (listing.is_toilets) return listing
+      });
+    }
+
+    if (filters['showers'] === true ){
+      filteredListings = filteredListings.filter(listing => {
+        if (listing.has_showers) return listing
+      });
+    }
+
+    if (filters['maxPrice'] < 10000) {
+      filteredListings = filteredListings.filter(listing => {
+        if (listing.price_daily < filters['maxPrice']) return listing
+      });
+    }
+
+    if (filters['maxCapacity'] < 100) {
+      filteredListings = filteredListings.filter(listing => {
+        if (listing.max_capacity > filters['maxCapacity']) return listing
+      });
+    }
 
     return filteredListings;
   }
 
 
   render() {
+    const filtListings = this.applyListingFilters(this.props.listings)
 
-    if (Object.values(this.props.listings).length === 0) {
+
+    if (filtListings.length === 0) {
       return (
         <div className="no-listings-avail">
-          <h1>Sorry, there are no listings available for this location!</h1>
+          <h1>Sorry, there are no listings available that match your Search!</h1>
         </div>
       )
     }
 
-    // const filteredListings = this.applyListingFilters(this.props.listings);
-
-
     return (
       <div className="listing-index">
-      {Object.values(this.props.listings).map(listing => (
+      {filtListings.map(listing => (
         <ListingIndexItem key={listing.id} listing={listing}/> 
       ))}
     </div>
   )}
 }
 
-
-export default ListingIndex;
-
+export default withRouter(ListingIndex);
