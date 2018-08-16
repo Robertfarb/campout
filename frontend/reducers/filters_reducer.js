@@ -18,7 +18,7 @@ const filtersReducer = (state = {}, action) => {
 
   switch (action.type) {
     case UPDATE_FILTER:
-      return action.value
+      return [];
     default:
       return state;
   }

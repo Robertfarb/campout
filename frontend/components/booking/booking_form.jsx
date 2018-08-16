@@ -32,12 +32,10 @@ class BookingForm extends React.Component {
   }
 
   update(field) {
-    e => this.setState({
+    return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
-
-  
 
   handleSubmit(e) {
     e.preventDefault();

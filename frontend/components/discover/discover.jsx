@@ -16,7 +16,8 @@ class Discover extends React.Component {
 
   render() {
     if (Object.values(this.props.listings).length === 0) {
-      return (<div className="loading-container"><div className="loader">Loading...</div></div>)
+      // return (<div>Sorry no listings available</div>)
+      // return (<div className="loading-container"><div className="loader">Loading...</div></div>)
     }
 
 

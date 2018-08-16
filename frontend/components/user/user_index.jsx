@@ -33,7 +33,7 @@ class UserIndex extends React.Component {
         <div className="user-bookings-index">
           {Object.values(this.props.bookings).map(booking => (
             <div className="booking-index-item" key={booking.id}>
-              <img className="booking-img"src={booking.listing.listingIcon}></img>
+              <a href={`#/listings/${booking.listing.id}`}><img className="booking-img" src={booking.listing.listingIcon}></img></a>
               <div className="booking-details">
                 <h2>{booking.listing.title}</h2>
                 <p>{booking.listing.description}</p>

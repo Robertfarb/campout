@@ -1,6 +1,5 @@
 class Api::ListingsController < ApplicationController
   def index
-    # debugger;
     @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
   end
 
@@ -17,6 +16,6 @@ class Api::ListingsController < ApplicationController
   end
 
   def bounds
-    params[:bounds]
+    params[:searchParams]
   end
 end

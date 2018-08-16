@@ -28,6 +28,7 @@ class MainPage extends React.Component {
             </div>
             <div className="search-bar-container">
               <input placeholder="Camping near me..." className="campsite-search" type="text"/>
+              <button onClick={() => this.props.history.push("/discover")}className="splash-search">Search</button>
             </div>
           </div>
           <div className="right-main">

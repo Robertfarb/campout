@@ -134,6 +134,24 @@
   }
 }
 
+.splash-search {
+  background-color: $hipcamp-green;
+  color: white;
+  width: 145px;
+  height: 55px;
+  font-weight: 700;
+  text-align: center;
+  float: right;
+  margin-top: 10px;
+  border: 3px solid transparent;
+}
+
+.splash-search:hover{
+  background-color: white;
+  color: $hipcamp-green;
+  border: 3px solid $hipcamp-green;
+}
+
 @media (max-width: 910px) {
   .main-top {
     flex-direction: column;

@@ -10,6 +10,7 @@ class ListingIndex extends React.Component {
   }
 
   componentWillReceiveProps(ownProps) {
+
   }
 
   componentDidMount() {
@@ -19,6 +20,16 @@ class ListingIndex extends React.Component {
 
 
   render() {
+
+    if (Object.values(this.props.listings).length === 0) {
+      return (
+        <div className="no-listings-avail">
+          <h1>Sorry, there are no listings available for this location!</h1>
+        </div>
+      )
+    }
+
+
     return (
       <div className="listing-index">
       {Object.values(this.props.listings).map(listing => (

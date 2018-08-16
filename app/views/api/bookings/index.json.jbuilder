@@ -5,7 +5,7 @@
     json.total_days booking.total_days
 
     json.listing do
-      json.extract! booking.listing, :title, :description
+      json.extract! booking.listing, :id, :title, :description
 
       booking.listing.photos.each do |photo|
         json.listingIcon url_for(photo)

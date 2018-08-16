@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/listings_api_util';
+import { requestAllListings } from './listings_actions';
 
 export const UPDATE_FILTER = 'UPDATE_FILTER';
 
