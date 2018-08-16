@@ -89,9 +89,9 @@ class MainPage extends React.Component {
               </footer>
             </div>
             <div className="splash-square">
-              <div onClick={this.handlePriceFilter(50)} className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/martine-jacobsen-344052-unsplash.jpg" alt="" /></div>
+              <div onClick={this.handlePriceFilter(75)} className="splash-listing-img"><img className="full-img" src="https://s3-us-west-1.amazonaws.com/campout-dev/martine-jacobsen-344052-unsplash.jpg" alt="" /></div>
               <footer className="splash-image-footer">
-                <h3 onClick={this.handlePriceFilter(50)}>Camping under $50</h3>
+                <h3 onClick={this.handlePriceFilter(75)}>Camping under $75</h3>
                 <p>Best options near me</p>
               </footer>
             </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ListingIndexItem from './listing_index_item'
 import {selectAllListings} from '../../reducers/selectors';
+import { updateFilter } from '../../actions/location_filter_actions';
+import { updateFilteredListings } from '../../actions/listings_actions';
 
 
 class ListingIndex extends React.Component {
@@ -13,7 +15,9 @@ class ListingIndex extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0)
-    // this.props.requestAllListings();
+  }
+
+  componentWillUnmount () {
     this.props.clearFilters();
   }
 
@@ -26,11 +30,11 @@ class ListingIndex extends React.Component {
       if (listing.is_glamping) return listing});
     }
 
-    // if (filters['camping'] === true) {
-    //   filteredListings = filteredListings.filter(listing => {
-    //     if (listing.is_glamping === false) return listing
-    //   });
-    // }
+    if (filters['camping'] === true) {
+      filteredListings = filteredListings.filter(listing => {
+        if (listing.is_glamping === false) return listing
+      });
+    }
     
     if (filters['petFriendly'] === true) {
     filteredListings = filteredListings.filter(listing => {
@@ -60,14 +64,15 @@ class ListingIndex extends React.Component {
         if (listing.max_capacity > filters['maxCapacity']) return listing
       });
     }
-
+    
+    // const filteredState = Object.assign({}, filteredListings);
+    // this.props.updateFilteredListings(filteredState)
     return filteredListings;
   }
 
 
   render() {
     const filtListings = this.applyListingFilters(this.props.listings)
-
 
     if (filtListings.length === 0) {
       return (

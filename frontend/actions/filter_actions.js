@@ -5,6 +5,7 @@ export const REMOVE_FILTER = 'REMOVE_FILTER';
 export const CLEAR_FILTERS = 'CLEAR_FILTERS';
 export const RECEIVE_CAPACITY_FILTER = 'RECEIVE_CAPACITY_FILTER';
 export const REMOVE_CAPACITY_FILTER = 'REMOVE_CAPACITY_FILTER';
+export const UPDATE_SITE_FILTER = 'UPDATE_SITE_FILTER';
 
 
 export const receiveFilter = filter => ({
@@ -38,3 +39,14 @@ export const removePriceFilter = () => ({
 export const clearFilters = () => ({
   type: CLEAR_FILTERS
 })
+
+export const changeSiteFilter = filter => ({
+  type: UPDATE_SITE_FILTER,
+  filter
+})
+
+
+export const updateFilterValue = filter => dispatch => {
+  dispatch(changeSiteFilter(filter))
+}
+

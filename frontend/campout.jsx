@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { fetchSearchListings, fetchFilterListings} from './util/listings_api_util';
 import {requestAllBookings,  deleteBooking, createBooking, receiveAllBookings} from './actions/bookings_actions';
+import { updateFilterValue } from './actions/filter_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.receiveAllBookings = receiveAllBookings;
   window.fetchSearchListings = fetchSearchListings;
   window.fetchFilterListings = fetchFilterListings;
+  window.updateFilterValue = updateFilterValue;
   // window.requestAllListings = requestAllListings;
   // window.requestListing = requestListing;
   //testing//

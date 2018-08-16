@@ -12,15 +12,10 @@ class Discover extends React.Component {
   }
 
   componentDidMount () {
-    this.props.requestAllListings();
+    // this.props.requestAllListings();
   }
 
   render() {
-    if (Object.values(this.props.listings).length === 0) {
-      // return (<div>Sorry no listings available</div>)
-      // return (<div className="loading-container"><div className="loader">Loading...</div></div>)
-    }
-
 
     return (
       <div className="map-search-container">
@@ -28,15 +23,16 @@ class Discover extends React.Component {
         <FiltersContainer />
         </div>
         <ListingsIndex 
-        listings={this.props.listings} 
-        requestAllListings={this.props.requestAllListings}
-        updateFilter={this.props.updateFilter}
-        clearFilters={this.props.clearFilters}
-        filters={this.props.filters}
+          listings={this.props.listings} 
+          requestAllListings={this.props.requestAllListings}
+          updateFilter={this.props.updateFilter}
+          clearFilters={this.props.clearFilters}
+          filters={this.props.filters}
+          updateFilteredListings={this.props.updateFilteredListings}
         />
         <ListingsMap 
-        listings={this.props.listings}
-        updateFilter={this.props.updateFilter}
+          listings={this.props.listings}
+          updateFilter={this.props.updateFilter}
         />
       </div>
     )

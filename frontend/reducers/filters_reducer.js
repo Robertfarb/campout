@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 import { RECEIVE_FILTER, RECEIVE_PRICE_FILTER,
         REMOVE_PRICE_FILTER, REMOVE_FILTER,
         CLEAR_FILTERS, RECEIVE_CAPACITY_FILTER,
-        REMOVE_CAPACITY_FILTER } from '../actions/filter_actions';
+        REMOVE_CAPACITY_FILTER, UPDATE_SITE_FILTER} from '../actions/filter_actions';
 
 
 const filtersReducer = (state = {}, action) => {
@@ -32,6 +32,8 @@ const filtersReducer = (state = {}, action) => {
       return merge(newState, state, {maxCapacity: action.capacity});
     case REMOVE_CAPACITY_FILTER:
       return {maxCapacity: 100}
+    case UPDATE_SITE_FILTER:
+      return action.filter
     case CLEAR_FILTERS:
       return defaultFilters;
     case REMOVE_FILTER:
