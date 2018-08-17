@@ -73,9 +73,20 @@ In the map component I use Google's geocoder service to translate the user's inp
     });
   }
 ```
+
+
+
 ## Technologies
+Campout was built using Rails and PostgreSQL for the backend, and React.js / Redux architecture on the frontend. 
+
+## Design Docs
+* [MVP List](../wiki/MVP-List)
+* [Database Schema](../wiki/Database-Schema)
+* [Sample State](../wiki/Sample-State)
+* [Frontend Routes and Components](../wiki/Frontend-Routes)
+* [Backend Routes](../wiki/Backend-Routes)
 
 
-## Design
-
-## Future features
+## Ideas for future features
+- User's will be able to add reviews to campsites that they have stayed at, and update or delete the review if they are the author.
+- Users will be able to create a Listing and upload their own images of the campsite
