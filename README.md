@@ -77,14 +77,14 @@ In the map component I use Google's geocoder service to translate the user's inp
 
 
 ## Technologies
-Campout was built using Rails and PostgreSQL for the backend, and React.js / Redux architecture on the frontend. 
+Campout was built using Rails and PostgreSQL for the backend, and React.js / Redux architecture on the frontend. Rails was chosen for the backend becuase of it's powerful features out of the box, and react/redux on the frontend for it's scalability.
 
 ## Design Docs
-* [MVP List](../wiki/MVP-List)
-* [Database Schema](../wiki/Database-Schema)
-* [Sample State](../wiki/Sample-State)
-* [Frontend Routes and Components](../wiki/Frontend-Routes)
-* [Backend Routes](../wiki/Backend-Routes)
+* [MVP List](https://github.com/Robertfarb/campout/wiki/MVP-List)
+* [Database Schema](https://github.com/Robertfarb/campout/wiki/Database-Schema)
+* [Sample State](https://github.com/Robertfarb/campout/wiki/Sample-State)
+* [Frontend Routes and Components](https://github.com/Robertfarb/campout/wiki/Frontend-Routes)
+* [Backend Routes](https://github.com/Robertfarb/campout/wiki/Backend-Routes)
 
 
 ## Ideas for future features
