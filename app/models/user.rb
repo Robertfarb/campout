@@ -28,6 +28,10 @@ class User < ApplicationRecord
   has_many :listings,
     foreign_key: :host_id,
     class_name: :Listing
+
+  has_many :reviews,
+    foreign_key: :user_id,
+    class_name: :Review
   
   def self.generate_session_token
     SecureRandom.urlsafe_base64
