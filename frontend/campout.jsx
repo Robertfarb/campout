@@ -28,7 +28,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.createReview = createReview;
   window.updateReview = updateReview;
   window.destroyReview = destroyReview;
-  // window.requestAllListings = requestAllListings;
-  // window.requestListing = requestListing;
   //testing//
 });
