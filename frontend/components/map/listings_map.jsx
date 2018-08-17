@@ -4,7 +4,6 @@ import MarkerManager from '../../util/marker_manager';
 import { withRouter } from 'react-router-dom';
 import { receiveGeolocation } from '../../actions/location_filter_actions';
 
-
 class ListingsMap extends React.Component {
   constructor (props) {
     super(props);

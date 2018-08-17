@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../search/search_container';
 
-
-
 class MainPage extends React.Component {
   constructor (props){
     super(props);

@@ -39,7 +39,6 @@ class Filter extends React.Component {
   }
   
   render() {
-    // const { filters } = this.props;
 
     return (
       <div className="filters-container">

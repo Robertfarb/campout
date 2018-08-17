@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
-
 class ListingIndexItem extends React.Component {
   constructor(props) {
     super(props);
@@ -24,6 +23,5 @@ class ListingIndexItem extends React.Component {
     )
   }
 }
-
 
 export default ListingIndexItem;

@@ -4,7 +4,6 @@ import { RECEIVE_FILTER, RECEIVE_PRICE_FILTER,
         CLEAR_FILTERS, RECEIVE_CAPACITY_FILTER,
         REMOVE_CAPACITY_FILTER, UPDATE_SITE_FILTER} from '../actions/filter_actions';
 
-
 const filtersReducer = (state = {}, action) => {
   Object.freeze(state);
   const newState = {};

@@ -5,7 +5,6 @@ import {selectAllListings} from '../../reducers/selectors';
 import { updateFilter } from '../../actions/location_filter_actions';
 import { updateFilteredListings } from '../../actions/listings_actions';
 
-
 class ListingIndex extends React.Component {
   constructor(props) {
     super(props);

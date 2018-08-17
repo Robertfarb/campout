@@ -14,6 +14,7 @@ rob = User.create({username: "robfarb", first_name: "Robert", last_name: "Farb",
 smokey = User.create({username: "smokeythebear", first_name: "Smokey", last_name: "Bear", zip_code: "94103", password: "12345678"})
 ranger_rick = User.create({username: "parkranger10", first_name: "Ranger", last_name: "Rick", zip_code: "92234", password: "ilovenationalparks"})
 national_park_service = User.create({username: "nationalparkservice", first_name: "National", last_name: "Park Service", zip_code: "92234", password: "natparkservice10"})
+stella = User.create({username: "stellathedawg", first_name: "Stella", last_name: "Appleton", zip_code: "91403", password: "stellabork!"})
 
 yos = Listing.create!({title: "Yosemite", host_id: national_park_service.id, description: "Yosemite National Park lies in the heart of California. It flaunts 'hanging' valleys, many waterfalls, cirque lakes, polished domes, moraines and U-shaped valleys.",
                 address: "Yosemite National Park", long: -119.538329, lat: 37.865101, price_daily: 55, is_glamping: false, 
@@ -197,8 +198,20 @@ burney = Listing.create!({title: "MacArthur Burney Falls", host_id: national_par
 
 
 
-#Test
+#Booking Seeds
 booking1 = Booking.create!({guest_id: smokey.id, listing_id: yos.id, check_in: Date.new(2018, 8, 14), check_out: Date.new(2018, 8, 20), total_price: 600, total_guests: 10})
 booking2 = Booking.create!({guest_id: smokey.id, listing_id: redwoods.id, check_in: Date.new(2018, 8, 14), check_out: Date.new(2018, 8, 16), total_price: 200, total_guests: 10})
 booking3 = Booking.create!({guest_id: smokey.id, listing_id: zion.id, check_in: Date.new(2018, 8, 20), check_out: Date.new(2018, 8, 30), total_price: 200, total_guests: 10})
 booking3 = Booking.create!({guest_id: smokey.id, listing_id: big_sur.id, check_in: Date.new(2018, 8, 20), check_out: Date.new(2018, 8, 30), total_price: 200, total_guests: 5})
+
+#Review Seeds
+review1 = Review.create!({:user_id: smokey.id, listing_id: yos.id, review_body: "Nice site, off in the woods with beautiful views, fire pit with cooking grill over the top, plenty of wood for our fires. The owner recommended the most BEAUTIFUL hike with gorgeous waterfalls called Lewis Creek National Scenic Trail"})
+review1 = Review.create!({:user_id: rob.id, listing_id: yos.id, review_body: "Old Yosemite Basecamp is very much a gateway to the national park from which it gets its name. Whether you’re spending a night under the stars in preparation for a trip to the Valley or weaning yourself off of the great outdoors after a long weekend in Yosemite, there’s plenty to do/see/touch/smell around Oakhurst to get you (or keep you) in that outside state-of-mind."})
+review1 = Review.create!({:user_id: stella.id, listing_id: zion.id, review_body: "The location is great but the amenities are very basic with just a hose."})
+review1 = Review.create!({:user_id: ranger_rick.id, listing_id: zion.id, review_body: "We had a very nice stay and the place is basic but beautiful. There is a hose with clean fresh water and a place to make a fire."})
+
+
+
+    t.integer "user_id", null: false
+    t.integer "listing_id", null: false
+    t.text "review_body", null: false

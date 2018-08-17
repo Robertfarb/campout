@@ -5,14 +5,9 @@ import ListingsIndex from '../listings/listings_index';
 import FiltersContainer from '../filter/filter_container';
 
 
-
 class Discover extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  componentDidMount () {
-    // this.props.requestAllListings();
   }
 
   render() {

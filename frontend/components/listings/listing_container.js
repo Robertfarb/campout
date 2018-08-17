@@ -4,8 +4,6 @@ import Listing from './listing';
 import { requestAllListings, requestListing } from '../../actions/listings_actions';
 import {requestAllBookings} from '../../actions/bookings_actions';
 
-
-
 const mapStateToProps = (state, ownProps) => {
   const listingId = ownProps.match.params.listingId
   const listing = state.entities.listings[ownProps.match.params.listingId]
@@ -13,7 +11,6 @@ const mapStateToProps = (state, ownProps) => {
   const photos = state.entities.listings.listingPhotos
   const loading = state.ui.loading.detailLoading
 
-  
   return {
     listing,
     host,

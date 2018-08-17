@@ -2,14 +2,12 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import SearchBar from '../search/search_container';
 
-
 const Navbar = ({ openModal, currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="logged-out-nav nav">
       <div className="left">
         <Link to="/"><img className="nav-logo" src={window.images.logoPng} /></Link>
         <SearchBar />
-        {/* <input className="nav-search" placeholder="Search..." type="text" /> */}
       </div>
       <div className="right">
         <a className="github nav-link" href="https://github.com/robertfarb/"><i className="fa fa-github fa-2x"></i></a>

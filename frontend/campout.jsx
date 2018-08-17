@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {fetchReviews, createReview, updateReview, destroyReview} from './util/reviews_api_util';
+import {deleteReview, requestReviews, createReview, updateReview} from './actions/reviews_actions';
+import { create } from 'domain';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
   //testing//
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchReviews = fetchReviews;
+  window.deleteReview = deleteReview;
+  window.requestReviews = requestReviews;
   window.createReview = createReview;
   window.updateReview = updateReview;
-  window.destroyReview = destroyReview;
   //testing//
 });

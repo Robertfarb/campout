@@ -17,15 +17,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import DiscoverContainer from './discover/discover_container';
 import SearchContainer from './search/search_container'
 
-
-  const App = () => (
+const App = () => (
     <div>
       <NavBarContainer />
       <Modal />
       <Switch>
         <Route path="/listings/:listingId" component={ListingShow} />
         <Route exact path="/listings" component={ListingsIndex} />
-        <Route exact path="/test" component={SearchContainer} />
         <Route path="/discover" component={DiscoverContainer} />
         <ProtectedRoute path="/users/:userId" component={UserProfile}/>
         <Route exact path="/" component={MainPage} />

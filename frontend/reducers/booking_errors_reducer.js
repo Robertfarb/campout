@@ -3,7 +3,6 @@ import {
   RECEIVE_BOOKING_ERRORS, CLEAR_ERRORS
 } from '../actions/bookings_actions';
 
-
 export default (state = [], action) => {
   Object.freeze(state);
 
