@@ -46,12 +46,13 @@ class ListingsMap extends React.Component {
       if (status === "OK") {
         if (results[0]) {
           this.map.setZoom(7)
-          this.map.setCenter(results[0].geometry.location);
+          let center = results[0].geometry.location;
+          this.map.setCenter(center);
           const newBounds = this.map.getBounds();
           this.map.fitBounds(newBounds);
           this.props.receiveGeolocation("");
         } else {
-          window.alert("no results found!")
+          return null;
        }}
     });
   }
@@ -78,4 +79,4 @@ class ListingsMap extends React.Component {
   }
 }
 
-  export default withRouter(ListingsMap);
+export default withRouter(ListingsMap);

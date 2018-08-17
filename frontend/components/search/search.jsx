@@ -9,7 +9,6 @@ class Search extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    // this.getLatLong = this.getLatLong.bind(this);
   }
 
   update(field) {

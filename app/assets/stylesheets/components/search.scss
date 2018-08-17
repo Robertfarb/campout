@@ -1,3 +1,21 @@
 .nav-search {
   height: 55px;
 }
+
+.left-main {
+  .search-bar-container{
+    input {
+      height: 95px;
+      border-bottom-color: #ebebeb;
+      border-bottom-style: solid;
+      border-bottom-width: thin;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+      box-shadow: 0 1px 20px #d8d8d8;
+      -webkit-box-shadow: 0 1px 20px #d8d8d8;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-top: 30px;
+    }
+  }
+}

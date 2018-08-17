@@ -1,20 +1,17 @@
-import Footer from '../footer/footer'
-
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from '../search/search_container';
+
 
 
 class MainPage extends React.Component {
   constructor (props){
     super(props);
-    this.state = {
-      geoLocation: ''
-    }
 
     this.update = this.update.bind(this);
-    this.handleSearchInput = this.handleSearchInput.bind(this);
     this.handlePriceFilter = this.handlePriceFilter.bind(this);
     this.handleFilter = this.handleFilter.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   update(field) {
@@ -27,17 +24,17 @@ class MainPage extends React.Component {
     this.props.requestAllListings();
   }
 
-  handleSearchInput () {
-    //Write function to handle the search bar input and direct me to the /discover with the map centered
-    // on the desired city (geocoder??)
-  }
-
   handleFilter(filter) {
     return e => {
       this.props.clearFilters();
       this.props.receiveFilter(filter);
       this.props.history.push('/discover')
     }
+  }
+
+  handleSearch (e) {
+    this.props.receiveGeolocation(e.currentTarget.parentElement.children[0].children[0].children[0].value)
+    .then(this.props.history.push("/discover"))
   }
 
   handlePriceFilter(price) {
@@ -59,9 +56,9 @@ class MainPage extends React.Component {
             <div className="tagline">
               <p>Book unique camping experiences at 300,000 <br /> campsites, ranches, vineyards, public parks and more.</p>
             </div>
-            <div className="search-bar-container">
-              <input onKeyDown={(e) => {if (e.keyCode === 13) this.props.history.push("/discover")}} placeholder="Camping near me..." className="campsite-search" type="text"/>
-              <button onClick={() => this.props.history.push("/discover")}className="splash-search">Search</button>
+            <div className="search-bar">
+            <SearchBar className="campsite-search" />
+              <button onClick={(e) => this.handleSearch(e)} className="splash-search">Search</button>
             </div>
           </div>
           <div className="right-main">

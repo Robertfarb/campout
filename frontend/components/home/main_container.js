@@ -3,6 +3,7 @@ import MainPage from './main';
 import { requestAllListings } from '../../actions/listings_actions';
 import { clearFilters } from '../../actions/filter_actions';
 import { receiveFilter, receivePriceFilter } from '../../actions/filter_actions';
+import { receiveGeolocation } from '../../actions/location_filter_actions';
 
 const mapStateToProps = (state, errors) => ({
   errors: errors.session,
@@ -18,7 +19,8 @@ const mapDispatchToProps = dispatch => {
     requestAllListings: (bounds) => dispatch(requestAllListings(bounds)),
     clearFilters: () => dispatch(clearFilters),
     receiveFilter: (filter) => dispatch(receiveFilter(filter)),
-    receivePriceFilter: (price) => dispatch(receivePriceFilter(price))
+    receivePriceFilter: (price) => dispatch(receivePriceFilter(price)),
+    receiveGeolocation: (loc) => dispatch(receiveGeolocation)
   };
 };
 
