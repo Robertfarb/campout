@@ -190,7 +190,7 @@ burney = Listing.create!({title: "MacArthur Burney Falls", host_id: national_par
                 burney.photos.attach(io: File.open("app/assets/images/burney/burney3.jpg"), filename: "burney3.jpg")
                 burney.photos.attach(io: File.open("app/assets/images/burney/burney4.jpg"), filename: "burney4.jpg")
                 
-                # burney.photos.attach(io: File.open("./app/assets/images/burney/burney1.jpg"), filename: "burney1.jpg")
+                burney.photos.attach(io: File.open("./app/assets/images/burney/burney1.jpg"), filename: "burney1.jpg")
                 # burney.photos.attach(io: File.open("./app/assets/images/burney/burney2.jpg"), filename: "burney2.jpg")
                 # burney.photos.attach(io: File.open("./app/assets/images/burney/burney3.jpg"), filename: "burney3.jpg")
                 # burney.photos.attach(io: File.open("./app/assets/images/burney/burney4.jpg"), filename: "burney4.jpg")

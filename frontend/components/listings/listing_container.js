@@ -10,12 +10,14 @@ const mapStateToProps = (state, ownProps) => {
   const host = state.entities.listings.host
   const photos = state.entities.listings.listingPhotos
   const loading = state.ui.loading.detailLoading
+  const currUser = state.entities.users[state.session.id]
 
   return {
     listing,
     host,
     photos,
-    listingId
+    listingId,
+    currUser
   }
 };
 

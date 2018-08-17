@@ -21,7 +21,6 @@ export const updateFilteredListings = (filteredListings) => {
   dispatch(receiveAllListings(filteredListings));
 }
 
-
 export const receiveAllListings = (listings) => ({
   type: RECEIVE_ALL_LISTINGS,
   listings

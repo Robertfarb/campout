@@ -22,7 +22,6 @@ class Listing extends React.Component {
   componentWillUnmount () {
     this.props.requestAllBookings();
   }
-  
 
   render() {
     if (this.props.listing === undefined) {
@@ -109,12 +108,12 @@ class Listing extends React.Component {
                 </div>
               </div>
             </div>
-
             <div className="listing-right">
               <BookingContainer />
             </div>
           </div>
         </div>
+
     );
   }
 }

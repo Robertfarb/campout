@@ -5,7 +5,6 @@ import { updateFilter } from '../../actions/location_filter_actions';
 import { clearFilters, updateFilterValue } from '../../actions/filter_actions';
 import { receiveGeolocation } from '../../actions/location_filter_actions';
 
-
 const mapStateToProps = (state, errors) => {
   return {
   listings: state.entities.listings,

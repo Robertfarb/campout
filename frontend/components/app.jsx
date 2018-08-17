@@ -15,7 +15,7 @@ import ListingsIndex from './listings/listings_index_container';
 import UserProfile from './user/user_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import DiscoverContainer from './discover/discover_container';
-import SearchContainer from './search/search_container'
+import SearchContainer from './search/search_container';
 
 const App = () => (
     <div>

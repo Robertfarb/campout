@@ -17,15 +17,24 @@ class MarkerManager {
   }
 
   createMarkerFromListing (listing) {
+    const listingInfoWindow = new google.maps.InfoWindow({
+      content: '<div class="map-info">' + 
+      '<h2>' + listing.title + '</h2>' +
+      '<div>' + listing.description +'</div>'
+      +'</div>'
+    })
     const position = new google.maps.LatLng(listing.lat, listing.long)
     const marker = new google.maps.Marker({
       position,
       map: this.map,
       listingId: listing.id,
-      listingTitle: listing.title
+      listingTitle: listing.title,
+      infoWindow: listingInfoWindow
     });
 
     marker.addListener('click', () => this.handleClick(listing));
+    marker.addListener('mouseover', () => marker.infoWindow.open(this.map, marker))
+    marker.addListener('mouseout', () => marker.infoWindow.close(this.map, marker))
     this.markers[marker.listingId] = marker;
   }
 

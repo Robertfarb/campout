@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Review from './reviews_index'
 
 const mapStateToProps = (state) => ({
   currentUser: users[state.session.id],
@@ -14,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
   deleteReview: (review) => dispatch(deleteReview(review))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default connect(mapStateToProps, mapDispatchToProps)(Review);
