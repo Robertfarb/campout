@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MarkerManager from '../../util/marker_manager';
 import { withRouter } from 'react-router-dom';
+import { receiveGeolocation } from '../../actions/location_filter_actions';
 
 
 class ListingsMap extends React.Component {
@@ -12,10 +13,6 @@ class ListingsMap extends React.Component {
     this.registerListeners = this.registerListeners.bind(this);
     this.centerMapOnSearch = this.centerMapOnSearch.bind(this);
     this.geoCoder = new google.maps.Geocoder();
-  }
-
-  componentWillReceiveProps () {
-    this.centerMapOnSearch();
   }
 
   componentDidMount () {
@@ -43,25 +40,26 @@ class ListingsMap extends React.Component {
   }
 
   centerMapOnSearch () {
-    let geocoder = new google.maps.Geocoder();
-    let resultObj = { lat: 0, lng: 0 }
-    geocoder.geocode({ 'address': this.props.geoLocation['address']}, function (results, status) {
+    const geolocation = this.props.geoLocation
+    
+    this.geoCoder.geocode({ 'address': geolocation}, (results, status) => {
       if (status === "OK") {
-        const lat = parseFloat(results[0].geometry.location.lat())
-        const lng = parseFloat(results[0].geometry.location.lng())
-        resultObj["lat"] = lat
-        resultObj["lng"] = lng
-        this.map.setCenter(new google.maps.LatLng(lat, lng));
-        this.map.updateFilter("location", bounds)
-      } else {
-        return "no luck"
-      }
+        if (results[0]) {
+          this.map.setZoom(7)
+          this.map.setCenter(results[0].geometry.location);
+          const newBounds = this.map.getBounds();
+          this.map.fitBounds(newBounds);
+          this.props.receiveGeolocation("");
+        } else {
+          window.alert("no results found!")
+       }}
     });
   }
 
   componentDidUpdate () {
     const listingsArr = Object.values(this.props.listings)
     this.MarkerManager.updateMarkers(listingsArr)
+    if (this.props.geoLocation.length > 0) this.centerMapOnSearch();
   }
 
 

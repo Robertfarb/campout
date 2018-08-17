@@ -1,7 +1,7 @@
 import { RECEIVE_GEOLOCATION } from '../actions/location_filter_actions';
 import merge from 'lodash/merge';
 
-const geolocationReducer = (state = {address: 'San Francisco'}, action) => {
+const geolocationReducer = (state = {address: ''}, action) => {
   Object.freeze(state);
   const newState = {};
 

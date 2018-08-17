@@ -34,6 +34,7 @@ class Discover extends React.Component {
           listings={this.props.listings}
           updateFilter={this.props.updateFilter}
           geoLocation={this.props.geoLocation}
+          receiveGeolocation={this.props.receiveGeolocation}
         />
       </div>
     )
