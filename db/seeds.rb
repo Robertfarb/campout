@@ -186,7 +186,6 @@ burney = Listing.create!({title: "MacArthur Burney Falls", host_id: national_par
                 # burney.photos.attach(io: File.open("./app/assets/images/burney/burney4.jpg"), filename: "burney4.jpg")
 
 
-
 mountain = Listing.create!({title: "San Diego mountainside tent", host_id: ranger_rick.id, description: "A single camp spot on the top of a mountain surrounded by 160 acres of no one else! 4WD/AWD road to camp spot. Plenty of shade at spot with picnic area that is covered. Drinking water, sink and outdoor cold water shower. Bouldering (climbing), fire pit (seasonal), covered deck, hiking and VIEWS! ", 
             address: "Whiteside Mountain Resort", long: -116.750972, lat: 32.861333, price_daily: 75, is_glamping: true, 
             pet_friendly: false, is_toilets: true, max_capacity: 10, has_showers: true, checkin_after: "9 AM", 
@@ -204,7 +203,7 @@ booking1 = Booking.create!({guest_id: smokey.id, listing_id: yos.id, check_in: D
 booking2 = Booking.create!({guest_id: smokey.id, listing_id: redwoods.id, check_in: Date.new(2018, 8, 14), check_out: Date.new(2018, 8, 16), total_price: 200, total_guests: 10})
 booking3 = Booking.create!({guest_id: smokey.id, listing_id: zion.id, check_in: Date.new(2018, 8, 20), check_out: Date.new(2018, 8, 30), total_price: 200, total_guests: 10})
 booking4 = Booking.create!({guest_id: smokey.id, listing_id: big_sur.id, check_in: Date.new(2018, 11, 20), check_out: Date.new(2018, 8, 30), total_price: 200, total_guests: 5})
-booking5 = Booking.create!({guest_id: smokey.id, listing_id: burney.id, check_in: Date.new(2019, 1, 20), check_out: Date.new(2019, 2, 30), total_price: 200, total_guests: 5})
+booking5 = Booking.create!({guest_id: smokey.id, listing_id: burney.id, check_in: Date.new(2018, 1, 20), check_out: Date.new(2019, 2, 20), total_price: 200, total_guests: 5})
 booking6 = Booking.create!({guest_id: smokey.id, listing_id: big_sur.id, check_in: Date.new(2019, 1, 20), check_out: Date.new(2019, 8, 30), total_price: 200, total_guests: 5})
 
 #Review Seeds
