@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 User.destroy_all
 Listing.destroy_all
 Activity.destroy_all
@@ -26,6 +18,8 @@ yos = Listing.create!({title: "Yosemite", host_id: national_park_service.id, des
                 yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_3.jpg"), filename: "yosemite-3.jpg")
                 yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_4.jpg"), filename: "yosemite-4.jpg")
                 yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_5.jpg"), filename: "yosemite-5.jpg")
+
+                # Must use below filepath to seed locally
 
                 # yos.photos.attach(io: File.open("./app/assets/images/yosemite/yosemite_1.jpg"), filename: "yosemite-1.jpg")
                 # yos.photos.attach(io: File.open("./app/assets/images/yosemite/yosemite_2.jpg"), filename: "yosemite-2.jpg")
@@ -106,7 +100,6 @@ crater_lake = Listing.create!({title: "Crater Lake", host_id: national_park_serv
                 # crater_lake.photos.attach(io: File.open("./app/assets/images/crater_lake/crater_lake5.jpg"), filename: "crater_lake5.jpg")
 
 
-
 grand_canyon = Listing.create!({title: "Grand Canyon", host_id: national_park_service.id, description: "Come explore the vast canyon carved out by the Colorado River. The Grand Canyon is the most spectacular gorge in the world. Located in the state of Arizona, it cuts across the Grand Canyon National Park.", 
                 address: "Grand Canyon National Park", long: -112.112999, lat: 36.106964, price_daily: 50, is_glamping: false, 
                 pet_friendly: true, is_toilets: true, max_capacity: 15, has_showers: false, checkin_after: "11 AM", 
@@ -163,8 +156,6 @@ aspen = Listing.create!({title: "Maroon Bells", host_id: rob.id, description: "S
 
 
 
-
-
 jackson = Listing.create!({title: "Crystal Creek Campground", host_id: smokey.id, description: "Crystal Creek Campground is located along the Gros Ventre River and Crystal Creek, both designated Wild and Scenic Rivers for the spectacular surrounding scenery and excellent fishing opportunities. This is a small and peaceful campground that has several nearby options for hiking, biking and OHV riding.", 
                 address: "Crystal Creek Campground", long: -110.431422, lat: 43.610451, price_daily: 75, is_glamping: false, 
                 pet_friendly: true, is_toilets: true, max_capacity: 8, has_showers: true, checkin_after: "9 AM", 
@@ -176,8 +167,7 @@ jackson = Listing.create!({title: "Crystal Creek Campground", host_id: smokey.id
 
                 # jackson.photos.attach(io: File.open("./app/assets/images/jackson/jackson1.jpg"), filename: "jackson1.jpg")
                 # jackson.photos.attach(io: File.open("./app/assets/images/jackson/jackson2.jpg"), filename: "jackson2.jpg")
-                # jackson.photos.attach(io: File.open("./app/assets/images/jackson/jackson3.jpg"), filename: "jackson3.jpg")
-
+                # jackson.photos.attach(io: File.open("./app/assets/images/jackson/jackson3.jpg"), filename: "jackson3.jpg")=
                
 
 burney = Listing.create!({title: "MacArthur Burney Falls", host_id: national_park_service.id, description: "McArthur–Burney Falls Memorial State Park is the second oldest state park in the California State Parks system, located approximately 6 miles (9.7 km) north of Burney, California. The park offers camping, fishing, watersports, hiking and horseback riding facilities", 
@@ -190,11 +180,22 @@ burney = Listing.create!({title: "MacArthur Burney Falls", host_id: national_par
                 burney.photos.attach(io: File.open("app/assets/images/burney/burney3.jpg"), filename: "burney3.jpg")
                 burney.photos.attach(io: File.open("app/assets/images/burney/burney4.jpg"), filename: "burney4.jpg")
                 
-                burney.photos.attach(io: File.open("./app/assets/images/burney/burney1.jpg"), filename: "burney1.jpg")
+                # burney.photos.attach(io: File.open("./app/assets/images/burney/burney1.jpg"), filename: "burney1.jpg")
                 # burney.photos.attach(io: File.open("./app/assets/images/burney/burney2.jpg"), filename: "burney2.jpg")
                 # burney.photos.attach(io: File.open("./app/assets/images/burney/burney3.jpg"), filename: "burney3.jpg")
                 # burney.photos.attach(io: File.open("./app/assets/images/burney/burney4.jpg"), filename: "burney4.jpg")
 
+
+
+mountain = Listing.create!({title: "San Diego mountainside tent", host_id: ranger_rick.id, description: "A single camp spot on the top of a mountain surrounded by 160 acres of no one else! 4WD/AWD road to camp spot. Plenty of shade at spot with picnic area that is covered. Drinking water, sink and outdoor cold water shower. Bouldering (climbing), fire pit (seasonal), covered deck, hiking and VIEWS! ", 
+            address: "Whiteside Mountain Resort", long: -116.750972, lat: 32.861333, price_daily: 75, is_glamping: true, 
+            pet_friendly: false, is_toilets: true, max_capacity: 10, has_showers: true, checkin_after: "9 AM", 
+            checkout_before: "2 PM"})
+
+                mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain1.jpg"), filename: "mountain1.jpg")
+                mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain2.jpg"), filename: "mountain2.jpg")
+                mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain3.jpg"), filename: "mountain3.jpg")
+                mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain4.jpg"), filename: "mountain4.jpg")
 
 
 
@@ -202,14 +203,11 @@ burney = Listing.create!({title: "MacArthur Burney Falls", host_id: national_par
 booking1 = Booking.create!({guest_id: smokey.id, listing_id: yos.id, check_in: Date.new(2018, 8, 14), check_out: Date.new(2018, 8, 20), total_price: 600, total_guests: 10})
 booking2 = Booking.create!({guest_id: smokey.id, listing_id: redwoods.id, check_in: Date.new(2018, 8, 14), check_out: Date.new(2018, 8, 16), total_price: 200, total_guests: 10})
 booking3 = Booking.create!({guest_id: smokey.id, listing_id: zion.id, check_in: Date.new(2018, 8, 20), check_out: Date.new(2018, 8, 30), total_price: 200, total_guests: 10})
-booking3 = Booking.create!({guest_id: smokey.id, listing_id: big_sur.id, check_in: Date.new(2018, 8, 20), check_out: Date.new(2018, 8, 30), total_price: 200, total_guests: 5})
+booking4 = Booking.create!({guest_id: smokey.id, listing_id: big_sur.id, check_in: Date.new(2018, 11, 20), check_out: Date.new(2018, 8, 30), total_price: 200, total_guests: 5})
+booking5 = Booking.create!({guest_id: smokey.id, listing_id: burney.id, check_in: Date.new(2019, 1, 20), check_out: Date.new(2019, 2, 30), total_price: 200, total_guests: 5})
+booking6 = Booking.create!({guest_id: smokey.id, listing_id: big_sur.id, check_in: Date.new(2019, 1, 20), check_out: Date.new(2019, 8, 30), total_price: 200, total_guests: 5})
 
 #Review Seeds
-review1 = Review.create!({:user_id: smokey.id, listing_id: yos.id, review_body: "Nice site, off in the woods with beautiful views, fire pit with cooking grill over the top, plenty of wood for our fires. The owner recommended the most BEAUTIFUL hike with gorgeous waterfalls called Lewis Creek National Scenic Trail"})
-review1 = Review.create!({:user_id: rob.id, listing_id: yos.id, review_body: "Old Yosemite Basecamp is very much a gateway to the national park from which it gets its name. Whether you’re spending a night under the stars in preparation for a trip to the Valley or weaning yourself off of the great outdoors after a long weekend in Yosemite, there’s plenty to do/see/touch/smell around Oakhurst to get you (or keep you) in that outside state-of-mind."})
-review1 = Review.create!({:user_id: stella.id, listing_id: zion.id, review_body: "The location is great but the amenities are very basic with just a hose."})
-review1 = Review.create!({:user_id: ranger_rick.id, listing_id: zion.id, review_body: "We had a very nice stay and the place is basic but beautiful. There is a hose with clean fresh water and a place to make a fire."})
-
 
 
     t.integer "user_id", null: false

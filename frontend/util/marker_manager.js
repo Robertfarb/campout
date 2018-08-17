@@ -6,7 +6,6 @@ class MarkerManager {
   }
   
   updateMarkers(listings) {
-    debugger;
     const listingsObj = {};
     listings.forEach(listing => listingsObj[listing.id] = listing);
 
@@ -21,7 +20,7 @@ class MarkerManager {
     const listingInfoWindow = new google.maps.InfoWindow({
       content: '<div class="map-info">' + 
       '<h2>' + listing.title + '</h2>' +
-      '<div>' + listing.description +'</div>'
+      '<div>$' + listing.price_daily +' per night</div>'
       +'</div>'
     })
 

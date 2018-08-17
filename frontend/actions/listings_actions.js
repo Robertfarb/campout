@@ -17,7 +17,7 @@ export const requestListing = (id) => dispatch => {
   .then(listing => dispatch(receiveListing(listing)))
 }
 
-export const updateFilteredListings = (filteredListings) => {
+export const updateFilteredListings = (filteredListings) => dispatch => {
   dispatch(receiveAllListings(filteredListings));
 }
 
