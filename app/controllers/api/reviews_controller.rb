@@ -31,7 +31,7 @@ class Api::ReviewsController < ApplicationController
     if @review.update(review_params)
       listing = @review.listing
 
-      render :index
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -39,6 +39,6 @@ class Api::ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:user_id, :listing_id, :review_body)
+    params.require(:review).permit(:id, :user_id, :listing_id, :review_body)
   end
 end

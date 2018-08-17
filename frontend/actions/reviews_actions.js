@@ -19,7 +19,7 @@ export const createReview = (review) => dispatch => (
   .then(review => dispatch(receiveReview(review)))
 )
 
-export const updateReview = (review) => (
+export const updateReview = review => dispatch => (
   APIUtil.updateReview(review)
   .then(review => dispatch(receiveReview(review)))
 )
