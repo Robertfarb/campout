@@ -60,7 +60,7 @@ class MainPage extends React.Component {
               <p>Book unique camping experiences at 300,000 <br /> campsites, ranches, vineyards, public parks and more.</p>
             </div>
             <div className="search-bar-container">
-              <input onKeyDown={(e) => {if (e.target.keyCode === 13) this.props.history.push("/discover")}} placeholder="Camping near me..." className="campsite-search" type="text"/>
+              <input onKeyDown={(e) => {if (e.keyCode === 13) this.props.history.push("/discover")}} placeholder="Camping near me..." className="campsite-search" type="text"/>
               <button onClick={() => this.props.history.push("/discover")}className="splash-search">Search</button>
             </div>
           </div>
