@@ -13,7 +13,7 @@ Activity.destroy_all
 rob = User.create({username: "robfarb", first_name: "Robert", last_name: "Farb", zip_code: "94103", password: "12345678"})
 smokey = User.create({username: "smokeythebear", first_name: "Smokey", last_name: "Bear", zip_code: "94103", password: "12345678"})
 ranger_rick = User.create({username: "parkranger10", first_name: "Ranger", last_name: "Rick", zip_code: "92234", password: "ilovenationalparks"})
-national_park_service = User.create({username: "nationalparkservice", first_name: "National", slast_name: "Park Service", zip_code: "92234", password: "natparkservice10"})
+national_park_service = User.create({username: "nationalparkservice", first_name: "National", last_name: "Park Service", zip_code: "92234", password: "natparkservice10"})
 
 yos = Listing.create!({title: "Yosemite", host_id: national_park_service.id, description: "Yosemite National Park lies in the heart of California. It flaunts 'hanging' valleys, many waterfalls, cirque lakes, polished domes, moraines and U-shaped valleys.",
                 address: "Yosemite National Park", long: -119.538329, lat: 37.865101, price_daily: 55, is_glamping: false, 
