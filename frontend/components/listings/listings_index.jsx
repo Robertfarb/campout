@@ -22,7 +22,6 @@ class ListingIndex extends React.Component {
   }
 
   applyListingFilters () {
-<<<<<<< HEAD
     let filters = this.props.filters;
     let filteredListings = Object.values(this.props.listings);
 
@@ -36,9 +35,6 @@ class ListingIndex extends React.Component {
         if (listing.is_glamping === false) return listing
       });
     }
-=======
-    const { filters, listings } = this.props;
->>>>>>> master
     
     if (filters['petFriendly'] === true) {
     filteredListings = filteredListings.filter(listing => {
@@ -68,9 +64,6 @@ class ListingIndex extends React.Component {
         if (listing.max_capacity > filters['maxCapacity']) return listing
       });
     }
-    
-    // const filteredState = Object.assign({}, filteredListings);
-    // this.props.updateFilteredListings(filteredState)
     return filteredListings;
   }
 
