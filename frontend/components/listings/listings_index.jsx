@@ -22,6 +22,7 @@ class ListingIndex extends React.Component {
   }
 
   applyListingFilters () {
+<<<<<<< HEAD
     let filters = this.props.filters;
     let filteredListings = Object.values(this.props.listings);
 
@@ -35,6 +36,9 @@ class ListingIndex extends React.Component {
         if (listing.is_glamping === false) return listing
       });
     }
+=======
+    const { filters, listings } = this.props;
+>>>>>>> master
     
     if (filters['petFriendly'] === true) {
     filteredListings = filteredListings.filter(listing => {
