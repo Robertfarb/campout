@@ -205,10 +205,3 @@ booking3 = Booking.create!({guest_id: smokey.id, listing_id: zion.id, check_in: 
 booking4 = Booking.create!({guest_id: smokey.id, listing_id: big_sur.id, check_in: Date.new(2018, 11, 20), check_out: Date.new(2018, 8, 30), total_price: 200, total_guests: 5})
 booking5 = Booking.create!({guest_id: smokey.id, listing_id: burney.id, check_in: Date.new(2018, 1, 20), check_out: Date.new(2019, 2, 20), total_price: 200, total_guests: 5})
 booking6 = Booking.create!({guest_id: smokey.id, listing_id: big_sur.id, check_in: Date.new(2019, 1, 20), check_out: Date.new(2019, 8, 30), total_price: 200, total_guests: 5})
-
-#Review Seeds
-
-
-    t.integer "user_id", null: false
-    t.integer "listing_id", null: false
-    t.text "review_body", null: false
