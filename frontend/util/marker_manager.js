@@ -6,6 +6,7 @@ class MarkerManager {
   }
   
   updateMarkers(listings) {
+    debugger;
     const listingsObj = {};
     listings.forEach(listing => listingsObj[listing.id] = listing);
 
@@ -23,6 +24,7 @@ class MarkerManager {
       '<div>' + listing.description +'</div>'
       +'</div>'
     })
+
     const position = new google.maps.LatLng(listing.lat, listing.long)
     const marker = new google.maps.Marker({
       position,

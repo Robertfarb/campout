@@ -63,6 +63,8 @@ class ListingIndex extends React.Component {
         if (listing.max_capacity > filters['maxCapacity']) return listing
       });
     }
+    
+
     return filteredListings;
   }
 
