@@ -8,7 +8,9 @@ import { clearFilters, updateFilterValue } from '../../actions/filter_actions';
 const mapStateToProps = (state, errors) => {
   return {
   listings: state.entities.listings,
-  filters: state.ui.filters}
+  filters: state.ui.filters,
+  geoLocation: state.ui.geoLocation,
+  }
 };
 
 const mapDispatchToProps = dispatch => ({

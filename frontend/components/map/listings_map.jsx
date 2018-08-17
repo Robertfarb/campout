@@ -10,6 +10,8 @@ class ListingsMap extends React.Component {
     
     this.handleMarkerClick = this.handleMarkerClick.bind(this);
     this.registerListeners = this.registerListeners.bind(this);
+    this.centerMapOnSearch = this.centerMapOnSearch.bind(this);
+    this.geoCoder = new google.maps.Geocoder();
   }
 
   componentDidMount () {
@@ -36,9 +38,30 @@ class ListingsMap extends React.Component {
     });
   }
 
+  centerMapOnSearch () {
+    let geocoder = new google.maps.Geocoder();
+    let resultObj = { lat: 0, lng: 0 }
+    // debugger;
+    geocoder.geocode({ 'address': this.props.geoLocation['address']}, function (results, status) {
+      if (status === "OK") {
+        const lat = parseFloat(results[0].geometry.location.lat())
+        const lng = parseFloat(results[0].geometry.location.lng())
+        resultObj["lat"] = lat
+        resultObj["lng"] = lng
+        // debugger;
+        
+        let center = new google.maps.LatLng(lat, lng)
+        this.panTo(center);
+      } else {
+        return "no luck"
+      }
+    });
+  }
+
   componentDidUpdate () {
     const listingsArr = Object.values(this.props.listings)
     this.MarkerManager.updateMarkers(listingsArr)
+    this.centerMapOnSearch()
   }
 
 

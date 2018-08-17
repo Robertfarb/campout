@@ -1,0 +1,14 @@
+.search-bar-container {
+  height: 100vh;
+  padding: 10%;
+
+  form {
+    height: 100px;
+    width: 100px;
+  }
+
+  input {
+    background-color: red;
+    border: 1px solid black;
+  }
+}

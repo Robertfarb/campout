@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
 const Navbar = ({ openModal, currentUser, logout }) => {
@@ -22,7 +22,7 @@ const Navbar = ({ openModal, currentUser, logout }) => {
     <hgroup className="logged-in-nav nav">
     <div className="left">
       <Link to="/"><img className="nav-logo" src={window.images.logoPng} /></Link>
-      <input className="nav-search"  type="text" placeholder="Search..."/>
+        <input className="nav-search"  type="text" placeholder="Search..."/>
     </div>
       <div className="right">
         <a className="github nav-link" href="https://github.com/robertfarb/"><i className="fa fa-github fa-2x"></i></a>
@@ -37,4 +37,4 @@ const Navbar = ({ openModal, currentUser, logout }) => {
   return currentUser ? personalGreeting() : sessionLinks();
 }
 
-export default Navbar;
+export default withRouter(Navbar);

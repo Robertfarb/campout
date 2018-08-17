@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import { fetchSearchListings, fetchFilterListings} from './util/listings_api_util';
 import {requestAllBookings,  deleteBooking, createBooking, receiveAllBookings} from './actions/bookings_actions';
 import { updateFilterValue } from './actions/filter_actions';
+import {geoSearch} from './util/search_manager'; 
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchSearchListings = fetchSearchListings;
   window.fetchFilterListings = fetchFilterListings;
   window.updateFilterValue = updateFilterValue;
+  window.geoSearch = geoSearch;
   // window.requestAllListings = requestAllListings;
   // window.requestListing = requestListing;
   //testing//
