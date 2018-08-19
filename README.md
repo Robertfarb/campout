@@ -74,10 +74,22 @@ In the map component I use Google's geocoder service to translate the user's inp
   }
 ```
 
+###  Bookings
+
+![Bookings Screenshot](app/assets/images/booking_login.png)
+
+Logged in users can book a campsite using a dropdown calendar, which will then add the booking to th user's profile page on which they can view and cancel their bookings.
+
+I accomplished this by conditionally rendering a booking form or a login button dependending on if there is a current user in the session slice of state.
+
+
+
+![Bookings Screenshot](app/assets/images/bookings.png)
+
 
 
 ## Technologies
-Campout was built using Rails and PostgreSQL for the backend, and React.js / Redux architecture on the frontend. Rails was chosen for the backend becuase of it's powerful features out of the box, and react/redux on the frontend for it's scalability.
+Campout was built using Rails and PostgreSQL for the backend, and React.js / Redux architecture on the frontend. Rails was chosen for the backend becuase of it's powerful features out of the box, and react/redux on the frontend to get more experience working with a framework that is intednded for high scalability.
 
 ## Design Docs
 * [MVP List](https://github.com/Robertfarb/campout/wiki/MVP-List)
