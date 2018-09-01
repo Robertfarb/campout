@@ -102,3 +102,4 @@ Campout was built using Rails and PostgreSQL for the backend, and React.js / Red
 ## Ideas for future features
 - User's will be able to add reviews to campsites that they have stayed at, and update or delete the review if they are the author.
 - Users will be able to create a Listing and upload their own images of the campsite
+- Users can View campsites that 'friends' have visited
