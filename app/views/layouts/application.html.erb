@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Campout</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <%= csrf_meta_tags %>
-    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type =>  'image/png' %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCYaF2_WGBx9QM9CGqWi9mcRqiaJuOt6qM" %>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124332327-1"></script>
     <script>
@@ -17,6 +10,14 @@
 
       gtag('config', 'UA-124332327-1');
     </script>
+    <title>Campout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type =>  'image/png' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCYaF2_WGBx9QM9CGqWi9mcRqiaJuOt6qM" %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
   </head>
 
   <body>
