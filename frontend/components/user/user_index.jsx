@@ -16,7 +16,6 @@ class UserIndex extends React.Component {
   handleDelete (id) {
     this.props.deleteBooking(id)
     .then(() => this.props.requestAllBookings());
-    console.log("test")
   }
 
   render() {
