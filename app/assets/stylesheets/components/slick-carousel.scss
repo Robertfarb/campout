@@ -9,7 +9,7 @@
 .listing-image-carousel {
   height: 50vh;
   top: 50px;
-  width: 95%;
+  width: 92%;
   position: relative;
   margin: 0 auto;
   margin-top: 24px;
@@ -40,4 +40,56 @@
 
 .slick-slide {
   margin: 5px;
+}
+
+
+.slick-next, .slick-prev {
+    font-size: 0;
+    line-height: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    -webkit-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: 0;
+    background: 0 0;
+    position: absolute;
+    display: block;
+    padding: 0;
+}
+
+.slick-prev::before {
+  content: '\25c4';
+  padding-right: 0.5em;
+}
+
+.slick-next::before {
+  content: '\25ba';
+  padding-left: 0.5em;
+}
+
+.slick-next:before, .slick-prev:before {
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: #cccc;
+    font-family: slick;
+    -webkit-font-smoothing: antialiased;
+}
+
+.slick-arrow {
+    background-color: grey;
+    color: black;
+}
+
+.slick-next {
+  right: -25px;
+} 
+
+.slick-prev {
+  left: -25px;
 }
