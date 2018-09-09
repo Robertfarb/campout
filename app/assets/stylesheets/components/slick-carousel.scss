@@ -64,32 +64,32 @@
 
 .slick-prev::before {
   content: '\25c4';
-  padding-right: 0.5em;
 }
 
 .slick-next::before {
   content: '\25ba';
-  padding-left: 0.5em;
 }
 
 .slick-next:before, .slick-prev:before {
-    font-size: 20px;
-    line-height: 1;
-    opacity: .75;
-    color: #cccc;
-    font-family: slick;
-    -webkit-font-smoothing: antialiased;
+  font-size: 35px;
+  line-height: 1;
+  opacity: .75;
+  color: $font-medium-gray;
+  font-family: slick;
+  -webkit-font-smoothing: antialiased;
 }
 
 .slick-arrow {
-    background-color: grey;
-    color: black;
+  color: black;
 }
 
 .slick-next {
-  right: -25px;
+  right: -35px;
 } 
 
+.slick-prev:before {
+  font-size: 38px;
+}
 .slick-prev {
-  left: -25px;
+  left: -45px;
 }
