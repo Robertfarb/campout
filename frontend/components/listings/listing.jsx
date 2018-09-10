@@ -30,7 +30,10 @@ class Listing extends React.Component {
       return (<div className="loading-container"><div className="loader">Loading...</div></div>)
     } else if (!this.props.listing.host) {
       return (<div className="loading-container"><div className="loader">Loading...</div></div>)
+    } else if (!this.props.listing.listingPhotos) {
+      return (<div className="loading-container"><div className="loader">Loading...</div></div>)
     }
+    // debugger;
 
     let glamping;
     let pet_friendly;
@@ -84,7 +87,7 @@ class Listing extends React.Component {
                   <ul className="activities-list">
                     <li><img className="host-avatar" src={window.images.hiking}></img>Hiking</li>
                     <li><img className="host-avatar" src={window.images.biking}></img>Biking</li>
-                    <li><img className="host-avatar" src={window.images.swimming}></img>Climbing</li>
+                    <li><img className="host-avatar" src={window.images.swimming}></img>Swimming</li>
                     <li><img className="host-avatar" src={window.images.bird}></img>Wildlife watching</li>
                   </ul>
                 </main>

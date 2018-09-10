@@ -10,7 +10,7 @@ class ListingImageCarousel extends React.Component {
   render() {
     var settings = {
       infinite: true,
-      // arrows: true,
+
       className: 'image-slider-css',
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -18,7 +18,7 @@ class ListingImageCarousel extends React.Component {
       horizontal: true,
       
     };
-
+    
     const { photos } = this.props;
     return (
       <div className="listing-image-carousel">
