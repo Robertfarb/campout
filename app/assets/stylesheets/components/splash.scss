@@ -178,6 +178,7 @@
   }
 }
 
+
 @media (max-width: 510px) {
   .left-main {
     h2 {
@@ -195,5 +196,13 @@
   .splash-listing-img {
     width: 28vw;
     height: 28vw;
+  }
+  .signup-button, .login-button, .logout-button {
+    font-size: 12px;
+    border: none;
+  }
+  .signup-button:hover, .login-button:hover, .logout-button:hover {
+    font-size: 12px;
+    border: none;
   }
 }
