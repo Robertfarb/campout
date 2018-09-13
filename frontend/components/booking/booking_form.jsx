@@ -19,12 +19,10 @@ class BookingForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllBookings();
   }
 
   componentWillUnmount() {
     this.setState({check_in: '', check_out: ''})
-    this.props.requestAllBookings();
   }
 
   totalPrice () {

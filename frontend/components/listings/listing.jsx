@@ -19,9 +19,6 @@ class Listing extends React.Component {
     this.props.requestListing(this.props.listingId)
   }
 
-  componentWillUnmount () {
-    this.props.requestAllBookings();
-  }
 
   render() {
     if (this.props.listing === undefined) {
