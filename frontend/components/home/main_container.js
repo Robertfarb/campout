@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => {
     clearFilters: () => dispatch(clearFilters),
     receiveFilter: (filter) => dispatch(receiveFilter(filter)),
     receivePriceFilter: (price) => dispatch(receivePriceFilter(price)),
-    receiveGeolocation: (loc) => dispatch(receiveGeolocation)
+    receiveGeolocation: (loc) => dispatch(receiveGeolocation(loc))
   };
 };
 

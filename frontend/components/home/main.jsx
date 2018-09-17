@@ -32,7 +32,8 @@ class MainPage extends React.Component {
 
   handleSearch (e) {
     this.props.receiveGeolocation(e.currentTarget.parentElement.children[0].children[0].children[0].value)
-    .then(this.props.history.push("/discover"))
+    this.props.history.push("/discover")
+    // .then(this.props.history.push("/discover"))
   }
 
   handlePriceFilter(price) {

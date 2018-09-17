@@ -30,7 +30,6 @@ class Listing extends React.Component {
     } else if (!this.props.listing.listingPhotos) {
       return (<div className="loading-container"><div className="loader">Loading...</div></div>)
     }
-    // debugger;
 
     let glamping;
     let pet_friendly;
