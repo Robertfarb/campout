@@ -24,8 +24,9 @@ class Discover extends React.Component {
           clearFilters={this.props.clearFilters}
           filters={this.props.filters}
           updateFilteredListings={this.props.updateFilteredListings}
+          receiveAllListings ={this.props.receiveAllListings}
         />
-        <ListingsMap 
+        <ListingsMap
           listings={this.props.listings}
           updateFilter={this.props.updateFilter}
           geoLocation={this.props.geoLocation}

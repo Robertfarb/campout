@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { receiveGeolocation } from '../../actions/location_filter_actions';
 
 class ListingsMap extends React.Component {
-  constructor (props) {
+  constructor (props) { 
     super(props);
     
     this.handleMarkerClick = this.handleMarkerClick.bind(this);

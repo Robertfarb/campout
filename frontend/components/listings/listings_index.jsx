@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import ListingIndexItem from './listing_index_item'
+import ListingIndexItem from './listing_index_item';
 
 class ListingIndex extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class ListingIndex extends React.Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   componentWillUnmount () {
@@ -64,7 +64,9 @@ class ListingIndex extends React.Component {
   }
 
   render() {
-    const filtListings = this.applyListingFilters(this.props.listings)
+    const filtListings = this.applyListingFilters(this.props.listings);
+    
+    
 
     if (filtListings.length === 0) {
       return (
@@ -72,7 +74,7 @@ class ListingIndex extends React.Component {
           <h1>Sorry, there are no listings available that match your Search!</h1>
         </div>
       )
-    }
+    };
 
     return (
       <div className="listing-index">
@@ -80,7 +82,7 @@ class ListingIndex extends React.Component {
         <ListingIndexItem key={listing.id} listing={listing}/> 
       ))}
     </div>
-  )}
+  )};
 }
 
 export default withRouter(ListingIndex);

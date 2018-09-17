@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import {deleteReview, requestReviews, createReview, updateReview} from './actions/reviews_actions';
 import { create } from 'domain';
+import { receiveAllListings } from './actions/listings_actions'
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,5 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.requestReviews = requestReviews;
   window.createReview = createReview;
   window.updateReview = updateReview;
+  window.receiveAllListings = receiveAllListings;
   //testing//
 });
