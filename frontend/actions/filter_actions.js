@@ -9,12 +9,12 @@ export const UPDATE_SITE_FILTER = 'UPDATE_SITE_FILTER';
 
 export const receiveFilter = filter => ({
   type: RECEIVE_FILTER,
-  filter,
+  filter
 })
 
 export const removeFilter = filter => ({
   type: REMOVE_FILTER,
-  filter,
+  filter
 })
 
 export const receiveCapacityFilter = capacity => ({
@@ -23,7 +23,7 @@ export const receiveCapacityFilter = capacity => ({
 })
 
 export const removeCapacityFilter = () => ({
-  type: REMOVE_CAPACITY_FILTER,
+  type: REMOVE_CAPACITY_FILTER, 
 })
 
 export const receivePriceFilter = price => ({

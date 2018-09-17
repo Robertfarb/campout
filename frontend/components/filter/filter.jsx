@@ -39,7 +39,6 @@ class Filter extends React.Component {
   }
   
   render() {
-
     return (
       <div className="filters-container">
         <h2 className="filter-header">Amenities</h2>
@@ -48,7 +47,7 @@ class Filter extends React.Component {
               type='checkbox'
               className="radio-input"
               onClick={this.toggleFilter('camping')}
-              checked={this.props.filters['camping'] === true}
+              // checked={this.props.filters['camping'] === true}
               onChange={() => {}}
             />
             <label>Camping</label>

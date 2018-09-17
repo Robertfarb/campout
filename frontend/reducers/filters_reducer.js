@@ -36,7 +36,7 @@ const filtersReducer = (state = {}, action) => {
     case CLEAR_FILTERS:
       return defaultFilters;
     case REMOVE_FILTER:
-      return {[action.filter]: false}
+      return merge(newState, state, {[action.filter]: false})
     default:
       return state;
   }
