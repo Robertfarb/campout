@@ -64,10 +64,11 @@ class ListingIndex extends React.Component {
   }
 
   render() {
+    if(Object.keys(this.props.listings).length === 0 && this.props.listings.constructor === Object) {
+      return (<div className="loading-container list-loader"><div className="loader">Loading...</div></div>)
+    }
     const filtListings = this.applyListingFilters(this.props.listings);
     
-    
-
     if (filtListings.length === 0) {
       return (
         <div className="no-listings-avail">
