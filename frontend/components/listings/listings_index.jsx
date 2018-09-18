@@ -1,12 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ListingIndexItem from './listing_index_item';
-import { receiveAllListings } from '../../actions/listings_actions';
+import { applyListingFilters } from '../../util/filter_util';
 
 class ListingIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.applyListingFilters = this.applyListingFilters.bind(this);
   }
 
   componentDidMount() {
@@ -17,55 +16,8 @@ class ListingIndex extends React.Component {
     this.props.clearFilters();
   }
 
-  applyListingFilters () {
-    let filters = this.props.filters;
-    let filteredListings = Object.values(this.props.listings);
-
-    if (filters['glamping'] === true) {
-    filteredListings = filteredListings.filter(listing => {
-      if (listing.is_glamping) return listing});
-    }
-
-    if (filters['camping'] === true) {
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.is_glamping === false) return listing
-      });
-    }
-    
-    if (filters['petFriendly'] === true) {
-    filteredListings = filteredListings.filter(listing => {
-      if (listing.pet_friendly) return listing});
-    }
-
-    if (filters['toilets'] === true) {
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.is_toilets) return listing
-      });
-    }
-
-    if (filters['showers'] === true ){
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.has_showers) return listing
-      });
-    }
-
-    if (filters['maxPrice'] < 10000) {
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.price_daily < filters['maxPrice']) return listing
-      });
-    }
-
-    if (filters['maxCapacity'] < 100) {
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.max_capacity > filters['maxCapacity']) return listing
-      });
-    }
-
-    return filteredListings;
-  }
-
   render() {
-    const filtListings = this.applyListingFilters(this.props.listings);
+    const filtListings = applyListingFilters(this.props.filters, this.props.listings);
 
     if (Object.keys(this.props.listings).length === 0 && this.props.listings.constructor === Object) {
       return (<div className="loading-container list-loader"><div className="loader">Loading...</div></div>)

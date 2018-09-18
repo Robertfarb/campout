@@ -57,7 +57,7 @@ class Filter extends React.Component {
             <input
               type='checkbox'
               className="radio-input"
-              onClick={this.toggleFilter('glamping')}
+              onClick={this.toggleFilter('glamping' )}
               checked={this.props.filters['glamping'] === true}
               onChange={() => {}}
               id="glamping"

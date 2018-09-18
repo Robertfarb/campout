@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import MarkerManager from '../../util/marker_manager';
 import { withRouter } from 'react-router-dom';
 import { receiveGeolocation } from '../../actions/location_filter_actions';
+import { applyListingFilters } from '../../util/filter_util';
 
 class ListingsMap extends React.Component {
   constructor (props) { 
@@ -12,7 +13,7 @@ class ListingsMap extends React.Component {
     this.registerListeners = this.registerListeners.bind(this);
     this.centerMapOnSearch = this.centerMapOnSearch.bind(this);
     this.geoCoder = new google.maps.Geocoder();
-    this.applyListingFilters = this.applyListingFilters.bind(this);
+    // this.applyListingFilters = this.applyListingFilters.bind(this);
   }
 
   componentDidMount () {
@@ -26,55 +27,6 @@ class ListingsMap extends React.Component {
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this))
     this.MarkerManager.updateMarkers(listingsArr)
     this.registerListeners();
-  }
-
-  applyListingFilters() {
-    let filters = this.props.filters;
-    let filteredListings = Object.values(this.props.listings);
-
-    if (filters['glamping'] === true) {
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.is_glamping) return listing
-      });
-    }
-
-    if (filters['camping'] === true) {
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.is_glamping === false) return listing
-      });
-    }
-
-    if (filters['petFriendly'] === true) {
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.pet_friendly) return listing
-      });
-    }
-
-    if (filters['toilets'] === true) {
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.is_toilets) return listing
-      });
-    }
-
-    if (filters['showers'] === true) {
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.has_showers) return listing
-      });
-    }
-
-    if (filters['maxPrice'] < 10000) {
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.price_daily < filters['maxPrice']) return listing
-      });
-    }
-
-    if (filters['maxCapacity'] < 100) {
-      filteredListings = filteredListings.filter(listing => {
-        if (listing.max_capacity > filters['maxCapacity']) return listing
-      });
-    }
-
-    return filteredListings;
   }
 
   registerListeners () {
@@ -107,8 +59,7 @@ class ListingsMap extends React.Component {
   }
 
   componentDidUpdate () {
-    const filteredListings = this.applyListingFilters();
-    const listingsArr = Object.values(this.props.listings)
+    const filteredListings = applyListingFilters(this.props.filters, this.props.listings)
     this.MarkerManager.updateMarkers(filteredListings)
     if (this.props.geoLocation.length > 0) this.centerMapOnSearch();
   }
