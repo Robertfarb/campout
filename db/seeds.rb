@@ -191,10 +191,29 @@ mountain = Listing.create!({title: "San Diego mountainside tent", host_id: range
             pet_friendly: false, is_toilets: true, max_capacity: 10, has_showers: true, checkin_after: "9 AM", 
             checkout_before: "2 PM"})
 
-                mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain1.jpg"), filename: "mountain1.jpg")
-                mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain2.jpg"), filename: "mountain2.jpg")
-                mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain3.jpg"), filename: "mountain3.jpg")
-                mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain4.jpg"), filename: "mountain4.jpg")
+
+            mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain1.jpg"), filename: "mountain1.jpg")
+            mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain2.jpg"), filename: "mountain2.jpg")
+            mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain3.jpg"), filename: "mountain3.jpg")
+            mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain4.jpg"), filename: "mountain4.jpg")
+
+
+
+yellow = Listing.create!({title: "Yellowstone National Park", host_id: national_park_service.id, description: "Yellowstone features dramatic canyons, alpine rivers, lush forests, hot springs and gushing geysers, including its most famous, Old Faithful. It's also home to hundreds of animal species, including bears, wolves, bison, elk and antelope.", 
+            address: "Yellowstone Nat. Park", long: -110.584389, lat: 44.427284, price_daily: 20, is_glamping: false, 
+            pet_friendly: true, is_toilets: true, max_capacity: 10, has_showers: true, checkin_after: "10 AM", 
+            checkout_before: "3 PM"})
+
+            yellow.photos.attach(io: File.open("app/assets/images/yellowstone/yellow1.jpg"), filename: "yellow1.jpg")
+            yellow.photos.attach(io: File.open("app/assets/images/yellowstone/yellow2.jpg"), filename: "yellow2.jpg")
+            yellow.photos.attach(io: File.open("app/assets/images/yellowstone/yellow3.jpg"), filename: "yellow3.jpg")
+            yellow.photos.attach(io: File.open("app/assets/images/yellowstone/yellow4.jpg"), filename: "yellow4.jpg")
+
+        
+malibu = Listing.create!({title: "Malibu Creek State Park", host_id: ranger_rick.id, description: "Malibu Creek State Park is a state park of California, United States, preserving the Malibu Creek canyon in the Santa Monica Mountains. The 8,215-acre park was established in 1974. Opened to the public in 1976, the park is also a component of Santa Monica Mountains National Recreation Area.", 
+            address: "Malibu Creek State Park", long: -118.731316, lat: 34.105156, price_daily: 35, is_glamping: true, 
+            pet_friendly: true, is_toilets: true, max_capacity: 25, has_showers: true, checkin_after: "10 AM", 
+            checkout_before: "3 PM"})
 
 
 
