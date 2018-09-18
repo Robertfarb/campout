@@ -18,7 +18,7 @@ class ListingsMap extends React.Component {
   componentDidMount () {
     const listingsArr = Object.values(this.props.listings)
     const mapOptions = {
-      center: { lat: 37.865101, lng: -119.538329},
+      center: { lat: 37.865101, lng: -119.538329 },
       zoom: 6
     };
 
@@ -26,12 +26,6 @@ class ListingsMap extends React.Component {
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this))
     this.MarkerManager.updateMarkers(listingsArr)
     this.registerListeners();
-  }
-
-  componentDidUpdate () {
-    debugger;
-    let filteredListings = this.applyListingFilters();
-    this.MarkerManager.updateMarkers(filteredListings)
   }
 
   applyListingFilters() {
@@ -113,8 +107,9 @@ class ListingsMap extends React.Component {
   }
 
   componentDidUpdate () {
+    const filteredListings = this.applyListingFilters();
     const listingsArr = Object.values(this.props.listings)
-    this.MarkerManager.updateMarkers(listingsArr)
+    this.MarkerManager.updateMarkers(filteredListings)
     if (this.props.geoLocation.length > 0) this.centerMapOnSearch();
   }
 

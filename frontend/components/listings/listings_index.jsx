@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ListingIndexItem from './listing_index_item';
+import { receiveAllListings } from '../../actions/listings_actions';
 
 class ListingIndex extends React.Component {
   constructor(props) {
