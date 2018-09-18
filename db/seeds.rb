@@ -214,6 +214,12 @@ malibu = Listing.create!({title: "Malibu Creek State Park", host_id: ranger_rick
             address: "Malibu Creek State Park", long: -118.731316, lat: 34.105156, price_daily: 35, is_glamping: true, 
             pet_friendly: true, is_toilets: true, max_capacity: 25, has_showers: true, checkin_after: "10 AM", 
             checkout_before: "3 PM"})
+            
+            malibu.photos.attach(io: File.open("app/assets/images/malibu/malibu1.jpg"), filename: "malibu1.jpg")
+            malibu.photos.attach(io: File.open("app/assets/images/malibu/malibu2.jpg"), filename: "malibu2.jpg")
+            malibu.photos.attach(io: File.open("app/assets/images/malibu/malibu3.jpg"), filename: "malibu3.jpg")
+
+
 
 
 
