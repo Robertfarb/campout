@@ -1,3 +1,6 @@
+require 'date'
+require 'open-uri'
+
 User.destroy_all
 Listing.destroy_all
 Activity.destroy_all
@@ -13,11 +16,11 @@ yos = Listing.create!({title: "Yosemite", host_id: national_park_service.id, des
                 pet_friendly: false, is_toilets: false, max_capacity: 5, has_showers: false, checkin_after: "10 AM", 
                 checkout_before: "4 PM"})
                 
-                yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_1.jpg"), filename: "yosemite-1.jpg")
-                yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_2.jpg"), filename: "yosemite-2.jpg")
-                yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_3.jpg"), filename: "yosemite-3.jpg")
-                yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_4.jpg"), filename: "yosemite-4.jpg")
-                yos.photos.attach(io: File.open("app/assets/images/yosemite/yosemite_5.jpg"), filename: "yosemite-5.jpg")
+                yos.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/yosemite_1.jpg"), filename: "yosemite-1.jpg")
+                yos.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/yosemite_2.jpg"), filename: "yosemite-2.jpg")
+                yos.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/yosemite_3.jpg"), filename: "yosemite-3.jpg")
+                yos.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/yosemite_4.jpg"), filename: "yosemite-4.jpg")
+                yos.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/yosemite_5.jpg"), filename: "yosemite-5.jpg")
 
                 # Must use below filepath to seed locally
 
@@ -32,12 +35,13 @@ big_sur = Listing.create!({title: "Big Sur", host_id: national_park_service.id, 
                 pet_friendly: true, is_toilets: true, max_capacity: 6, has_showers: true, checkin_after: "11 AM", 
                 checkout_before: "3 PM"})
 
-                big_sur.photos.attach(io: File.open("app/assets/images/big_sur/big_sur1.jpg"), filename: "big_sur-1.jpg")
-                big_sur.photos.attach(io: File.open("app/assets/images/big_sur/big_sur2.jpg"), filename: "big_sur-2.jpg")
-                big_sur.photos.attach(io: File.open("app/assets/images/big_sur/big_sur3.jpg"), filename: "big_sur-3.jpg")
-                big_sur.photos.attach(io: File.open("app/assets/images/big_sur/big_sur4.jpg"), filename: "big_sur-4.jpg")
-                big_sur.photos.attach(io: File.open("app/assets/images/big_sur/big_sur5.jpg"), filename: "big_sur-5.jpg")
-                big_sur.photos.attach(io: File.open("app/assets/images/big_sur/big_sur6.jpg"), filename: "big_sur-6.jpg")
+                big_sur.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/big_sur1.jpg"), filename: "big_sur-1.jpg")
+                big_sur.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/big_sur2.jpg"), filename: "big_sur-2.jpg")
+                big_sur.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/big_sur3.jpg"), filename: "big_sur-3.jpg")
+                big_sur.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/big_sur4.jpg"), filename: "big_sur-4.jpg")
+                big_sur.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/big_sur5.jpg"), filename: "big_sur-5.jpg")
+                big_sur.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/big_sur6.jpg"), filename: "big_sur-6.jpg")
+
 
                 # big_sur.photos.attach(io: File.open("./app/assets/images/big_sur/big_sur1.jpg"), filename: "big_sur-1.jpg")
                 # big_sur.photos.attach(io: File.open("./app/assets/images/big_sur/big_sur2.jpg"), filename: "big_sur-2.jpg")
@@ -51,11 +55,11 @@ j_tree = Listing.create!({title: "Joshua Tree", host_id: ranger_rick.id, descrip
                 pet_friendly: false, is_toilets: true, max_capacity: 10, has_showers: false, checkin_after: "10 AM", 
                 checkout_before: "4 PM"})
 
-                j_tree.photos.attach(io: File.open("app/assets/images/joshua_tree/joshua_tree1.jpg"), filename: "jtree1.jpg")
-                j_tree.photos.attach(io: File.open("app/assets/images/joshua_tree/joshua_tree2.jpg"), filename: "jtree2.jpg")
-                j_tree.photos.attach(io: File.open("app/assets/images/joshua_tree/joshua_tree3.jpg"), filename: "jtree3.jpg")
-                j_tree.photos.attach(io: File.open("app/assets/images/joshua_tree/joshua_tree4.jpg"), filename: "jtree4.jpg")
-                j_tree.photos.attach(io: File.open("app/assets/images/joshua_tree/joshua_tree5.jpg"), filename: "jtree5.jpg")
+                j_tree.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/joshua_tree1.jpg"), filename: "jtree1.jpg")
+                j_tree.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/joshua_tree2.jpg"), filename: "jtree2.jpg")
+                j_tree.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/joshua_tree3.jpg"), filename: "jtree3.jpg")
+                j_tree.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/joshua_tree4.jpg"), filename: "jtree4.jpg")
+                j_tree.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/joshua_tree5.jpg"), filename: "jtree5.jpg")
 
                 # j_tree.photos.attach(io: File.open("./app/assets/images/joshua_tree/joshua_tree1.jpg"), filename: "jtree1.jpg")
                 # j_tree.photos.attach(io: File.open("./app/assets/images/joshua_tree/joshua_tree2.jpg"), filename: "jtree2.jpg")
@@ -69,11 +73,11 @@ zion = Listing.create!({title: "Zion", host_id: national_park_service.id, descri
                 pet_friendly: true, is_toilets: false, max_capacity: 10, has_showers: false, checkin_after: "10 AM", 
                 checkout_before: "4 PM"})
 
-                zion.photos.attach(io: File.open("app/assets/images/zion/zion1.jpg"), filename: "zion1.jpg")
-                zion.photos.attach(io: File.open("app/assets/images/zion/zion2.jpg"), filename: "zion3.jpg")
-                zion.photos.attach(io: File.open("app/assets/images/zion/zion3.jpg"), filename: "zion4.jpg")
-                zion.photos.attach(io: File.open("app/assets/images/zion/zion4.jpg"), filename: "zion5.jpg")
-                zion.photos.attach(io: File.open("app/assets/images/zion/zion5.jpg"), filename: "zion6.jpg")
+                zion.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/zion1.jpg"), filename: "zion1.jpg")
+                zion.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/zion2.jpg"), filename: "zion2.jpg")
+                zion.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/zion3.jpg"), filename: "zion3.jpg")
+                zion.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/zion4.jpg"), filename: "zion4.jpg")
+                zion.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/zion5.jpg"), filename: "zion5.jpg")
 
                 # zion.photos.attach(io: File.open("./app/assets/images/zion/zion1.jpg"), filename: "zion1.jpg")
                 # zion.photos.attach(io: File.open("./app/assets/images/zion/zion2.jpg"), filename: "zion3.jpg")
@@ -87,11 +91,11 @@ crater_lake = Listing.create!({title: "Crater Lake", host_id: national_park_serv
                 pet_friendly: false, is_toilets: true, max_capacity: 8, has_showers: false, checkin_after: "10 AM", 
                 checkout_before: "4 PM"})
 
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake1.jpg"), filename: "crater_lake1.jpg")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake2.jpg"), filename: "crater_lake2.jpg")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake3.jpg"), filename: "crater_lake3.jpg")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake4.jpg"), filename: "crater_lake4.jpg")
-                crater_lake.photos.attach(io: File.open("app/assets/images/crater_lake/crater_lake5.jpg"), filename: "crater_lake5.jpg")
+                crater_lake.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/crater_lake1.jpg"), filename: "crater_lake1.jpg")
+                crater_lake.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/crater_lake2.jpg"), filename: "crater_lake2.jpg")
+                crater_lake.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/crater_lake3.jpg"), filename: "crater_lake3.jpg")
+                crater_lake.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/crater_lake4.jpg"), filename: "crater_lake4.jpg")
+                crater_lake.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/crater_lake5.jpg"), filename: "crater_lake5.jpg")
 
                 # crater_lake.photos.attach(io: File.open("./app/assets/images/crater_lake/crater_lake1.jpg"), filename: "crater_lake1.jpg")
                 # crater_lake.photos.attach(io: File.open("./app/assets/images/crater_lake/crater_lake2.jpg"), filename: "crater_lake2.jpg")
@@ -105,11 +109,11 @@ grand_canyon = Listing.create!({title: "Grand Canyon", host_id: national_park_se
                 pet_friendly: true, is_toilets: true, max_capacity: 15, has_showers: false, checkin_after: "11 AM", 
                 checkout_before: "4 PM"})
 
-                grand_canyon.photos.attach(io: File.open("app/assets/images/grand_canyon/grand_canyon1.jpg"), filename: "grand_canyon1.jpg")
-                grand_canyon.photos.attach(io: File.open("app/assets/images/grand_canyon/grand_canyon2.jpg"), filename: "grand_canyon2.jpg")
-                grand_canyon.photos.attach(io: File.open("app/assets/images/grand_canyon/grand_canyon3.jpg"), filename: "grand_canyon3.jpg")
-                grand_canyon.photos.attach(io: File.open("app/assets/images/grand_canyon/grand_canyon4.jpg"), filename: "grand_canyon4.jpg")
-                grand_canyon.photos.attach(io: File.open("app/assets/images/grand_canyon/grand_canyon5.jpg"), filename: "grand_canyon5.jpg")
+                grand_canyon.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/grand_canyon1.jpg"), filename: "grand_canyon1.jpg")
+                grand_canyon.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/grand_canyon2.jpg"), filename: "grand_canyon2.jpg")
+                grand_canyon.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/grand_canyon3.jpg"), filename: "grand_canyon3.jpg")
+                grand_canyon.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/grand_canyon4.jpg"), filename: "grand_canyon4.jpg")
+                grand_canyon.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/grand_canyon5.jpg"), filename: "grand_canyon5.jpg")
 
                 # grand_canyon.photos.attach(io: File.open("./app/assets/images/grand_canyon/grand_canyon1.jpg"), filename: "grand_canyon1.jpg")
                 # grand_canyon.photos.attach(io: File.open("./app/assets/images/grand_canyon/grand_canyon2.jpg"), filename: "grand_canyon2.jpg")
@@ -123,11 +127,11 @@ redwoods = Listing.create!({title: "Redwoods", host_id: smokey.id, description: 
                 pet_friendly: true, is_toilets: true, max_capacity: 8, has_showers: true, checkin_after: "9 AM", 
                 checkout_before: "2 PM"})
  
-                redwoods.photos.attach(io: File.open("app/assets/images/redwood/redwood1.jpg"), filename: "redwood1.jpg")
-                redwoods.photos.attach(io: File.open("app/assets/images/redwood/redwood2.jpg"), filename: "redwood2.jpg")
-                redwoods.photos.attach(io: File.open("app/assets/images/redwood/redwood3.jpg"), filename: "redwood3.jpg")
-                redwoods.photos.attach(io: File.open("app/assets/images/redwood/redwood4.jpg"), filename: "redwood4.jpg")
-                redwoods.photos.attach(io: File.open("app/assets/images/redwood/redwood5.jpg"), filename: "redwood5.jpg")
+                redwoods.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/redwood1.jpg"), filename: "redwood1.jpg")
+                redwoods.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/redwood2.jpg"), filename: "redwood2.jpg")
+                redwoods.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/redwood3.jpg"), filename: "redwood3.jpg")
+                redwoods.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/redwood4.jpg"), filename: "redwood4.jpg")
+                redwoods.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/redwood5.jpg"), filename: "redwood5.jpg")
 
                 # redwoods.photos.attach(io: File.open("./app/assets/images/redwood/redwood1.jpg"), filename: "redwood1.jpg")
                 # redwoods.photos.attach(io: File.open("./app/assets/images/redwood/redwood2.jpg"), filename: "redwood2.jpg")
@@ -142,11 +146,12 @@ aspen = Listing.create!({title: "Maroon Bells", host_id: rob.id, description: "S
                 pet_friendly: true, is_toilets: true, max_capacity: 20, has_showers: true, checkin_after: "10 AM", 
                 checkout_before: "2 PM"})
 
-                aspen.photos.attach(io: File.open("app/assets/images/aspen/aspen1.jpg"), filename: "aspen1.jpg")
-                aspen.photos.attach(io: File.open("app/assets/images/aspen/aspen2.jpg"), filename: "aspen2.jpg")
-                aspen.photos.attach(io: File.open("app/assets/images/aspen/aspen3.jpg"), filename: "aspen3.jpg")
-                aspen.photos.attach(io: File.open("app/assets/images/aspen/aspen4.jpg"), filename: "aspen4.jpg")
-                aspen.photos.attach(io: File.open("app/assets/images/aspen/aspen5.jpg"), filename: "aspen5.jpg")
+                aspen.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/aspen1.jpg"), filename: "aspen1.jpg")
+                aspen.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/aspen1.jpg"), filename: "aspen2.jpg")
+                aspen.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/aspen1.jpg"), filename: "aspen3.jpg")
+                aspen.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/aspen1.jpg"), filename: "aspen4.jpg")
+                aspen.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/aspen1.jpg"), filename: "aspen5.jpg")
+
 
                 # aspen.photos.attach(io: File.open("./app/assets/images/aspen/aspen1.jpg"), filename: "aspen1.jpg")
                 # aspen.photos.attach(io: File.open("./app/assets/images/aspen/aspen2.jpg"), filename: "aspen2.jpg")
@@ -155,15 +160,14 @@ aspen = Listing.create!({title: "Maroon Bells", host_id: rob.id, description: "S
                 # aspen.photos.attach(io: File.open("./app/assets/images/aspen/aspen5.jpg"), filename: "aspen5.jpg")
 
 
-
 jackson = Listing.create!({title: "Crystal Creek Campground", host_id: smokey.id, description: "Crystal Creek Campground is located along the Gros Ventre River and Crystal Creek, both designated Wild and Scenic Rivers for the spectacular surrounding scenery and excellent fishing opportunities. This is a small and peaceful campground that has several nearby options for hiking, biking and OHV riding.", 
                 address: "Crystal Creek Campground", long: -110.431422, lat: 43.610451, price_daily: 75, is_glamping: false, 
                 pet_friendly: true, is_toilets: true, max_capacity: 8, has_showers: true, checkin_after: "9 AM", 
                 checkout_before: "2 PM"})
 
-                jackson.photos.attach(io: File.open("app/assets/images/jackson/jackson1.jpg"), filename: "jackson1.jpg")
-                jackson.photos.attach(io: File.open("app/assets/images/jackson/jackson2.jpg"), filename: "jackson2.jpg")
-                jackson.photos.attach(io: File.open("app/assets/images/jackson/jackson3.jpg"), filename: "jackson3.jpg")
+                jackson.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/jackson1.jpg"), filename: "jackson1.jpg")
+                jackson.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/jackson2.jpg"), filename: "jackson2.jpg")
+                jackson.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/jackson3.jpg"), filename: "jackson3.jpg")
 
                 # jackson.photos.attach(io: File.open("./app/assets/images/jackson/jackson1.jpg"), filename: "jackson1.jpg")
                 # jackson.photos.attach(io: File.open("./app/assets/images/jackson/jackson2.jpg"), filename: "jackson2.jpg")
@@ -175,10 +179,10 @@ burney = Listing.create!({title: "MacArthur Burney Falls", host_id: national_par
                 pet_friendly: false, is_toilets: true, max_capacity: 10, has_showers: true, checkin_after: "9 AM", 
                 checkout_before: "2 PM"})
 
-                burney.photos.attach(io: File.open("app/assets/images/burney/burney1.jpg"), filename: "burney1.jpg")
-                burney.photos.attach(io: File.open("app/assets/images/burney/burney2.jpg"), filename: "burney2.jpg")
-                burney.photos.attach(io: File.open("app/assets/images/burney/burney3.jpg"), filename: "burney3.jpg")
-                burney.photos.attach(io: File.open("app/assets/images/burney/burney4.jpg"), filename: "burney4.jpg")
+                burney.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/burney1.jpg"), filename: "burney1.jpg")
+                burney.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/burney2.jpg"), filename: "burney2.jpg")
+                burney.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/burney3.jpg"), filename: "burney3.jpg")
+                burney.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/burney4.jpg"), filename: "burney4.jpg")
                 
                 # burney.photos.attach(io: File.open("./app/assets/images/burney/burney1.jpg"), filename: "burney1.jpg")
                 # burney.photos.attach(io: File.open("./app/assets/images/burney/burney2.jpg"), filename: "burney2.jpg")
@@ -192,10 +196,10 @@ mountain = Listing.create!({title: "San Diego mountainside tent", host_id: range
             checkout_before: "2 PM"})
 
 
-            mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain1.jpg"), filename: "mountain1.jpg")
-            mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain2.jpg"), filename: "mountain2.jpg")
-            mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain3.jpg"), filename: "mountain3.jpg")
-            mountain.photos.attach(io: File.open("app/assets/images/mountain/mountain4.jpg"), filename: "mountain4.jpg")
+            mountain.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/mountain1.jpg"), filename: "mountain1.jpg")
+            mountain.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/mountain2.jpg"), filename: "mountain2.jpg")
+            mountain.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/mountain3.jpg"), filename: "mountain3.jpg")
+            mountain.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/mountain4.jpg"), filename: "mountain4.jpg")
 
 
 
@@ -204,10 +208,10 @@ yellow = Listing.create!({title: "Yellowstone National Park", host_id: national_
             pet_friendly: true, is_toilets: true, max_capacity: 10, has_showers: true, checkin_after: "10 AM", 
             checkout_before: "3 PM"})
 
-            yellow.photos.attach(io: File.open("app/assets/images/yellowstone/yellow1.jpg"), filename: "yellow1.jpg")
-            yellow.photos.attach(io: File.open("app/assets/images/yellowstone/yellow2.jpg"), filename: "yellow2.jpg")
-            yellow.photos.attach(io: File.open("app/assets/images/yellowstone/yellow3.jpg"), filename: "yellow3.jpg")
-            yellow.photos.attach(io: File.open("app/assets/images/yellowstone/yellow4.jpg"), filename: "yellow4.jpg")
+            yellow.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/yellow1.jpg"), filename: "yellow1.jpg")
+            yellow.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/yellow2.jpg"), filename: "yellow2.jpg")
+            yellow.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/yellow3.jpg"), filename: "yellow3.jpg")
+            yellow.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/yellow4.jpg"), filename: "yellow4.jpg")
 
         
 malibu = Listing.create!({title: "Malibu Creek State Park", host_id: ranger_rick.id, description: "Malibu Creek State Park is a state park of California, United States, preserving the Malibu Creek canyon in the Santa Monica Mountains. The 8,215-acre park was established in 1974. Opened to the public in 1976, the park is also a component of Santa Monica Mountains National Recreation Area.", 
@@ -215,10 +219,9 @@ malibu = Listing.create!({title: "Malibu Creek State Park", host_id: ranger_rick
             pet_friendly: true, is_toilets: true, max_capacity: 25, has_showers: true, checkin_after: "10 AM", 
             checkout_before: "3 PM"})
             
-            malibu.photos.attach(io: File.open("app/assets/images/malibu/malibu1.jpg"), filename: "malibu1.jpg")
-            malibu.photos.attach(io: File.open("app/assets/images/malibu/malibu2.jpg"), filename: "malibu2.jpg")
-            malibu.photos.attach(io: File.open("app/assets/images/malibu/malibu3.jpg"), filename: "malibu3.jpg")
-
+            malibu.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/malibu1.jpg"), filename: "malibu1.jpg")
+            malibu.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/malibu2.jpg"), filename: "malibu2.jpg")
+            malibu.photos.attach(open("https://s3-us-west-1.amazonaws.com/campout-prod/malibu3.jpg"), filename: "malibu3.jpg")
 
 
 
