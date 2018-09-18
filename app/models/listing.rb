@@ -34,7 +34,7 @@ class Listing < ApplicationRecord
     foreign_key: :listing_id,
     class_name: :Activity
 
-  has_many_attached  :photos
+  has_many_attached :photos
 
   has_many :bookings,
     foreign_key: :listing_id,
