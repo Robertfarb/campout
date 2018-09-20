@@ -21,11 +21,16 @@ class ListingsMap extends React.Component {
       center: { lat: 37.865101, lng: -119.538329 },
       zoom: 6
     };
-
+    
     this.map = new google.maps.Map(this.mapNode, mapOptions)
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this))
     this.MarkerManager.updateMarkers(listingsArr)
     this.registerListeners();
+
+    if (this.props.geoLocation.length > 0) {
+      debugger;
+      this.centerMapOnSearch();
+    }
   }
 
   registerListeners () {

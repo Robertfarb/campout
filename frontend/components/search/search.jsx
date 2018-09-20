@@ -18,7 +18,6 @@ class Search extends React.Component {
   }
 
   handleSubmit (e) {
-    debugger;
     e.preventDefault();
     this.props.receiveGeolocation(e.target.children[0].value)
     this.props.history.push("/discover")
