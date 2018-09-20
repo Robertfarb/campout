@@ -13,7 +13,6 @@ class ListingsMap extends React.Component {
     this.registerListeners = this.registerListeners.bind(this);
     this.centerMapOnSearch = this.centerMapOnSearch.bind(this);
     this.geoCoder = new google.maps.Geocoder();
-    // this.applyListingFilters = this.applyListingFilters.bind(this);
   }
 
   componentDidMount () {

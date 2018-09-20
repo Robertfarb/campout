@@ -18,10 +18,8 @@ class ListingIndex extends React.Component {
 
   render() {
     const filtListings = applyListingFilters(this.props.filters, this.props.listings);
-
-    if (Object.keys(this.props.listings).length === 0 && this.props.listings.constructor === Object) {
-      return (<div className="loading-container list-loader"><div className="loader">Loading...</div></div>)
-     } else if (filtListings.length === 0) {
+    
+    if (filtListings.length === 0) {
       return (
         <div className="no-listings-avail">
           <h1>Sorry, there are no listings available that match your Search!</h1>
