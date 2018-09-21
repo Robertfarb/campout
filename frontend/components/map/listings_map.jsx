@@ -13,24 +13,24 @@ class ListingsMap extends React.Component {
     this.registerListeners = this.registerListeners.bind(this);
     this.centerMapOnSearch = this.centerMapOnSearch.bind(this);
     this.geoCoder = new google.maps.Geocoder();
+    this.getCenter = this.getCenter.bind(this);
   }
 
   componentDidMount () {
-    const listingsArr = Object.values(this.props.listings)
+    let geoLocation = this.props.geoLocation;
+    // let mapCenter = geoLocation.length <= 0 ? { lat: 37.865101, lng: -119.538329 } : this.getCenter();
+    let mapCenter = { lat: 37.865101, lng: -119.538329 };
+    const listingsArr = Object.values(this.props.listings);
+    
     const mapOptions = {
-      center: { lat: 37.865101, lng: -119.538329 },
+      center: mapCenter,
       zoom: 6
     };
-    
+
     this.map = new google.maps.Map(this.mapNode, mapOptions)
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this))
     this.MarkerManager.updateMarkers(listingsArr)
     this.registerListeners();
-
-    if (this.props.geoLocation.length > 0) {
-      debugger;
-      this.centerMapOnSearch();
-    }
   }
 
   registerListeners () {
@@ -57,9 +57,25 @@ class ListingsMap extends React.Component {
           this.map.fitBounds(newBounds);
           this.props.receiveGeolocation("");
         } else {
-          return null;
+          return { lat: 37.865101, lng: -119.538329 };
        }}
     });
+  }
+
+  getCenter () {
+    const geolocation = this.props.geoLocation;
+  
+      this.geoCoder.geocode({ 'address': geolocation }, (results, status) => {
+        if (status === "OK") {
+          if (results[0]) {
+            let lat = results[0].geometry.location.lat();
+            let lng = results[0].geometry.location.lng();
+            return {lat, lng}
+          } else {
+            return { lat: 37.865101, lng: -119.538329 };
+          }
+        }
+      });
   }
 
   componentDidUpdate () {
