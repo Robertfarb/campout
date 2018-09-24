@@ -17,10 +17,11 @@ class ListingsMap extends React.Component {
     // this.searchedCenter = this.searchedCenter.bind(this);
   }
 
-  
+
   componentDidMount () {
     let geoLocation = this.props.geoLocation;
-    let mapCenter = geoLocation.length <= 0 ? { lat: 37.865101, lng: -119.538329 } : this.getCenter();
+    let mapCenter = geoLocation.length <= 0 ? { lat: 37.865101, lng: -119.538329 } : this.getCenter((latLng) => {return latLng});
+    debugger
     // let mapCenter = { lat: 37.865101, lng: -119.538329 };
     const listingsArr = Object.values(this.props.listings);
 
@@ -64,23 +65,23 @@ class ListingsMap extends React.Component {
     });
   }
 
-  getCenter () {
+  getCenter (cb) {
     const geolocation = this.props.geoLocation;
     let centerCoords;
   
-      this.geoCoder.geocode({ 'address': geolocation }, (results, status) => {
+      this.geoCoder.geocode({ 'address': geolocation }, function (results, status) {
         if (status === "OK") {
           if (results[0]) {
             let lat = results[0].geometry.location.lat();
             let lng = results[0].geometry.location.lng();
             centerCoords = {lat, lng}
+            return cb(centerCoords);
           } else {
             centerCoords = { lat: 37.865101, lng: -119.538329 };
+            return cb(centerCoords);
           }
         }
       });
-    // debugger;
-    return centerCoords;
   }
 
   componentDidUpdate () {
