@@ -14,14 +14,16 @@ class ListingsMap extends React.Component {
     this.centerMapOnSearch = this.centerMapOnSearch.bind(this);
     this.geoCoder = new google.maps.Geocoder();
     this.getCenter = this.getCenter.bind(this);
+    // this.searchedCenter = this.searchedCenter.bind(this);
   }
 
+  
   componentDidMount () {
     let geoLocation = this.props.geoLocation;
-    // let mapCenter = geoLocation.length <= 0 ? { lat: 37.865101, lng: -119.538329 } : this.getCenter();
-    let mapCenter = { lat: 37.865101, lng: -119.538329 };
+    let mapCenter = geoLocation.length <= 0 ? { lat: 37.865101, lng: -119.538329 } : this.getCenter();
+    // let mapCenter = { lat: 37.865101, lng: -119.538329 };
     const listingsArr = Object.values(this.props.listings);
-    
+
     const mapOptions = {
       center: mapCenter,
       zoom: 6
@@ -64,18 +66,21 @@ class ListingsMap extends React.Component {
 
   getCenter () {
     const geolocation = this.props.geoLocation;
+    let centerCoords;
   
       this.geoCoder.geocode({ 'address': geolocation }, (results, status) => {
         if (status === "OK") {
           if (results[0]) {
             let lat = results[0].geometry.location.lat();
             let lng = results[0].geometry.location.lng();
-            return {lat, lng}
+            centerCoords = {lat, lng}
           } else {
-            return { lat: 37.865101, lng: -119.538329 };
+            centerCoords = { lat: 37.865101, lng: -119.538329 };
           }
         }
       });
+    // debugger;
+    return centerCoords;
   }
 
   componentDidUpdate () {
