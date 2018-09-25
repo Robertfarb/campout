@@ -19,7 +19,10 @@ class ListingsMap extends React.Component {
 
   componentDidMount () {
     let geoLocation = this.props.geoLocation;
-    // let mapCenter = geoLocation.length <= 0 ? { lat: 37.865101, lng: -119.538329 } : this.getCenter((latLng) => {return latLng});
+    // let mapCenter = geoLocation.length <= 0 ? 
+    //                 { lat: 37.865101, lng: -119.538329 } : 
+    //                 this.getCenter()
+    //                 .then((coords) => this.coords = coords);
     let mapCenter = { lat: 37.865101, lng: -119.538329 };
     const listingsArr = Object.values(this.props.listings);
 
@@ -66,20 +69,20 @@ class ListingsMap extends React.Component {
   getCenter (callBack) {
     const geolocation = this.props.geoLocation;
     let centerCoords;
-  
-      this.geoCoder.geocode({ 'address': geolocation }, function (results, status) {
-        if (status === "OK") {
-          if (results[0]) {
-            let lat = results[0].geometry.location.lat();
-            let lng = results[0].geometry.location.lng();
-            centerCoords = {lat, lng}
-            callBack(centerCoords);
-          } else {
-            centerCoords = { lat: 37.865101, lng: -119.538329 };
-            callBack(centerCoords);
-          }
+
+    this.geoCoder.geocode({ 'address': geolocation }, function (results, status) {
+      if (status === "OK") {
+        if (results[0]) {
+          let lat = results[0].geometry.location.lat();
+          let lng = results[0].geometry.location.lng();
+          centerCoords = { lat, lng }
+          callBack(centerCoords);
+        } else {
+          centerCoords = { lat: 37.865101, lng: -119.538329 };
+          callBack(centerCoords);
         }
-      });
+      }
+    });
   }
 
   componentDidUpdate () {
