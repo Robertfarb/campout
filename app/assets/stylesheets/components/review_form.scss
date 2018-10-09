@@ -1,15 +1,13 @@
 .review-form-container {
-  height: 50vh;
+  display: flex;
   margin: 0 auto;
-  margin-top: 200px;
-  width: 100%;
-  
+  width: 65vw;
 
   input {
-    background-color: darkcyan;
     height: 150px;
     width: 300px;
     border: 1px solid black;
     margin: 5px;
   }
 }
+

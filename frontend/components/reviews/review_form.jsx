@@ -22,11 +22,10 @@ class ReviewForm extends React.Component {
   }
 
   render () {
-    debugger;
     if (this.props.currentUser === undefined) {
       return (
         <div>
-          <button className="booking-login sticky-button" onClick={() => this.props.openModal("login")}>Log In to Book</button>
+          <button className="booking-login login-review" onClick={() => this.props.openModal("login")}>Login To Review</button>
         </div>
       )
     }else if (this.props.formType === "Add Review" && this.props.currentUser.id ) {

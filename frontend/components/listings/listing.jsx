@@ -112,8 +112,8 @@ class Listing extends React.Component {
               <BookingContainer />
             </div>
           </div>
-          <div>
-          <CreateReviewForm listingId={this.props.listing.id}/>
+          <div className="review-form-container">
+            <CreateReviewForm listingId={this.props.listing.id} />
           </div>
         </div>
     );
