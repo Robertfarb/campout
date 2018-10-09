@@ -3,11 +3,22 @@
   margin: 0 auto;
   width: 65vw;
 
-  input {
-    height: 150px;
-    width: 300px;
-    border: 1px solid black;
+  input, textarea{
+    border: 1px solid #ebebeb;
     margin: 5px;
+    padding: 20px;
   }
 }
 
+.submit-review {
+  background: #40d9ac;
+}
+
+textarea {
+  width: 27vw;
+}
+
+.review-form{
+  display: flex;
+  flex-direction: row;
+}

@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import ListingImageCarousel from './listing_image_carousel';
 import BookingContainer from '../booking/booking_container';
 import CreateReviewForm from '../reviews/create_review_form_container';
+import ReviewsIndex from '../reviews/reviews_index_container';
 
 class Listing extends React.Component {
   constructor(props) {
@@ -114,6 +115,9 @@ class Listing extends React.Component {
           </div>
           <div className="review-form-container">
             <CreateReviewForm listingId={this.props.listing.id} />
+          </div>
+          <div>
+            <ReviewsIndex />
           </div>
         </div>
     );

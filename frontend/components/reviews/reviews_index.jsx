@@ -14,7 +14,7 @@ class ReviewsIndex extends React.Component {
   render() {
     return (
       <div className="listing-index">
-        { /* Map over Reviews here and render a Review Index Item for each one */ }
+        TEST!
       </div>
     )
   }

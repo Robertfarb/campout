@@ -31,13 +31,14 @@ class ReviewForm extends React.Component {
     }else if (this.props.formType === "Add Review" && this.props.currentUser.id ) {
       return (
         <div className="review-form-container">
-          <form onSubmit={this.handleSubmit}>
-            <input 
+          <form className="review-form" onSubmit={this.handleSubmit}>
+            <textarea 
               type="text"
               onChange={this.update("review_body")}
               value={this.state.review_body}
             />
             <input
+              className="submit-review"
               type="submit"
               value={this.props.formType}
             />

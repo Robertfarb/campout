@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ReviewsIndex from './reviews_index'
+import ReviewsIndex from './reviews_index';
 
 const mapStateToProps = (state) => ({
-  currentUser: users[state.session.id],
+  currentUser: state.entities.users[state.session.id],
   reviews: state.entities.reviews
 });
 
