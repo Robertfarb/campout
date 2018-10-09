@@ -50,7 +50,6 @@ class ListingsMap extends React.Component {
 
   centerMapOnSearch () {
     const geolocation = this.props.geoLocation
-    
     this.geoCoder.geocode({ 'address': geolocation}, (results, status) => {
       if (status === "OK") {
         if (results[0]) {
@@ -69,7 +68,6 @@ class ListingsMap extends React.Component {
   getCenter (callBack) {
     const geolocation = this.props.geoLocation;
     let centerCoords;
-
     this.geoCoder.geocode({ 'address': geolocation }, function (results, status) {
       if (status === "OK") {
         if (results[0]) {

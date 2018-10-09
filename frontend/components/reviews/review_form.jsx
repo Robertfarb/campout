@@ -22,7 +22,14 @@ class ReviewForm extends React.Component {
   }
 
   render () {
-    if (this.props.formType === "Add Review" && this.props.currentUser.id ) {
+    debugger;
+    if (this.props.currentUser === undefined) {
+      return (
+        <div>
+          <button className="booking-login sticky-button" onClick={() => this.props.openModal("login")}>Log In to Book</button>
+        </div>
+      )
+    }else if (this.props.formType === "Add Review" && this.props.currentUser.id ) {
       return (
         <div className="review-form-container">
           <form onSubmit={this.handleSubmit}>

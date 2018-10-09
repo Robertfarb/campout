@@ -16,7 +16,7 @@ class MarkerManager {
     .forEach((listingId) => this.removeMarker(this.markers[listingId]))
   }
 
-  createMarkerFromListing (listing) {
+  createMarkerFromListing(listing) {
     const listingInfoWindow = new google.maps.InfoWindow({
       content: '<div class="map-info">' + 
       '<h2>' + listing.title + '</h2>' +
