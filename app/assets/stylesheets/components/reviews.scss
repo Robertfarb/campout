@@ -1,0 +1,25 @@
+.reviews-header {
+  font-weight: 600;
+  color: $font-medium-gray;
+  font-size: 1.2em;
+}
+
+.review-index-item {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  color: $font-medium-gray;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0px 0px 20px 0px;
+}
+
+.review-username {
+  font-weight: 600;
+  font-size: 1.5em;
+  margin: 10px 0px;
+  color: $font-medium-gray;
+}
+
+.review-body {
+  letter-spacing: 0.02em;
+}

@@ -72,14 +72,14 @@ render () {
             <input type="password"
               value={this.state.password}
               placeholder="password"
-            onChange={this.update('password')}
-            className="signup-input"
+              onChange={this.update('password')}
+              className="signup-input"
             />
             <input type="text"
               value={this.state.zip_code}
               placeholder="Zip code..."
-            onChange={this.update('zip_code')}
-            className="signup-input"
+              onChange={this.update('zip_code')}
+              className="signup-input"
             />
         </div>
         <input type="submit" value="Join Campout" className="signup-button"/>

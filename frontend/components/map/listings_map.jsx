@@ -19,10 +19,6 @@ class ListingsMap extends React.Component {
 
   componentDidMount () {
     let geoLocation = this.props.geoLocation;
-    // let mapCenter = geoLocation.length <= 0 ? 
-    //                 { lat: 37.865101, lng: -119.538329 } : 
-    //                 this.getCenter()
-    //                 .then((coords) => this.coords = coords);
     let mapCenter = { lat: 37.865101, lng: -119.538329 };
     const listingsArr = Object.values(this.props.listings);
 

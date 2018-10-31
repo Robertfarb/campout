@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {deleteReview, requestReviews, createReview, updateReview} from './actions/reviews_actions';
+import {deleteReview, requestReviews, createReview, updateReview, receiveReview} from './actions/reviews_actions';
 import { create } from 'domain';
 import { receiveAllListings } from './actions/listings_actions'
 
@@ -31,5 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.createReview = createReview;
   window.updateReview = updateReview;
   window.receiveAllListings = receiveAllListings;
+  window.receiveReview = receiveReview;
   //testing//
 });

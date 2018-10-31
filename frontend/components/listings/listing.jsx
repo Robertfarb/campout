@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import ListingImageCarousel from './listing_image_carousel';
 import BookingContainer from '../booking/booking_container';
 import CreateReviewForm from '../reviews/create_review_form_container';
-import ReviewsIndex from '../reviews/reviews_index_container';
+import ReviewsIndex from '../reviews/reviews_index';
 
 class Listing extends React.Component {
   constructor(props) {
@@ -18,11 +18,11 @@ class Listing extends React.Component {
 
   componentDidMount () {
     window.scrollTo(0, 0)
-    this.props.requestListing(this.props.listingId)
+    this.props.requestListing(this.props.listingId);
   }
 
 
-  render() {
+  render() { 
     if (this.props.listing === undefined) {
       return (<div className="loading-container"><div className="loader">Loading...</div></div>)
     } else if (!this.props.listingId) {
@@ -108,16 +108,16 @@ class Listing extends React.Component {
                   </div>
                 </div>
               </div>
+              <ReviewsIndex 
+               listingId={this.props.listing.id}
+               listing={this.props.listing}
+               currUser={this.props.currUser}
+               reviews={this.props.reviews}
+              />
             </div>
             <div className="listing-right">
               <BookingContainer />
             </div>
-          </div>
-          <div className="review-form-container">
-            <CreateReviewForm listingId={this.props.listing.id} />
-          </div>
-          <div>
-            <ReviewsIndex />
           </div>
         </div>
     );
