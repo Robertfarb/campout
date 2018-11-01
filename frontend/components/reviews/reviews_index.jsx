@@ -6,6 +6,12 @@ class ReviewsIndex extends React.Component {
   constructor(props) {
     super(props);
   }
+  
+  componentWillReceiveProps(newProps) {
+    if(newProps.reviews !== this.props.reviews) {
+      this.props.requestListing(this.props.listingId);
+    }
+  }
 
   render() {
     const reviews = this.props.listing.reviews === undefined ? 0 : Object.values(this.props.listing.reviews);
@@ -23,8 +29,8 @@ class ReviewsIndex extends React.Component {
         <h2 className="reviews-header">{reviews.length} {numReviews}</h2>
           <ul>
             {reviews.map((review, idx)=> (
-              <ReviewIndexItem key={idx} review={review}/>
-            ))}
+              <ReviewIndexItem key={idx} review={review} requestReviews={this.props.requestReviews}/>
+          ))}
           </ul>
         </div>
       )

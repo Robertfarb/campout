@@ -108,12 +108,16 @@ class Listing extends React.Component {
                   </div>
                 </div>
               </div>
-              <ReviewsIndex 
-               listingId={this.props.listing.id}
-               listing={this.props.listing}
-               currUser={this.props.currUser}
-               reviews={this.props.reviews}
-              />
+              <div className="reviews-section">
+                <CreateReviewForm listing={this.props.listing}/>
+                <ReviewsIndex 
+                listingId={this.props.listing.id}
+                listing={this.props.listing}
+                currUser={this.props.currUser}
+                reviews={this.props.reviews}
+                requestListing={this.props.requestListing}
+                />
+            </div>
             </div>
             <div className="listing-right">
               <BookingContainer />

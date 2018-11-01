@@ -16,7 +16,7 @@ export const requestReviews = () => dispatch => (
 
 export const createReview = (review) => dispatch => (
   APIUtil.createReview(review)
-  .then(review => dispatch(receiveReview(review)))
+    .then(review => dispatch(receiveReview(review)))
 )
 
 export const updateReview = review => dispatch => (

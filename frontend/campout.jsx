@@ -4,7 +4,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 import {deleteReview, requestReviews, createReview, updateReview, receiveReview} from './actions/reviews_actions';
 import { create } from 'domain';
-import { receiveAllListings } from './actions/listings_actions'
+import { receiveAllListings } from './actions/listings_actions';
+import { requestAllBookings } from './actions/bookings_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,5 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.updateReview = updateReview;
   window.receiveAllListings = receiveAllListings;
   window.receiveReview = receiveReview;
+  window.requestAllBookings = requestAllBookings;
   //testing//
 });
