@@ -29,7 +29,11 @@ class ReviewsIndex extends React.Component {
         <h2 className="reviews-header">{reviews.length} {numReviews}</h2>
           <ul>
             {reviews.map((review, idx)=> (
-              <ReviewIndexItem key={idx} review={review} requestReviews={this.props.requestReviews}/>
+              <ReviewIndexItem 
+                key={idx}
+                review={review}
+                deleteReview={this.props.deleteReview}
+              />
           ))}
           </ul>
         </div>

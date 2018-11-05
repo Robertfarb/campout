@@ -18,7 +18,7 @@ class ListingIndex extends React.Component {
 
   render() {
     const filtListings = applyListingFilters(this.props.filters, this.props.listings);
-    
+
     if (filtListings.length === 0) {
       return (
         <div className="no-listings-avail">
@@ -30,7 +30,10 @@ class ListingIndex extends React.Component {
     return (
       <div className="listing-index">
       {filtListings.map(listing => (
-        <ListingIndexItem key={listing.id} listing={listing}/> 
+        <ListingIndexItem 
+          key={listing.id} 
+          listing={listing}
+        /> 
       ))}
     </div>
   )};

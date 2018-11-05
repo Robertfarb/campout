@@ -116,6 +116,7 @@ class Listing extends React.Component {
                 currUser={this.props.currUser}
                 reviews={this.props.reviews}
                 requestListing={this.props.requestListing}
+                deleteReview={this.props.deleteReview}
                 />
             </div>
             </div>
