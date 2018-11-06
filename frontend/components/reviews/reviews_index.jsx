@@ -10,6 +10,7 @@ class ReviewsIndex extends React.Component {
   componentWillReceiveProps(newProps) {
     if(newProps.reviews !== this.props.reviews) {
       this.props.requestListing(this.props.listingId);
+      this.props.requestAllListings();
     }
   }
 
@@ -33,6 +34,7 @@ class ReviewsIndex extends React.Component {
                 key={idx}
                 review={review}
                 deleteReview={this.props.deleteReview}
+                currUser={this.props.currUser}
               />
           ))}
           </ul>

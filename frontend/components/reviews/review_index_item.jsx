@@ -20,6 +20,7 @@ class ReviewIndexItem extends React.Component {
           key={this.props.idx}
           review={review} 
           deleteReview={this.props.deleteReview}
+          currUser={this.props.currUser}
         />
       </li>
     )
